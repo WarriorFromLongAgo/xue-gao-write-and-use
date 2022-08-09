@@ -1,13 +1,13 @@
-package com.xuegao.xuegaospringotherues;
+package com.xuegao.springmybatis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class XueGaoSpringOtherUesApplication {
+public class SpringMybatisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(XueGaoSpringOtherUesApplication.class, args);
+        SpringApplication.run(SpringMybatisApplication.class, args);
     }
 
 }
