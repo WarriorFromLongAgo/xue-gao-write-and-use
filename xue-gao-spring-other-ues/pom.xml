@@ -17,8 +17,13 @@
     <dependencies>
         <dependency>
             <groupId>com.xuegao</groupId>
-            <artifactId>xuegao-framework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>framework-web</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>framework-util</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 
