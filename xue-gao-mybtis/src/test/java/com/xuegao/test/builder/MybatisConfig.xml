@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+       Copyright 2009-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 属性：定义配置外在化 -->
+    <properties resource="jdbc.properties"/>
+
+    <!-- 设置：定义mybatis的一些全局性设置 -->
+    <settings>
+<!--        CachingExecutor-->
+<!--        BaseExecutor-->
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <setting name="useColumnLabel" value="true"/>
+        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+    </settings>
+
+    <!-- 类型名称：为一些类定义别名 -->
+    <!--    <typeAliases>-->
+    <!--        <typeAlias alias="Author" type="domain.blog.Author"/>-->
+    <!--    </typeAliases>-->
+    <!--    <typeAliases>-->
+    <!--        <package name="domain.blog"/>-->
+    <!--    </typeAliases>-->
+
+    <!-- 类型处理器：定义Java类型与数据库中的数据类型之间的转换关系 -->
+    <!--    <typeHandlers>-->
+    <!--        <typeHandler handler="org.mybatis.example.ExampleTypeHandler"/>-->
+    <!--    </typeHandlers>-->
+    <!--    <typeHandlers>-->
+    <!--        <package name="org.mybatis.example"/>-->
+    <!--    </typeHandlers>-->
+    <!--    <typeHandlers>-->
+    <!--        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>-->
+    <!--    </typeHandlers>-->
+
+    <!-- 对象工厂 -->
+    <!--    <objectFactory type="org.mybatis.example.ExampleObjectFactory">-->
+    <!--        <property name="someProperty" value="100"/>-->
+    <!--    </objectFactory>-->
+
+    <!--    MyBatis 允许您在执行映射语句时拦截对某些点的调用。默认情况下，MyBatis 允许插件拦截以下方法调用：-->
+    <!--    执行器（更新、查询、刷新语句、提交、回滚、getTransaction、close、isClosed）-->
+    <!--    ParameterHandler （getParameterObject， setParameters）-->
+    <!--    ResultSetHandler （handleResultSets， handleOutputParameters）-->
+    <!--    语句处理程序（准备、参数化、批处理、更新、查询）-->
+    <!-- 插件：mybatis的插件,插件可以修改mybatis的内部运行规则 -->
+    <!--    https://mybatis.org/mybatis-3/configuration.html-->
+    <!--    <plugins>-->
+    <!--        <plugin interceptor="org.mybatis.example.ExamplePlugin">-->
+    <!--            <property name="someProperty" value="100"/>-->
+    <!--        </plugin>-->
+    <!--    </plugins>-->
+
+    <!-- 环境：配置mybatis的环境 -->
+    <!-- 设置一个默认的连接环境信息 -->
+    <environments default="development">
+        <!-- 连接环境信息，取一个任意唯一的名字 -->
+        <environment id="development">
+            <!-- mybatis使用jdbc事务管理方式 -->
+            <transactionManager type="JDBC"/>
+            <!-- mybatis使用连接池方式来获取连接 -->
+            <dataSource type="POOLED">
+                <!-- 配置与数据库交互的4个必要属性 -->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <!--        &lt;!&ndash; 连接环境信息，取一个任意唯一的名字 &ndash;&gt;-->
+        <!--        <environment id="oracle_developer">-->
+        <!--            &lt;!&ndash; mybatis使用jdbc事务管理方式 &ndash;&gt;-->
+        <!--            <transactionManager type="jdbc"/>-->
+        <!--            &lt;!&ndash; mybatis使用连接池方式来获取连接 &ndash;&gt;-->
+        <!--            <dataSource type="pooled">-->
+        <!--                &lt;!&ndash; 配置与数据库交互的4个必要属性 &ndash;&gt;-->
+        <!--                <property name="driver" value="${oracle.driver}"/>-->
+        <!--                <property name="url" value="${oracle.url}"/>-->
+        <!--                <property name="username" value="${oracle.username}"/>-->
+        <!--                <property name="password" value="${oracle.password}"/>-->
+        <!--            </dataSource>-->
+        <!--        </environment>-->
+    </environments>
+
+    <!-- 数据库厂商标识 -->
+    <!--    <databaseIdProvider type="DB_VENDOR">-->
+    <!--        <property name="SQL Server" value="sqlserver"/>-->
+    <!--        <property name="DB2" value="db2"/>-->
+    <!--        <property name="Oracle" value="oracle" />-->
+    <!--    </databaseIdProvider>-->
+
+    <!-- 映射器：指定映射文件或者映射类 -->
+    <mappers>
+        <mapper resource="com/atguigu/dao/UserMapper.xml"/>
+    </mappers>
+</configuration>
+
+
