@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<mapper namespace="com.xuegao.mapper.AuthorMapper">
+    <resultMap id="selectAuthor" type="com.xuegao.entity.Author">
+        <id column="id" property="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="bio" column="bio"/>
+    </resultMap>
+
+<!--    <select id="selectAuthor" resultMap="selectAuthor">-->
+    <select id="selectAuthor" parameterType="com.xuegao.entity.Author" resultType="com.xuegao.entity.Author">
+        select id, username, password, email, bio
+        from author
+        where id = ?
+    </select>
+
+</mapper>
