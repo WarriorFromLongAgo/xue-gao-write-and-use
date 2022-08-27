@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xuegao.springmybatis.business.demo.mapper.UserInfoMapper">
-    <resultMap id="BaseResultMap" type="com.xuegao.springmybatis.business.demo.model.doo.UserInfo">
+    <resultMap id="BaseResultMap" type="com.xuegao.springmybatis.model.demo.doo.UserInfo">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
-        <!--        <result column="password" jdbcType="VARCHAR" property="password"/>-->
+        <result column="password" jdbcType="VARCHAR" property="password"/>
     </resultMap>
 
     <sql id="BaseTable">
         user_info
     </sql>
 
+    <!--    id: sql 片段在命名空间内的唯一标识. 和mapper 中方法名保持一致-->
+    <!--    useGeneratedKeys: 是否回填自动生成的主键-->
+    <!--    keyProperty: 主键回填到哪个属性-->
+    <!--    keyColumn: 主键回填的字段名, 可省略-->
+    <!--    parameterType: 参数类型, 通常都可以省略.-->
+    <!--    flushCache: 是否刷新(清空)一级缓存和二级缓存, 默认为true. 笔者尝试设置为false,并不生效. 所以使用默认即可.-->
+    <!--    timeout: sql 执行超时时间, 默认未设置, 由数据库驱动决定.-->
+    <!--    statementType: 执行sql时使用的statement类型, 默认为PREPARED. 可选值为:STATEMENT，PREPARED 或 CALLABLE 的一个-->
+    <!--    <insert-->
+    <!--            id="insert"-->
+    <!--            flushCache="true"-->
+    <!--            statementType="PREPARED"-->
+    <!--            keyProperty=""-->
+    <!--            keyColumn=""-->
+    <!--            useGeneratedKeys=""-->
+    <!--            timeout="20">-->
+    <!--    </insert>-->
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" timeout="20">
+        insert into
+        <include refid="BaseTable"/>
+        (`id`, `username`, `password`)
+        values
+        (null, #{username}, #{password})
+    </insert>
+
+    <update id="disable" flushCache="true" statementType="PREPARED" timeout="20">
+        update
+        <include refid="BaseTable"/>
+        set `username` = 'disable' where id = #{id}
+    </update>
+
+    <update id="update" flushCache="true" statementType="PREPARED" timeout="20">
+        update
+        <include refid="BaseTable"/>
+        set `username` = 'update' where id = #{id}
+    </update>
+
     <select id="list" resultMap="BaseResultMap">
         select id,
-        username
+        username,
+        password
         from
         <include refid="BaseTable"/>
         limit 200
     </select>
+
+    <insert id="batchInsert">
+        insert into
+        <include refid="BaseTable"/>
+        (`id`, `username`, `password`)
+        values
+        <foreach collection="userInfoList" item="userInfo" separator=",">
+            (null, #{userInfo.username}, #{userInfo.password})
+        </foreach>
+        ;
+    </insert>
+
+    <insert id="batchUpdate">
+
+    </insert>
 </mapper>

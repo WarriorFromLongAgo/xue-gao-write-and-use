@@ -1,4 +1,4 @@
-package com.xuegao.springmybatis.business.demo.model.doo;
+package com.xuegao.springmybatis.model.demo.doo;
 
 import lombok.Getter;
 import lombok.Setter;
