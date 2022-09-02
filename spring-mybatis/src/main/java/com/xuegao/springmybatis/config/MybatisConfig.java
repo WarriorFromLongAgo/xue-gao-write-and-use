@@ -36,6 +36,7 @@ public class MybatisConfig {
         // org.apache.ibatis.builder.xml.XMLConfigBuilder#settingsElement
         // configuration.setCacheEnabled();
         configuration.setLogImpl(StdOutImpl.class);
+        configuration.setLogPrefix("[xuegao-spring-mybatis]");
         configuration.addInterceptor(new PrintSqlInterceptor());
 
         return sqlSessionFactory;

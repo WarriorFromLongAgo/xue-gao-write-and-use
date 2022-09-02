@@ -69,7 +69,19 @@
         ;
     </insert>
 
-    <insert id="batchUpdate">
-
-    </insert>
+    <update id="batchUpdate">
+        <foreach collection="userInfoList" item="userInfo" index="index" separator=";">
+            UPDATE
+            <include refid="BaseTable"/>
+            <set>
+                <if test="userInfo.username != null">
+                    username = #{userInfo.username},
+                </if>
+                <if test="userInfo.password != null">
+                    password = #{userInfo.password},
+                </if>
+            </set>
+            WHERE id = ${userInfo.id}
+        </foreach>
+    </update>
 </mapper>

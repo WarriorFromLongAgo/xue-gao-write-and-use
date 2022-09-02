@@ -6,6 +6,7 @@ import com.xuegao.springmybatis.model.demo.doo.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,6 +59,7 @@ public class UserInfoController {
     }
 
     @RequestMapping("/userInfo/batchInsert")
+    @Transactional(rollbackFor = Exception.class)
     public List<UserInfo> batchInsert() {
 
         Random random = new Random();
@@ -76,11 +78,12 @@ public class UserInfoController {
         return userInfoList;
     }
 
+    @Transactional
     @RequestMapping("/userInfo/batchUpdate")
     public Integer batchUpdate() {
         List<UserInfo> list = list();
         for (UserInfo userInfo : list) {
-            userInfo.setPassword("update");
+            userInfo.setPassword("update2");
         }
         return userInfoMapper.batchUpdate(list);
     }
