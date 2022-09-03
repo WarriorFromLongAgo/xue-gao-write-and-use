@@ -10,5 +10,5 @@ public interface TransactionMapper {
 
     List<UserInfo> list();
 
-
+    Integer insert(UserInfo userInfo);
 }

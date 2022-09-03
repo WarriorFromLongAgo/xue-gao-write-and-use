@@ -20,4 +20,12 @@
         <include refid="BaseTable"/>
         limit 200
     </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" timeout="20">
+        insert into
+        <include refid="BaseTable"/>
+        (`id`, `username`, `password`)
+        values
+        (null, #{username}, #{password})
+    </insert>
 </mapper>

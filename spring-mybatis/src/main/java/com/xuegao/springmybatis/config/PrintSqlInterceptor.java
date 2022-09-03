@@ -1,5 +1,6 @@
 package com.xuegao.springmybatis.config;
 
+import com.xuegao.JsonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
@@ -44,7 +45,6 @@ public class PrintSqlInterceptor implements Interceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        log.info("[xue-gao-write-and-use][PrintSqlInterceptor][intercept][={}]", "1111111111");
         MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
         Object parameter = null;
         if (invocation.getArgs().length > 1) {
