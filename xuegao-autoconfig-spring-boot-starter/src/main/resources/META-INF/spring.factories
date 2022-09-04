@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.xuegao.xuegaoautoconfigspringbootstarter.service.HelloService1,\
+com.xuegao.xuegaoautoconfigspringbootstarter.service.HelloService2
+
