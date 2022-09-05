@@ -7,3 +7,11 @@ create table user_info
     password varchar(512) null comment '密码'
 );
 
+-- auto-generated definition
+create table mybatis_type_handler
+(
+    id     int auto_increment
+        primary key,
+    src    varchar(512) null comment '原文',
+    target varchar(512) null comment '密文'
+);
