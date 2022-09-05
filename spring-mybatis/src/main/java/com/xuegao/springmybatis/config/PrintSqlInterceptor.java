@@ -1,6 +1,5 @@
 package com.xuegao.springmybatis.config;
 
-import com.xuegao.JsonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
@@ -42,6 +41,7 @@ public class PrintSqlInterceptor implements Interceptor {
     private static final Logger log = LoggerFactory.getLogger(PrintSqlInterceptor.class);
 
     private int MIN_SIZE = 0;
+
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
