@@ -6,3 +6,5 @@ set global max_allowed_packet = 1024*1024*10;
 
 2，驱动配置
 allowMultiQueries=true
+
+问题，batch两种方式，sqlsession和拼接sql，两种方式sqlsession会出现sql长度溢出的问题吗
