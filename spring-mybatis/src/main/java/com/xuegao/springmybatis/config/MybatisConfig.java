@@ -38,6 +38,7 @@ public class MybatisConfig {
         configuration.setLogImpl(StdOutImpl.class);
         configuration.setLogPrefix("[xuegao-spring-mybatis]");
         configuration.addInterceptor(new PrintSqlInterceptor());
+        configuration.setMapUnderscoreToCamelCase(Boolean.TRUE);
 
         return sqlSessionFactory;
     }

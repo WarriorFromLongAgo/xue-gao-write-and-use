@@ -12,10 +12,12 @@ spring:
 #  允许批量sql
 #  &allowMultiQueries=true
 
-mybatis:
+#全部由config控制
+#mybatis:
   #  config-location: ''
-  configuration:
-    map-underscore-to-camel-case: true
+#  configuration:
+#    map-underscore-to-camel-case: true
+
 #logging:
 #  level:
 #    root: debug

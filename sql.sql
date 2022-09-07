@@ -15,3 +15,11 @@ create table mybatis_type_handler
     src    varchar(512) null comment '原文',
     target varchar(512) null comment '密文'
 );
+
+-- auto-generated definition
+create table mybatis_result
+(
+    id          int auto_increment
+        primary key,
+    result_type varchar(512) null comment '字段有下划线，映射'
+);
