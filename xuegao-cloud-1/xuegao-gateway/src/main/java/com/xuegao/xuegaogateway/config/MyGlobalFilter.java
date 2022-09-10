@@ -6,9 +6,11 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+@Component
 public class MyGlobalFilter implements GlobalFilter, Ordered {
     private static final Logger log = LoggerFactory.getLogger(MyGlobalFilter.class);
 
@@ -35,7 +37,7 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
         //获取请求uri
         String uriPath = request.getURI().getPath();
 
-        log.info("[xue-gao-write-and-use][MyGlobalFilter][filter][Method={}][host={}][path={}][query={]]",
+        log.info("[xue-gao-write-and-use][MyGlobalFilter][filter][Method={}][host={}][uriPath={}][query={}]",
                 request.getMethod().name(), request.getURI().getHost(), uriPath, request.getQueryParams());
         uriPath = uriPath.substring(uriPath.indexOf("/", 1));
 

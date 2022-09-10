@@ -20,16 +20,18 @@ spring:
         - id: "hr-service"
           uri: "lb://hr-service"
           predicates:
-            - Path="/hr/**"
+            - Path=/hr/**
           filters:
             - StripPrefix=1
         - id: "crm-service"
           uri: "lb://crm-service"
           predicates:
-            - Path="/crm/**"
+            - Path=/crm/**
+          filters:
+            - StripPrefix=1
       discovery:
         locator:
-          enabled: false
+          enabled: true
 
 eureka:
   instance:
