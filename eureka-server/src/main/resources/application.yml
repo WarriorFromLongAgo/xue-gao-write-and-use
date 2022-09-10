@@ -10,16 +10,20 @@ spring:
       password: 123456   # 密码
 eureka:
   instance:
+    #    hostname: 127.0.0.1
     hostname: localhost
   server:
     #防止由于Eureka的机制导致Client被错误显示在线 仅在开发环境使用,# 关闭自我保护模式（默认为打开）
     enable-self-preservation: true
     # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
     eviction-interval-timer-in-ms: 5000
+    my-url: null
   client:
     #声明自己是服务端
     register-with-eureka: false #不显示对server应用的注册
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #      http://${spring.security.user.name}:${spring.security.user.password}@localhost:9000/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
 
