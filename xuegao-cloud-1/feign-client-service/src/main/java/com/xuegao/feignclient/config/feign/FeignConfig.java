@@ -20,4 +20,5 @@ public class FeignConfig {
         // return Retryer.NEVER_RETRY;
         return new Retryer.Default();
     }
+
 }
