@@ -1,0 +1,59 @@
+server:
+  port: 14000
+
+spring:
+  application:
+    name: feign-client-service
+  security:
+    user:
+      name: root               # 用户名
+      password: 123456   # 密码
+  # 设置注册中心
+eureka:
+  instance:
+    hostname: "127.0.0.1"
+  client:
+    #不显示对server应用的注册
+    #    是否将自己注册到 Eureka-Server 中，默认的为 true
+    register-with-eureka: true
+    #    是否需要拉取服务信息，默认未true
+    fetchRegistry: true
+    # 表示 Eureka Client 间隔多久去服务器拉取信息，默认为 30 秒
+    registry-fetch-interval-seconds: 10
+    serviceUrl:
+      #配置eureka服务注册中心地址 如果eureka server服务注册中心是集群部署 只配置一个其他服务注册中心也能发现
+      defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/"
+#      defaultZone: "http://root:123456@127.0.0.1:8761/eureka/"
+feign:
+  client:
+    config:
+      #default 设置的全局超时时间
+      default:
+        loggerLevel: full
+        connectTimeout: 5000
+        readTimeout: 5000
+      # 指定服务
+  #      feign-server-service:
+  #          connectTimeout: 3000  # 请求链接时间  默认是1s
+  #          readTimeout: 3000  # 请求响应超时时间 默认是1s
+  #          loggerLevel: full # 请求日志打印详情  要配合下面的 debug一起使用
+  compression:
+    #  Tip提醒： 如果服务消费端的CPU资源比较紧张的话，建议不要开启数据的压缩功能，
+    #  因为数据压缩和解压都需要消耗CPU的资源，这样反而会给CPU增加了额外的负担，也会导致系统性能降低。
+    request:
+      # 开启请求数据的压缩功能
+      enabled: true
+      mime-types: text/xml,application/xml, application/json  # 压缩类型
+      min-request-size: 1024  # 最小压缩值标准，当数据大于 1024 才会进行压缩
+    response:
+      enabled: true  # 开启响应数据压缩功能
+
+
+
+logging:
+  level:
+    com.xuegao.feignclient.call: DEBUG
+
+
+
+

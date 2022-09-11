@@ -12,6 +12,11 @@
         <module>hr-service</module>
         <module>crm-service</module>
         <module>xuegao-gateway</module>
+        <module>feign-client-service</module>
+        <module>feign-server-service</module>
+        <module>xuegao-model</module>
+        <module>feign-server-service2</module>
+        <module>feign-client-service2</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -46,6 +51,11 @@
             <dependency>
                 <groupId>com.xuegao</groupId>
                 <artifactId>framework-util</artifactId>
+                <version>${xuegao-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xuegao</groupId>
+                <artifactId>framework-core</artifactId>
                 <version>${xuegao-framework.version}</version>
             </dependency>
         </dependencies>
