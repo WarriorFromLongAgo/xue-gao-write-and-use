@@ -25,11 +25,33 @@ eureka:
       defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/"
 #      defaultZone: "http://root:123456@127.0.0.1:8761/eureka/"
 
+# logging path
 logging:
   level:
-    com.xuegao.feignserver.business: DEBUG
-
-
+    root: info
+  file:
+    #    path: "/logs/${spring.application.name}.log"
+    name: "./logs/${spring.application.name}.log"
+    # 最大日志文件大小(默认为10MB，这里为了测试归档，暂时设置为2KB)
+    #    max-size: 2KB
+    # 要保留的日志备份的总大小(默认为0B)
+    #    total-size-cap: 1GB
+  pattern:
+    # 日志记录格式[组件名称] [时间戳] [日志级别] [类名.方法名] [消息文本]
+    file: "${spring.application.name} %d{yyyy-MM-dd HH:mm:ss.SSS} %p %C.%M %m %n"
+  logback:
+    rollingpolicy:
+      # 根据文件大小归档，超过2KB自动归档，次日启动服务时也会自动归档
+      file-name-pattern: ./logs/%d{yyyyMMdd}/${spring.application.name}.out.log.%d{yyyy-MM-dd}.%i.gz
+      # 最大日志文件大小(默认为10MB，这里为了测试归档，暂时设置为2KB)
+      max-file-size: 2KB
+      # 要保留的日志备份的总大小(默认为0B)
+      total-size-cap: 1GB
+      # 保存存档日志文件的最大天数(默认为7天)
+      max-history: 20
+#  ————————————————
+#  版权声明：本文为CSDN博主「嗷呜～~」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+#  原文链接：https://blog.csdn.net/qq_41287063/article/details/118580999
 
 
 
