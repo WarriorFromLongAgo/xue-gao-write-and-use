@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.2.10.RELEASE</version>
+<!--            <version>2.2.10.RELEASE</version>-->
         </dependency>
 
         <dependency>
@@ -69,10 +69,6 @@
                     <artifactId>tracer-sofa-boot-starter</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>tracer-sofa-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>
