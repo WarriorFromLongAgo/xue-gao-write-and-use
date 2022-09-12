@@ -49,5 +49,9 @@
             <groupId>com.xuegao</groupId>
             <artifactId>framework-util</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>tracer-sofa-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

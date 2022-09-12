@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
-    <contextListener class="com.xuegao.hr.config.LoggerStartupListener"/>
+    <contextListener class="com.xuegao.feignclient.config.log.LoggerStartupListener"/>
 
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
     <springProperty scope="context" name="serverPort" source="server.port"/>
