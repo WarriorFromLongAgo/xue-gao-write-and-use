@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @RestController
 public class TestController {
     private static final Logger log = LoggerFactory.getLogger(TestController.class);
@@ -30,6 +32,8 @@ public class TestController {
     @Autowired
     private RestTemplateService restTemplateService;
 
+    private AtomicInteger atomicInteger = new AtomicInteger(0);
+
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping(path = "/test/get")
     public String get() {
@@ -40,4 +44,19 @@ public class TestController {
         return "hello this is " + applicationName + ", port = " + serverPort;
     }
 
+    @RequestMapping(path = "/test/get1")
+    public String get1() {
+        log.info("[xue-gao-write-and-use][TestController][get1][serverPort={}][applicationName={}]", serverPort, applicationName);
+        return "hello this is " + applicationName + ", port = " + serverPort;
+    }
+
+    @RequestMapping(path = "/test/throwException")
+    public String throwException() {
+        log.info("[xue-gao-write-and-use][TestController][get1][serverPort={}][applicationName={}]", serverPort, applicationName);
+        if (atomicInteger.getAndIncrement() == 0) {
+            return "hello this is " + applicationName + ", port = " + serverPort;
+        } else {
+            throw new RuntimeException("111");
+        }
+    }
 }
