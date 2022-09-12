@@ -1,6 +1,6 @@
 package com.xuegao.feignclient.call.feignserver;
 
-import com.xuegao.RespUtil;
+import com.xuegao.util.RespUtil;
 import com.xuegao.model.dto.TestRequest;
 import com.xuegao.model.vo.TestResponse;
 import org.springframework.cloud.openfeign.FeignClient;

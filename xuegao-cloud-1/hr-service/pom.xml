@@ -31,5 +31,31 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alipay.sofa/tracer-sofa-boot-starter -->
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>tracer-sofa-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>xuegao-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>framework-util</artifactId>
+        </dependency>
     </dependencies>
 </project>

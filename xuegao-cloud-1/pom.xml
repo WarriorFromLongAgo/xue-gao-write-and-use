@@ -15,8 +15,6 @@
         <module>feign-client-service</module>
         <module>feign-server-service</module>
         <module>xuegao-model</module>
-        <module>feign-server-service2</module>
-        <module>feign-client-service2</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -29,7 +27,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.4.13</spring-boot.version>
         <spring-cloud.version>2020.0.6</spring-cloud.version>
-        <xuegao-framework.version>0.0.2</xuegao-framework.version>
+        <xuegao-framework.version>0.0.3</xuegao-framework.version>
+        <trace-sofa.version>3.14.1</trace-sofa.version>
+        <mysql-driver.version>8.0.30</mysql-driver.version>
+        <mybatis.version>2.2.2</mybatis.version>
     </properties>
 
     <dependencyManagement>
@@ -57,6 +58,21 @@
                 <groupId>com.xuegao</groupId>
                 <artifactId>framework-core</artifactId>
                 <version>${xuegao-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>tracer-sofa-boot-starter</artifactId>
+                <version>${trace-sofa.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-driver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

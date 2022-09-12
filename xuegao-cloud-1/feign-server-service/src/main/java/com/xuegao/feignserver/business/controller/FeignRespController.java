@@ -1,6 +1,6 @@
 package com.xuegao.feignserver.business.controller;
 
-import com.xuegao.RespUtil;
+import com.xuegao.util.RespUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

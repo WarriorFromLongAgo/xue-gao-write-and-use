@@ -1,6 +1,6 @@
 package com.xuegao.feignclient.call.feignserver.impl;
 
-import com.xuegao.RespUtil;
+import com.xuegao.util.RespUtil;
 import com.xuegao.feignclient.call.feignserver.FeignEurekaCall;
 import com.xuegao.model.dto.TestRequest;
 import com.xuegao.model.vo.TestResponse;

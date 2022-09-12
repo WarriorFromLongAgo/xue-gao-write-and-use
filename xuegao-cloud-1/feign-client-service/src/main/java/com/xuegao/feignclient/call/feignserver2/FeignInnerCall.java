@@ -1,8 +1,8 @@
 package com.xuegao.feignclient.call.feignserver2;
 
-import com.xuegao.JsonUtil;
 import com.xuegao.feignserver.business.service.InnerService;
 import com.xuegao.model.vo.TestResponse;
+import com.xuegao.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -31,5 +31,9 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>framework-util</artifactId>
+        </dependency>
     </dependencies>
 </project>
