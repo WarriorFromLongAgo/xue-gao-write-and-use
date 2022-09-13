@@ -5,11 +5,14 @@ import java.math.BigDecimal;
 public class Format<T> {
 
     public static void main(String[] args) {
+        Integer format = Format.format(0, 1, Integer.MAX_VALUE);
+        System.out.println(format);
 
-
+        BigDecimal format2 = Format.format(BigDecimal.ZERO, BigDecimal.ONE, BigDecimal.TEN);
+        System.out.println(format2);
     }
 
-    static <T> T format(T input, T min, T max) {
+    public static <T extends Comparable> T format(T input, T min, T max) {
         if (input == null) {
             input = min;
         } else if (input.compareTo(min) <= 0) {
@@ -21,7 +24,7 @@ public class Format<T> {
     }
 
 
-    BigDecimal format(BigDecimal input, BigDecimal min, BigDecimal max) {
+    static BigDecimal format(BigDecimal input, BigDecimal min, BigDecimal max) {
         if (input == null) {
             input = min;
         } else if (input.compareTo(min) <= 0) {
@@ -32,7 +35,7 @@ public class Format<T> {
         return input;
     }
 
-    Integer format(Integer input, Integer min, Integer max) {
+    static Integer format(Integer input, Integer min, Integer max) {
         if (input == null) {
             input = min;
         } else if (input.compareTo(min) <= 0) {

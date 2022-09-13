@@ -1,6 +1,6 @@
 package javatest.util.map;
 
-import com.xuegao.JsonUtil;
+import com.xuegao.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
