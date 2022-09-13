@@ -5,6 +5,7 @@ import com.xuegao.model.vo.TestResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -28,5 +29,16 @@ public class InnerService {
         TestResponse response = new TestResponse();
         response.setInfoList(infoList);
         return response;
+    }
+
+     BigDecimal<? extends Number> format(BigDecimal input, BigDecimal min, BigDecimal max) {
+        if (input == null) {
+            input = min;
+        } else if (input.compareTo(min) <= 0) {
+            input = min;
+        } else if (input.compareTo(max) >= 0) {
+            input = max;
+        }
+        return input;
     }
 }

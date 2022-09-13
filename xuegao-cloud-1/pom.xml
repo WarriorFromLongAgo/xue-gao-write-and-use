@@ -26,9 +26,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.4.13</spring-boot.version>
-        <spring-cloud.version>2020.0.6</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <xuegao-framework.version>0.0.3</xuegao-framework.version>
-        <trace-sofa.version>3.14.1</trace-sofa.version>
+        <trace-sofa.version>3.10.0</trace-sofa.version>
         <mysql-driver.version>8.0.30</mysql-driver.version>
         <mybatis.version>2.2.2</mybatis.version>
         <guava.version>31.0.1-jre</guava.version>
@@ -43,12 +43,19 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-dependencies</artifactId>-->
+<!--                <version>${spring-boot.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+            <!-- https://mvnrepository.com/artifact/com.alipay.sofa/sofaboot-dependencies -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofaboot-dependencies</artifactId>
+                <version>3.10.0</version>
                 <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.xuegao</groupId>

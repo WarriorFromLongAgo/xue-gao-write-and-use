@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: feign-server-service
+    name: "feign-server-service"
   security:
     user:
       name: root               # 用户名
