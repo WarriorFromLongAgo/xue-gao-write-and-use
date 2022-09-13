@@ -12,7 +12,7 @@ public class Format<T> {
         System.out.println(format2);
     }
 
-    public static <T extends Comparable> T format(T input, T min, T max) {
+    public static <T extends Comparable<T>> T format(T input, T min, T max) {
         if (input == null) {
             input = min;
         } else if (input.compareTo(min) <= 0) {
