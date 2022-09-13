@@ -8,6 +8,13 @@ spring:
     user:
       name: root               # 用户名
       password: 123456   # 密码
+#  cloud:
+#    loadbalancer:
+#      #      Spring Cloud Load Balancer:
+#      enabled: false
+      #      Ribbon
+#      enabled: true
+
   # 设置注册中心
 eureka:
   instance:
