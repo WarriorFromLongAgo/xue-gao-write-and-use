@@ -76,17 +76,17 @@
             <groupId>com.xuegao</groupId>
             <artifactId>framework-util</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.xuegao</groupId>-->
-<!--            <artifactId>feign-server-service</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>com.alipay.sofa</groupId>-->
-<!--                    <artifactId>tracer-sofa-boot-starter</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>feign-server-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alipay.sofa</groupId>
+                    <artifactId>tracer-sofa-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>tracer-sofa-boot-starter</artifactId>
