@@ -2,7 +2,7 @@ package fanxing.test1;
 
 import java.math.BigDecimal;
 
-public class Format<T> {
+public class Format {
 
     public static void main(String[] args) {
         Integer format = Format.format(0, 1, Integer.MAX_VALUE);
