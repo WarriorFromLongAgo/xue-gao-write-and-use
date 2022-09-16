@@ -34,10 +34,6 @@
                     <groupId>com.sun.jersey.contribs</groupId>
                     <artifactId>jersey-apache-client4</artifactId>
                 </exclusion>
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.cloud</groupId>-->
-<!--                    <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
-<!--                </exclusion>-->
             </exclusions>
         </dependency>
         <dependency>
@@ -47,25 +43,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-<!--            <version>2.2.10.RELEASE</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.cloud</groupId>-->
-<!--                    <artifactId>spring-cloud-openfeign-core</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-openfeign-core -->
 <!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-openfeign-core</artifactId>-->
-<!--            <version>2.2.10.RELEASE</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.cloud</groupId>-->
-<!--                    <artifactId>spring-cloud-netflix-ribbon</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
+<!--            <groupId>io.github.openfeign</groupId>-->
+<!--            <artifactId>feign-core</artifactId>-->
+<!--            <version>${feign-core.version}</version>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>com.xuegao</groupId>

@@ -1,7 +1,5 @@
 package com.xuegao.feignclient.config.feign;
 
-import com.xuegao.util.JsonUtil;
-import com.xuegao.util.RespUtil;
 import feign.FeignException;
 import feign.Response;
 import feign.codec.DecodeException;
@@ -9,8 +7,6 @@ import feign.codec.Decoder;
 import org.springframework.cloud.openfeign.support.SpringDecoder;
 
 import java.io.IOException;
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 public class ResponseDecoder implements Decoder {
@@ -22,36 +18,38 @@ public class ResponseDecoder implements Decoder {
 
     @Override
     public Object decode(Response response, Type type) throws IOException, DecodeException, FeignException {
-        Method method = response.request().requestTemplate().methodMetadata().method();
-        //如果Feign接口的返回值不是 Response{code:0,...} 结构类型，并且远程响应又是这个结构
-        boolean isNotClassFLag = method.getReturnType() != com.xuegao.util.RespUtil.class;
-        if (isNotClassFLag) {
-            //构造一个这个结构类型
-            Type newType =
-                    new ParameterizedType() {
-                        @Override
-                        public Type[] getActualTypeArguments() {
-                            return new Type[]{type};
-                        }
-
-                        @Override
-                        public Type getRawType() {
-                            return com.xuegao.util.RespUtil.class;
-                        }
-
-                        @Override
-                        public Type getOwnerType() {
-                            return null;
-                        }
-                    };
-            com.xuegao.util.RespUtil<?> result = (com.xuegao.util.RespUtil<?>) this.decoder.decode(response, newType);
-            //只返回data
-            return result.getData();
-        } else {
-            String s = response.body().toString();
-            RespUtil respUtil = JsonUtil.toClass(s, RespUtil.class);
-            return respUtil.getData();
-        }
+        System.out.println();
+        // Method method = response.request().requestTemplate().methodMetadata().method();
+        // //如果Feign接口的返回值不是 Response{code:0,...} 结构类型，并且远程响应又是这个结构
+        // boolean isNotClassFLag = method.getReturnType() != com.xuegao.util.RespUtil.class;
+        // if (isNotClassFLag) {
+        //     //构造一个这个结构类型
+        //     Type newType =
+        //             new ParameterizedType() {
+        //                 @Override
+        //                 public Type[] getActualTypeArguments() {
+        //                     return new Type[]{type};
+        //                 }
+        //
+        //                 @Override
+        //                 public Type getRawType() {
+        //                     return com.xuegao.util.RespUtil.class;
+        //                 }
+        //
+        //                 @Override
+        //                 public Type getOwnerType() {
+        //                     return null;
+        //                 }
+        //             };
+        //     com.xuegao.util.RespUtil<?> result = (com.xuegao.util.RespUtil<?>) this.decoder.decode(response, newType);
+        //     //只返回data
+        //     return result.getData();
+        // } else {
+        //     String s = response.body().toString();
+        //     RespUtil respUtil = JsonUtil.toClass(s, RespUtil.class);
+        //     return respUtil.getData();
+        // }
+        return null;
         // return this.decoder.decode(response, type);
     }
 
