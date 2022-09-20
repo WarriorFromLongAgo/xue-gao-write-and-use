@@ -81,6 +81,48 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.33.0</version>
+                <configuration>
+                    <!-- Docker 远程管理地址-->
+                    <dockerHost>http://192.168.3.101:2375</dockerHost>
+                    <!-- Docker 推送镜像仓库地址-->
+                    <pushRegistry>http://192.168.3.101:5000</pushRegistry>
+                    <images>
+                        <image>
+                            <!--由于推送到私有镜像仓库，镜像名需要添加仓库地址-->
+                            <name>192.168.3.101:5000/mall-tiny/${project.name}:${project.version}</name>
+                            <!--定义镜像构建行为-->
+                            <build>
+                                <!--定义基础镜像-->
+                                <from>java:8</from>
+                                <args>
+                                    <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                                </args>
+                                <!--定义哪些文件拷贝到容器中-->
+                                <assembly>
+                                    <!--定义拷贝到容器的目录-->
+                                    <targetDir>/</targetDir>
+                                    <!--只拷贝生成的jar包-->
+                                    <descriptorRef>artifact</descriptorRef>
+                                </assembly>
+                                <!--定义容器启动命令-->
+                                <entryPoint>["java", "-jar","/${project.build.finalName}.jar"]</entryPoint>
+                                <!--定义维护者-->
+                                <maintainer>xuegao</maintainer>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
+            <!--            作者：MacroZheng-->
+            <!--            链接：https://juejin.cn/post/6904054246207913998-->
+            <!--            来源：稀土掘金-->
+            <!--            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。-->
         </plugins>
     </build>
 
