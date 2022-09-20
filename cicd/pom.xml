@@ -5,7 +5,7 @@
 
     <groupId>com.xuegao</groupId>
     <artifactId>cicd</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.7-SNAPSHOT</version>
 
     <name>cicd</name>
     <description>Demo project for Spring Boot</description>
@@ -25,6 +25,7 @@
         <docker.password>qq23612244896</docker.password>
 
         <dockerfile-maven.version>1.4.13</dockerfile-maven.version>
+        <docker-maven-plugin.version>0.40.0</docker-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -150,6 +151,42 @@
                     </buildArgs>
                 </configuration>
             </plugin>
+
+            <!-- https://mvnrepository.com/artifact/io.fabric8/docker-maven-plugin -->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker-maven-plugin.version}</version>
+                <configuration>
+                    <!--这一部分是为了实现对远程docker容器的控制-->
+                    <!--docker主机地址,用于完成docker各项功能,注意是tcp不是http!-->
+                    <dockerHost>${docker.host}</dockerHost>
+                    <!--docker远程访问所需证书地址,如果docker远程主机没有启用TLS验证则不需要配证书-->
+                    <!--                    <certPath>${project.basedir}/docker/ssh</certPath>-->
+                    <!--这一部分是为了实现docker镜像的构建和推送-->
+                    <!--registry地址,用于推送,拉取镜像,我这里用的是阿里的registry-->
+                    <registry>${docker.registry}</registry>
+                    <!--认证配置,用于私有registry认证,如果忘记了可以去阿里的registry查看-->
+                    <authConfig>
+                        <push>
+                            <username>${docker.username}</username>
+                            <password>${docker.password}</password>
+                        </push>
+                    </authConfig>
+
+                    <images>
+                        <image>
+                            <name>${docker.registry}/${docker.namespace}/${docker.image-warehouse}:${project.version}
+                            </name>
+                            <build>
+                                <!--使用dockerFile文件-->
+                                <dockerFile>${project.basedir}/dockerfile</dockerFile>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
