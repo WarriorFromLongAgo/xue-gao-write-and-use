@@ -1,0 +1,32 @@
+#基于哪个镜像
+FROM java:8
+
+RUN sed -i "s/archive.ubuntu./mirrors.aliyun./g" /etc/apt/sources.list
+RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
+RUN sed -i "s/security.debian.org/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
+
+#将本地文件夹挂载到当前容器
+# VOLUME /tmp
+
+#复制文件到容器
+# ADD gold-recycle-service.jar app.jar
+ADD target/cicd-0.0.1-SNAPSHOT.jar app.jar
+
+#声明需要暴露的端口
+EXPOSE 8080
+
+#配置容器启动后执行的命令
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
+
+
+# docker build -f .\dockerfile -t cicd:0.0.1 .
+# docker run -d -p 8080:8080 --name cicd cicd:0.0.1
+
+# 使用"docker tag"命令重命名镜像，并将它通过专有网络地址推送至Registry。
+# docker tag 05b66f729859 registry.cn-hangzhou.aliyuncs.com/hubei-xuegao/spring_cicd:0.0.1
+# docker push registry.cn-hangzhou.aliyuncs.com/hubei-xuegao/spring_cicd:0.0.1
+
+# docker pull registry.cn-hangzhou.aliyuncs.com/hubei-xuegao/spring_cicd:0.0.1
+# docker run -d -p 8080:8080 --name cicd 05b66f729859

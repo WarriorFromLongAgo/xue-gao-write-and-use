@@ -5,7 +5,7 @@
 
     <groupId>com.xuegao</groupId>
     <artifactId>cicd</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
 
     <name>cicd</name>
     <description>Demo project for Spring Boot</description>
@@ -15,6 +15,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+
+        <docker.host>http://localhost:2375</docker.host>
+        <docker.registry>registry.cn-hangzhou.aliyuncs.com</docker.registry>
+        <docker.namespace>hubei-xuegao</docker.namespace>
+        <docker.image-warehouse>spring_cicd</docker.image-warehouse>
+
+        <docker.username>18000855903</docker.username>
+        <docker.password>qq23612244896</docker.password>
+
+        <dockerfile-maven.version>1.4.13</dockerfile-maven.version>
     </properties>
 
     <dependencies>
@@ -53,6 +63,18 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--    <proxies>-->
+    <!--        <proxy>-->
+    <!--            <id>optional</id>-->
+    <!--            <active>true</active>-->
+    <!--            <protocol>http</protocol>-->
+    <!--            <username>proxyuser</username>-->
+    <!--            <password>proxypass</password>&ndash;&gt;-->
+    <!--            <host>192.168.3.54</host>-->
+    <!--            <port>80</port>-->
+    <!--        </proxy>-->
+    <!--    </proxies>-->
+
     <build>
         <plugins>
             <plugin>
@@ -71,8 +93,20 @@
                 <version>2.3.7.RELEASE</version>
                 <configuration>
                     <mainClass>com.xuegao.cicd.CicdApplication</mainClass>
+                    <imageName>${project.build.finalName}</imageName>
+                    <image>
+                        <!--配置镜像名称-->
+                        <name>${docker.registry}/boot/${project.name}:${project.version}</name>
+                        <!--镜像打包完成后自动推送到镜像仓库-->
+                        <!--                        <publish>true</publish>-->
+                    </image>
                 </configuration>
                 <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>repackage</id>
                         <goals>
@@ -83,46 +117,39 @@
             </plugin>
 
             <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.33.0</version>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile-maven.version}</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <!-- Docker 远程管理地址-->
-                    <dockerHost>http://192.168.3.101:2375</dockerHost>
-                    <!-- Docker 推送镜像仓库地址-->
-                    <pushRegistry>http://192.168.3.101:5000</pushRegistry>
-                    <images>
-                        <image>
-                            <!--由于推送到私有镜像仓库，镜像名需要添加仓库地址-->
-                            <name>192.168.3.101:5000/mall-tiny/${project.name}:${project.version}</name>
-                            <!--定义镜像构建行为-->
-                            <build>
-                                <!--定义基础镜像-->
-                                <from>java:8</from>
-                                <args>
-                                    <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                                </args>
-                                <!--定义哪些文件拷贝到容器中-->
-                                <assembly>
-                                    <!--定义拷贝到容器的目录-->
-                                    <targetDir>/</targetDir>
-                                    <!--只拷贝生成的jar包-->
-                                    <descriptorRef>artifact</descriptorRef>
-                                </assembly>
-                                <!--定义容器启动命令-->
-                                <entryPoint>["java", "-jar","/${project.build.finalName}.jar"]</entryPoint>
-                                <!--定义维护者-->
-                                <maintainer>xuegao</maintainer>
-                            </build>
-                        </image>
-                    </images>
+                    <username>${docker.username}</username>
+                    <password>${docker.password}</password>
+                    <repository>${docker.registry}/${docker.namespace}/${docker.image-warehouse}</repository>
+                    <!--                    <repository>${docker.registry}</repository>-->
+                    <tag>${project.version}</tag>
+                    <!--                    使用 maven仓库setting.xml 还是pom文件-->
+                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+                    <!--                    使用 maven仓库setting.xml 可以提交，但是使用 pom文件的不行-->
+                    <!--                    <servers>-->
+                    <!--                        <server>-->
+                    <!--                            <id>registry.cn-hangzhou.aliyuncs.com</id>-->
+                    <!--                            <username>18000855903</username>-->
+                    <!--                            <password>qq23612244896</password>-->
+                    <!--                        </server>-->
+                    <!--                    </servers>-->
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
                 </configuration>
             </plugin>
-
-            <!--            作者：MacroZheng-->
-            <!--            链接：https://juejin.cn/post/6904054246207913998-->
-            <!--            来源：稀土掘金-->
-            <!--            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。-->
         </plugins>
     </build>
 
