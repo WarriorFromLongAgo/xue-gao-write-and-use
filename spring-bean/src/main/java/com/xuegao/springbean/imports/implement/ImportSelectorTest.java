@@ -7,7 +7,9 @@ public class ImportSelectorTest implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata annotationMetadata) {
-        return new String[]{"com.xuegao.springbean.imports.implement.ImportTestService2"};
+
+        // return new String[]{"com.xuegao.springbean.imports.implement.ImportTestService2"};
+        return new String[]{ImportTestService2.class.getName()};
 
         // 这里的importingClassMetadata针对的是使用@EnableService的非注解类
         // 因为`AnnotationMetadata`是`Import`注解所在的类属性，如果所在类是注解类，则延伸至应用这个注解类的非注解类为止

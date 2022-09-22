@@ -4,7 +4,6 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
-import org.springframework.stereotype.Component;
 
 public class ImportBeanDefinitionRegistrar3 implements ImportBeanDefinitionRegistrar {
     @Override
@@ -20,5 +19,25 @@ public class ImportBeanDefinitionRegistrar3 implements ImportBeanDefinitionRegis
         System.out.println("ImportBeanDefinitionRegistrar3 registerBeanDefinitions");
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.rootBeanDefinition(ImportTestService3.class);
         registry.registerBeanDefinition("ImportTestService3", beanDefinitionBuilder.getBeanDefinition());
+
+        // GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
+        // beanDefinition.setBeanClass(PigxResourceServerConfigurerAdapter.class);
+        // registry.registerBeanDefinition(SecurityConstants.RESOURCE_SERVER_CONFIGURER, beanDefinition);
+
+        // @Import({PigxSecurityBeanDefinitionRegistrar.class})
+        // public @interface EnablePigxResourceServer {
+        // }
+
+        // 定义一个bean：Service1
+        // BeanDefinition service1BeanDinition = BeanDefinitionBuilder.genericBeanDefinition(Service1.class).getBeanDefinition();
+        // // 注册bean
+        // registry.registerBeanDefinition("service1", service1BeanDinition);
+        // //定义一个bean：Service2，通过addPropertyReference注入service1
+        // BeanDefinition service2BeanDinition = BeanDefinitionBuilder.genericBeanDefinition(Service2.class).
+        // addPropertyReference("service1", "service1").
+        // getBeanDefinition();
+        // //注册bean
+        // registry.registerBeanDefinition("service2",service2BeanDinition);`
+
     }
 }
