@@ -57,6 +57,10 @@ java -javaagent:E:\GitProject\TestProject\xue-gao-write-and-use\agent1\target\ag
 java -javaagent:E:\GitProject\TestProject\xue-gao-write-and-use\agent1\target\agent1-1.0.0-jar-with-dependencies.jar=com.xuegao.useagent1 -jar E:\GitProject\TestProject\xue-gao-write-and-use\useagent1\target\useagent1-0.0.1-SNAPSHOT.jar
 ```
 
+在vm option里面加
+```
+-javaagent:E:\GitProject\TestProject\xue-gao-write-and-use\agent1\target\agent1-1.0.0-jar-with-dependencies.jar
+```
 
 
 
