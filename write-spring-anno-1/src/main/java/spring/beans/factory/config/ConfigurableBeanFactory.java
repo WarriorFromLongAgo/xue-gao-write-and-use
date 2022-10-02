@@ -1,11 +1,12 @@
-package beans.factory.config;
+package spring.beans.factory.config;
 
-import beans.factory.BeanFactory;
+
+import spring.beans.factory.BeanFactory;
 
 public interface ConfigurableBeanFactory extends BeanFactory {
 
 
     String SCOPE_SINGLETON = "singleton";
 
-
+    
 }
