@@ -1,0 +1,2 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  com.xuegao.springbean.beanextend.Bean100_FactoryBean
