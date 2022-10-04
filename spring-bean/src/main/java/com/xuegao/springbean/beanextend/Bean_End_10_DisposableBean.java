@@ -5,7 +5,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean500_DisposableBean implements DisposableBean {
+public class Bean_End_10_DisposableBean implements DisposableBean {
     @Override
     public void destroy() throws Exception {
         OnlyPrintUtil.print(getClass(), "destroy");

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean80_BeanFactoryAware implements BeanFactoryAware {
+public class Bean1000_BeanFactoryAware implements BeanFactoryAware {
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         OnlyPrintUtil.print(getClass(), "setBeanFactory");

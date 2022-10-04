@@ -6,7 +6,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean61_BeanPostProcessor implements BeanPostProcessor {
+public class Bean60_BeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         OnlyPrintUtil.print(getClass(), "postProcessBeforeInitialization");

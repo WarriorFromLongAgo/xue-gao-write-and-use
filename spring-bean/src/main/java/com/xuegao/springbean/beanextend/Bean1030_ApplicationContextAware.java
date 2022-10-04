@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean60_ApplicationContextAware implements ApplicationContextAware {
+public class Bean1030_ApplicationContextAware implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         OnlyPrintUtil.print(getClass(), "setApplicationContext");

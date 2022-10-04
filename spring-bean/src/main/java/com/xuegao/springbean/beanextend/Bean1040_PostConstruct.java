@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-public class Bean_PostConstruct {
+public class Bean1040_PostConstruct {
 
     @PostConstruct
     public void postConstruct() {

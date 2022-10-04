@@ -5,8 +5,8 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean90_BeanNameAware implements BeanNameAware {
-    public Bean90_BeanNameAware() {
+public class Bean1010_BeanNameAware implements BeanNameAware {
+    public Bean1010_BeanNameAware() {
         OnlyPrintUtil.print(getClass(), "Bean8_BeanNameAware");
     }
 

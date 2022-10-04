@@ -5,7 +5,7 @@ import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean110_SmartInitializingSingleton implements SmartInitializingSingleton {
+public class Bean1050_SmartInitializingSingleton implements SmartInitializingSingleton {
     @Override
     public void afterSingletonsInstantiated() {
         OnlyPrintUtil.print(getClass(), "afterSingletonsInstantiated");

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Bean100_InitializingBean implements InitializingBean {
+public class Bean1020_InitializingBean implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         OnlyPrintUtil.print(getClass(), "afterPropertiesSet");

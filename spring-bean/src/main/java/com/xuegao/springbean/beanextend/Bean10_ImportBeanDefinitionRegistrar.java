@@ -1,6 +1,5 @@
 package com.xuegao.springbean.beanextend;
 
-import com.xuegao.springbean.imports.importregistrar.ImportTestService3;
 import com.xuegao.springbean.util.OnlyPrintUtil;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -10,7 +9,7 @@ import org.springframework.core.type.AnnotationMetadata;
 /**
  *
  */
-public class Bean2_ImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class Bean10_ImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         // 调用时间点
@@ -35,8 +34,8 @@ public class Bean2_ImportBeanDefinitionRegistrar implements ImportBeanDefinition
         //注册Bean
         // registry.registerBeanDefinition("serviceC", beanDefinitionBuilder.getBeanDefinition());
         OnlyPrintUtil.print(getClass(), "registerBeanDefinitions");
-        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.rootBeanDefinition(ImportTestService3.class);
-        registry.registerBeanDefinition("ImportTestService3", beanDefinitionBuilder.getBeanDefinition());
+        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.rootBeanDefinition(Bean11_ImportBeanDefinitionRegistrarConfig.Bean11_ImportBeanDefinitionRegistrarTestService.class);
+        registry.registerBeanDefinition("Bean11_ImportBeanDefinitionRegistrarTestService", beanDefinitionBuilder.getBeanDefinition());
 
         // GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
         // beanDefinition.setBeanClass(PigxResourceServerConfigurerAdapter.class);
