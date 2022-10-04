@@ -1,4 +1,4 @@
-package com.xuegao.xuegaospringotherues.spring.event.spring自带;
+package com.xuegao.xuegaospringotherues.spring.event.自己Diy;
 
 import com.alibaba.fastjson2.JSON;
 import lombok.Getter;

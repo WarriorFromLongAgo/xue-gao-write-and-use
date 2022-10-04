@@ -1,6 +1,6 @@
 package com.xuegao.xuegaospringotherues.controller.event;
 
-import com.xuegao.xuegaospringotherues.spring.event.spring自带.MyApplicationEventTest;
+import com.xuegao.xuegaospringotherues.spring.event.自己Diy.MyApplicationEventTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;

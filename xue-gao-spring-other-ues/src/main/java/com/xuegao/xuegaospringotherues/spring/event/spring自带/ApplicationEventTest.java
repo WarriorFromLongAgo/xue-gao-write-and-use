@@ -6,6 +6,9 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * 这个是通用的接收器
+ */
 @Component
 public class ApplicationEventTest implements ApplicationListener<ApplicationEvent> {
     private static final Logger log = LoggerFactory.getLogger(ApplicationEventTest.class);
