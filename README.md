@@ -2,11 +2,17 @@
 采用分支的方式，手写框架，学习框架使用
 
 # jdk，javase基础
-基础知识
+基础知识，以及Java的相关扩展
 ## use-jdk
 jdk 基础的使用
-# java_json
+## java_json
 json处理，fastjson，Jackson，gson
+## java_agent
+agent相关知识
+## web_container
+web容器相关，暂时没东西
+## https
+Java的https，spring的https
 
 # write
 手写框架相关
@@ -14,6 +20,8 @@ json处理，fastjson，Jackson，gson
 mybatis-write 项目手写了一个简单的mybatis，可以用来学习
 ## write_mybatis 分支
 mybatis-write 项目手写了一个简单的mybatis，可以用来学习
+## write_spring_mvc
+没东西
 
 # spring相关
 ## spring_mybatis
@@ -28,6 +36,16 @@ spring的通知机制，在spring生命周期会出现，以及可以自定义�
 spring整合kafka
 ## spring-redis
 spring整合redis
+## spring_cicd
+cicd
+## spring_log
+logback
+## spring_sleuth
+链路追踪
+## spring_conditional
+按类型加载
+## spring_autoconfig
+自动配置
 
 # springcloud相关
 ## spring_micro_services
