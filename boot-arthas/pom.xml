@@ -32,6 +32,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.xuegao</groupId>
+            <artifactId>framework-util</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

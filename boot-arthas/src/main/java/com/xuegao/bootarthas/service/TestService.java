@@ -22,7 +22,12 @@ public class TestService {
 
 
     public String test1(String input) {
+        System.out.println("mc 2");
         return "TestService test1 = " + input;
     }
 
+    public static String staticTest1(String input) {
+        System.out.println("mc");
+        return "TestService staticTest1 = " + input;
+    }
 }
