@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18 CSS Position(定位) 5</title>
+
+  <style>
+    img {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+position 属性指定了元素的定位类型。
+position 属性的五个值：
+static
+relative
+fixed
+absolute
+sticky
+元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。 
+-->
+
+  <!-- 
+重叠的元素
+
+元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素
+z-index属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
+一个元素可以有正数或负数的堆叠顺序：
+具有更高堆叠顺序的元素总是在较低的堆叠顺序元素的前面。
+注意： 如果两个定位元素重叠，没有指定z - index，最后定位在HTML代码中的元素将被显示在最前面。
+
+-->
+
+  <h1>This is a heading</h1>
+  <img src="./图片/gif.gif" width="200" height="140" />
+  <p>因为图像元素设置了 z-index 属性值为 -1, 所以它会显示在文字之后。</p>
+
+</body>
+
+</html>

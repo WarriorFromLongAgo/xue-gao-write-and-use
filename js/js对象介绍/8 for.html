@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Car {
+        // constructor() { };
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+    };
+    let myCar1 = new Car("Ford", 2014);
+    for (const key in myCar1) {
+        console.log("key = " + key);
+        console.log(" = " + myCar1[key]);
+    }
+    console.log("================================");
+    delete myCar1.name;
+
+    for (const key in myCar1) {
+        console.log("key = " + key);
+        console.log(" = " + myCar1[key]);
+    }
+    console.log("================================");
+
+    const cars = ["BMW", "Volvo", "Mini"];
+    for (let x of cars) {
+        console.log("x = " + x);
+    }
+
+    console.log("================================");
+    let myCar2 = new Car("Ford", 2014);
+    console.log("Object.values() = " + Object.values(myCar2));
+</script>
+
+</html>

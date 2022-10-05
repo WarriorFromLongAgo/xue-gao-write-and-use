@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 CSS 链接</title>
+</head>
+
+<body>
+  <a href="https://www.runoob.com/css/css-link.html">runoob</a>
+
+</body>
+<style>
+  /* 当设置为若干链路状态的样式，也有一些顺序规则： */
+
+  /* 未访问链接*/
+  a:link {
+    color: #000000;
+  }
+
+  /* 已访问链接 */
+  a:visited {
+    color: #00FF00;
+  }
+
+  /* 鼠标移动到链接上 */
+  a:hover {
+    color: #FF00FF;
+    /* text-decoration 属性主要用于删除链接中的下划线： */
+    text-decoration: none;
+    /* 背景颜色属性指定链接背景色： */
+    background-color: red;
+  }
+
+  /* 鼠标点击时 */
+  a:active {
+    color: #0000FF;
+    /* text-decoration 属性主要用于删除链接中的下划线： */
+    text-decoration: underline;
+  }
+</style>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 入门</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <!-- 挂载点，模板，实例之间的关系 -->
+    <!-- <div id="root">{{message}}</div> -->
+    <div id="root"></div>
+
+    <!-- 模板就是挂载点里面的内容，模板即可以卸载挂载点内部，也可以卸载挂载点的 template 里面 -->
+    <!-- Vue实例里面，只需要写上挂载点，将模板协商，vue会自动的将模板和数据绑定在一起，并且渲染到挂载点上 --> -->
+</body>
+
+<script>
+    new Vue({
+        // 和这里关联 <div id="root">
+        el: '#root',
+        template: '<div>hello {{message}}</div>',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+
+</html>

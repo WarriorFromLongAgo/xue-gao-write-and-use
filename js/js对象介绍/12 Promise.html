@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function myDisplayer(some) {
+        console.log("some = " + some);
+    }
+
+    let myPromise = new Promise(function (myResolve, myReject) {
+        let x = 0;
+
+        // 生成代码（这可能需要一些时间）
+
+        if (x == 0) {
+            myResolve("OK");
+        } else {
+            myReject("Error");
+        }
+    });
+
+    myPromise.then(
+        function (value) { myDisplayer(value); },
+        function (error) { myDisplayer(error); }
+    );
+</script>
+
+</html>

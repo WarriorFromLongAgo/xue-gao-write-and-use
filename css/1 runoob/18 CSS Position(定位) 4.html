@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18 CSS Position(定位) 4</title>
+
+  <style>
+    h2 {
+      position: absolute;
+      left: 100px;
+      top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+position 属性指定了元素的定位类型。
+position 属性的五个值：
+static
+relative
+fixed
+absolute
+sticky
+元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。 
+-->
+
+  <!-- 
+    绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>:
+absolute 定位使元素的位置与文档流无关，因此不占据空间。
+absolute 定位的元素和其他元素重叠。
+-->
+
+
+  <h2>这是一个绝对定位了的标题</h2>
+  <p>用绝对定位,一个元素可以放在页面上的任何位置。标题下面放置距离左边的页面100 px和距离页面的顶部150 px的元素。.</p>
+
+</body>
+
+</html>

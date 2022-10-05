@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS padding（填充）</title>
+  <!-- https://www.runoob.com/css/css-padding.html -->
+</head>
+
+<body>
+  <p>这是一个没有指定填充边距的段落。</p>
+  <p class="padding">这是一个指定填充边距的段落。</p>
+</body>
+
+<style>
+  p {
+    background-color: yellow;
+  }
+
+  p.padding {
+    /* 填充 - 简写属性
+    Padding属性，可以有一到四个值。
+
+    padding:25px 50px 75px 100px;
+    上填充为25px
+    右填充为50px
+    下填充为75px
+    左填充为100px
+    padding:25px 50px 75px;
+    上填充为25px
+    左右填充为50px
+    下填充为75px
+    padding:25px 50px;
+    上下填充为25px
+    左右填充为50px
+    padding:25px;
+    所有的填充都是25px */
+
+    padding: 25px 50px;
+  }
+</style>
+
+</html>

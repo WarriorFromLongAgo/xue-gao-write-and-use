@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let str = ' Hello World ';
+    console.log(str);
+    // 获得字符串的长度
+    console.log(str.length);
+    // 转换大小写
+    console.log(str.toUpperCase());
+    console.log(str.toLowerCase());
+    console.log(str.substring(0, 5));
+    // 检索特定字符串字符
+    console.log("str[1] ===== " + str[1]);
+    console.log("str.charAt(1) ===== " + str.charAt(1));
+    console.log("str.charCodeAt(1) ===== " + str.charCodeAt(1));
+    // 在字符串中查找子字符串并提取它
+    console.log("str.indexOf('o') ===== " + str.indexOf('o'));
+    console.log("str.lastIndexOf('o') ===== " + str.lastIndexOf('o'));
+    console.log("str.includes('w') ===== " + str.includes('w'));
+    console.log("str.includes('W') ===== " + str.includes('W'));
+    console.log("str.startsWith(' Hello') ===== " + str.startsWith(' Hello'));
+    console.log("str.endsWith('World ') ===== " + str.endsWith('World '));
+    console.log("str.repeat(3) ===== " + str.repeat(3));
+    // 替换字符串的某部分
+    console.log("str.replace('Hello', 'Hi') ===== " + str.replace('Hello', 'Hi'));
+    console.log("str.search('o') ===== " + str.search('o'));
+    // 当你知道字符串中的子字符串开始的位置，以及想要结束的字符时，slice()可以用来提取它。 
+    console.log("str.slice(0, 5) ===== " + str.slice(0, 5));
+    console.log("str.split(' ') ===== " + str.split(' '));
+    console.log("str.trim() ===== " + str.trim());
+    console.log("str.trimLeft() ===== " + str.trimLeft());
+    console.log("str.trimRight() ===== " + str.trimRight());
+
+
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // 我们将保存一个即将访问的 URL 作为变量
+    var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    // 为了创建一个HTTP请求，我们需要创建一个HTTP请求对象，通过 new 构造函数的形式。
+    var request = new XMLHttpRequest();
+    // 现在我们需要使用 open() 函数打开一个新的请求，
+    request.open('GET', requestURL);
+    // 我们设定 responseType 为 JSON，所以服务器将知道我们想要返回一个 JSON 对象，然后发送请求 :
+    request.responseType = 'json';
+    console.log("request = " + request);
+    request.send();
+    // 最后一点内容涉及相应来自服务器的返回数据，然后处理它，
+    request.onload = function () {
+        var superHeroes = request.response;
+        console.log("superHeroes = " + superHeroes);
+        populateHeader(superHeroes);
+    }
+
+    // 让我们利用它来写两个我们使用的函数。
+    function populateHeader(jsonObj) {
+        console.log("jsonObj = " + jsonObj);
+    }
+
+
+</script>
+
+</html>

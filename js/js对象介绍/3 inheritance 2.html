@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function Brick() {
+        this.width = 10;
+        this.height = 20;
+    }
+
+    function BlueGlassBrick() {
+        Brick.call(this);
+
+        this.opacity = 0.5;
+        this.color = 'blue';
+    }
+
+    let brick = new Brick();
+    console.log("brick.width = " + brick.width);
+    console.log("Brick.prototype = " + brick.prototype);
+
+    var brick2 = Object.create(brick);
+    console.log("brick2.width = " + brick2.width);
+
+    console.log("brick1.width = " + brick2.__proto__);
+
+
+    var brick3 = new brick2.constructor('width3', 'height3');
+    console.log("brick3.width = " + brick3.width);
+
+
+    // 原型链继承
+
+
+
+</script>
+
+</html>

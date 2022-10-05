@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+    let sequence = [1, 2, 3, 5, 8, 13];
+    let random = ['tree', 795, [0, 1, 2]];
+
+    console.log("shopping = " + shopping);
+    console.log("shopping[0] = " + shopping[0]);
+    console.log("shopping.length = " + shopping.length);
+    console.log("============================================");
+    for (let i = 0; i < sequence.length; i++) {
+        console.log(sequence[i]);
+    }
+    console.log("============================================");
+    shopping.forEach(element => {
+        console.log(element);
+    });
+    console.log("============================================");
+    let myData = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+    let mtDataArr = myData.split(',');
+    console.log("mtDataArr = " + mtDataArr);
+    mtDataArr.forEach(element => {
+        console.log(element);
+    });
+    let mtDataArrJoinStr = mtDataArr.join('-');
+    console.log("mtDataArrJoinStr = " + mtDataArrJoinStr);
+    let mtDataArrToStr = mtDataArr.toString;
+    console.log("mtDataArrToStr = " + mtDataArrToStr);
+    mtDataArrToStr = mtDataArr.toString();
+    console.log("mtDataArrToStr = " + mtDataArrToStr);
+    console.log("============================================");
+    let arrTwo = [1, 2, 3];
+    console.log("arrTwo = " + arrTwo);
+
+</script>
+
+</html>

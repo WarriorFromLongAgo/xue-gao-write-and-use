@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 入门</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        姓：<input v-model="firstName" />
+        名：<input v-model="lastName" />
+        <div>{{fullName}}</div>
+        <div>firstNameCount = {{firstNameCount}}</div>
+        <div>lastNameCount = {{lastNameCount}}</div>
+        <div>fullNameCount = {{fullNameCount}}</div>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: "11",
+            lastName: "22",
+            firstNameCount: 0,
+            lastNameCount: 0,
+            fullNameCount: 0
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName + '  ' + this.lastName
+            }
+        },
+        watch: {
+            firstName: function () {
+                this.firstNameCount++;
+            },
+            lastName: function () {
+                this.lastNameCount++;
+            },
+            fullName: function () {
+                this.fullNameCount++;
+            }
+        }
+    })
+</script>
+
+</html>

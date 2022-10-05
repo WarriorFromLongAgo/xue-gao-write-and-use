@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hello = function () {
+        return "Hello World!";
+    };
+    console.log("hello = " + hello());
+
+    hello = () => {
+        return "Hello World!";
+    };
+    console.log("hello = " + hello());
+
+    hello = () => "Hello World!";
+    console.log("hello = " + hello());
+
+
+
+
+    hello = (val) => "Hello " + val;
+
+    console.log("hello = " + hello("value"));
+
+    hello = val => "Hello " + val;
+
+    console.log("hello = " + hello("value"));
+
+</script>
+
+</html>

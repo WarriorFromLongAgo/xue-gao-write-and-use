@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Car {
+        constructor(brand) {
+            this.carname = brand;
+        }
+        present() {
+            return 'I have a ' + this.carname;
+        }
+    }
+    let myCar1 = new Car("Ford");
+    console.log("myCar1 json " + JSON.stringify(myCar1));
+
+    class Model extends Car {
+        constructor(brand, mod) {
+            super(brand);
+            this.model = mod;
+        }
+        show() {
+            return this.present() + ', it is a ' + this.model;
+        }
+    }
+    let myCar2 = new Model("Ford", "Mustang");
+    console.log("myCar2 json " + JSON.stringify(myCar2));
+</script>
+
+</html>

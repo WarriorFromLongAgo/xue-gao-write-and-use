@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div> {{ message }} </div>
+        <div> {{ counter }} </div>
+
+    </div>
+
+</body>
+
+<script>
+    const HelloVueApp = {
+        data() {
+            return {
+                message: 'Hello Vue!!',
+                counter: 0
+            }
+        },
+        mounted() {
+            setInterval(() => {
+                this.counter++
+            }, 1000)
+        },
+        created() {
+            // `this` 指向 vm 实例
+            console.log('counter is: ' + this.counter) // => "count is: 1"
+        }
+    }
+
+    Vue.createApp(HelloVueApp).mount('#root')
+</script>
+
+</html>

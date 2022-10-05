@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18 CSS Position(定位) 1</title>
+
+  <style>
+    div.static {
+      position: static;
+      border: 3px solid #73AD21;
+      /* 这个有效果 */
+      /* margin: 100px 50px; */
+      /* 这个没有效果 */
+      top: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+position 属性指定了元素的定位类型。
+position 属性的五个值：
+static
+relative
+fixed
+absolute
+sticky
+元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。 
+-->
+
+  <h2>position: static;</h2>
+
+  <p>使用 position: static; 定位的元素，无特殊定位，遵循正常的文档流对象:</p>
+  <p>静态定位的元素不会受到 top, bottom, left, right影响。</p>
+
+  <div class="static">
+    该元素使用了 position: static;
+  </div>
+
+</body>
+
+</html>

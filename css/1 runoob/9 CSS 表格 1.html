@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9 CSS 表格</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Griffin</td>
+    </tr>
+    <tr>
+      <td>Lois</td>
+      <td>Griffin</td>
+    </tr>
+  </table>
+</body>
+<style>
+  /* 折叠边框 border-collapse 属性设置表格的边框是否被折叠成一个单一的边框或隔开： */
+  table {
+    border-collapse: collapse;
+    /* 下面的例子是设置100％的宽度， */
+    width: 100%;
+  }
+
+  th {
+    /* 50像素的th元素的高度的表格： */
+    height: 50px;
+    /* 下面的例子指定边框的颜色，和th元素的文本和背景颜色： */
+    background-color: green;
+    color: white;
+  }
+
+  td {
+    /* text-align属性设置水平对齐方式，向左，右，或中心： */
+    /* 垂直对齐属性设置垂直对齐，比如顶部，底部或中间： */
+    text-align: right;
+    height: 50px;
+    vertical-align: bottom;
+
+    /* 如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性： */
+    padding: 15px;
+
+
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+</style>
+
+</html>

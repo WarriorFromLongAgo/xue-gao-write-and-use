@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 入门</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <input v-model="inputValue" />
+            <button @click="handlerClick">提交</button>
+        </div>
+
+        <ul>
+            <li v-for="(item,index) in list">
+                {{item}}
+                <button @click="del(index)">删除</button>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            inputValue: 'hello',
+            list: [1, 2, 3]
+        },
+        methods: {
+            handlerClick() {
+                this.list.push(this.inputValue);
+                this.inputValue = '';
+            },
+            del(index) {
+                this.list.splice(index, 1);
+            }
+        }
+    })
+</script>
+
+</html>

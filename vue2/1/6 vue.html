@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 入门</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- v-if 直接从dom删除 -->
+        <div v-if="show">hello</div>
+        <!-- v-show 直接隐藏，不会动dom -->
+        <div v-show="show">hello</div>
+        <button @click="handlerClick">change</button>
+        <div></div>
+        <ul>
+            <li v-for="item of list">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) of list" :key="index">{{index}} ++ {{item}}</li>
+        </ul>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            show: true,
+            list: [1, 2, 3]
+        },
+        methods: {
+            handlerClick: function () {
+                this.show = !this.show;
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>请点击文本标记之一，就可以触发相关控件：</p>
+    定义和用法
+    for 属性规定 label 与哪个表单元素绑定。
+    隐式和显式的联系
+    标记通常以下面两种方式中的一种来和表单控件相联系：将表单控件作为标记标签的内容，
+    这样的就是隐式形式，或者为 <label></label> 标签下的 for 属性命名一个目标表单 id，这样就是显式形式。
+    <form>
+        <label for="male">Male</label>
+        <input type="radio" name="sex" id="male" />
+        <br />
+        <label for="female">Female</label>
+        <input type="radio" name="sex" id="female" />
+    </form>
+
+</body>
+
+</html>

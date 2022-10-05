@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        使用 JavaScript 表达式
+        迄今为止，在我们的模板中，我们一直都只绑定简单的 property 键值。但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。
+        
+        {{ number + 1 }}
+        
+        {{ ok ? 'YES' : 'NO' }}
+        
+        {{ message.split('').reverse().join('') }}
+        
+        <div v-bind:id="'list-' + id"></div>
+        这些表达式会在当前活动实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。
+        
+        <!--  这是语句，不是表达式：-->
+        {{ var a = 1 }}
+        
+        <!-- 流程控制也不会生效，请使用三元表达式 -->
+        {{ if (ok) { return message } }}
+    </div>
+
+</body>
+
+<script>
+
+
+    Vue.createApp(HelloVueApp).mount('#root')
+</script>
+
+</html>

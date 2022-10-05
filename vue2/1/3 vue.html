@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 入门</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- <div v-html="content" v-on:click="()=>{alter(123)}"> -->
+        <!-- </div> -->
+        <div v-on:click="handlerClick">{{content}}</div>
+        <div @click="handlerClick">@click {{content}}</div>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            content: "<h1>h1里面的内容</h1>"
+        },
+        methods: {
+            handlerClick: function () {
+                this.content = "change content";
+                alert(123)
+            }
+        }
+    })
+</script>
+
+</html>

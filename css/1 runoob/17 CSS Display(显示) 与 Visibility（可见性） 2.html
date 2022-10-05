@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 CSS Display(显示) 与 Visibility（可见性）</title>
+  <style>
+    li {
+      display: inline;
+    }
+
+    span {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+CSS Display - 块和内联元素
+块元素是一个元素，占用了全部宽度，在前后都是换行符。
+块元素的例子：
+<h1>
+<p>
+<div>
+内联元素只需要必要的宽度，不强制换行。
+内联元素的例子：
+<span>
+<a> 
+如何改变一个元素显示
+可以更改内联元素和块元素，反之亦然，可以使页面看起来是以一种特定的方式组合，并仍然遵循web标准。
+
+下面的示例把列表项显示为内联元素：
+li {display:inline;}
+
+下面的示例把span元素作为块元素：
+span {display:block;}
+
+-->
+
+
+
+  <p>链接列表水平显示：</p>
+
+  <ul>
+    <li><a href="/html/" target="_blank">HTML</a></li>
+    <li><a href="/css/" target="_blank">CSS</a></li>
+    <li><a href="/js/" target="_blank">JavaScript</a></li>
+    <li><a href="/xml/" target="_blank">XML</a></li>
+  </ul>
+
+  <h1>===============================================</h1>
+
+  <h2>Nirvana</h2>
+  <span>Record: MTV Unplugged in New York</span>
+  <span>Year: 1993</span>
+  <h2>Radiohead</h2>
+  <span>Record: OK Computer</span>
+  <span>Year: 1997</span>
+
+</body>
+
+</html>

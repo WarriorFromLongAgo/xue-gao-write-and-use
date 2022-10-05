@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 CSS 列表</title>
+</head>
+
+<body>
+  <p>无序列表实例:</p>
+
+  <ul class="a">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+  </ul>
+
+  <ul class="b">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+  </ul>
+
+  <p>有序列表实例:</p>
+
+  <ol class="c">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+  </ol>
+
+  <ol class="d">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+  </ol>
+
+</body>
+
+<style>
+  ul.a {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: circle;
+    /* list-style-type: none; */
+    /* 这里是那个点，无序的点的图片 */
+    /* list-style-image: url('./图片/gif.gif'); */
+  }
+
+  ul.a li {
+    background-image: url('./图片/gif.gif');
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 14px;
+  }
+
+  ul.b {
+    list-style-type: square;
+  }
+
+  ol.c {
+    list-style-type: upper-roman;
+  }
+
+  ol.d {
+    list-style-type: lower-alpha;
+  }
+</style>
+
+</html>

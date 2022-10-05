@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Car {
+        // constructor() { };
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+    };
+    let myCar1 = new Car("Ford", 2014);
+    let myCar2 = new Car("Audi", 2019);
+    console.log("myCar1 " + myCar1);
+    console.log("myCar2 " + myCar2);
+    debugger
+    console.log("myCar1 json " + JSON.stringify(myCar1));
+    console.log("myCar2 json " + JSON.stringify(myCar2));
+</script>
+
+</html>
