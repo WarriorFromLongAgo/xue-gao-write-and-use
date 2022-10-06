@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 布局 - 水平 & 垂直对齐</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+    }
+
+    .right {
+      position: absolute;
+      right: 0px;
+      width: 300px;
+      background-color: #b0e0e6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="right">
+      <p><b>注意: </b>当使用浮动属性对齐,总是包括 !DOCTYPE 声明!如果丢失,它将会在 IE 浏览器产生奇怪的结果。</p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>23 伪元素 1</title>
+  <style>
+    input:focus {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <p>点击文本输入框表单可以看到黄色背景:</p>
+
+  <form>
+    First name: <input type="text" name="firstname" /><br>
+    Last name: <input type="text" name="lastname" />
+  </form>
+
+  <p><b>注意:</b> :focus 作用于 IE8,DOCTYPE 必须已声明</p>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 布局 - 水平 & 垂直对齐</title>
+
+  <style>
+    .right {
+      position: absolute;
+      right: 0px;
+      width: 300px;
+      border: 3px solid #73AD21;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+左右对齐 - 使用定位方式
+我们可以使用 position: absolute; 属性来对齐元素:
+注释：绝对定位元素会被从正常流中删除，并且能够交叠元素。
+
+提示: 当使用 position 来对齐元素时, 通常 <body> 元素会设置 margin 和 padding 。 这样可以避免在不同的浏览器中出现可见的差异。
+
+当使用 position 属性时，IE8 以及更早的版本存在一个问题。如果容器元素（在我们的案例中是 <div class="container">）设置了指定的宽度，
+并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距。这似乎是为滚动条预留的空间。当使用 position 属性时，请始终设置 !DOCTYPE 声明：
+
+
+  <h2>右对齐</h2>
+  <p>以下实例演示了如何使用 position 来实现右对齐:</p>
+
+  <div class="right">
+    <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！</p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 布局 - 水平 & 垂直对齐</title>
+
+  <style>
+    .center {
+      margin: auto;
+      width: 30%;
+      border: 3px solid #73AD21;
+      padding: 200px;
+    }
+
+    .txt-center {
+      text-align: center;
+      border: 3px solid green;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>元素居中对齐</h2>
+  <p>水平居中块级元素 (如 div), 可以使用 margin: auto;</p>
+
+  <div class="center">
+    <p><b>注意: </b>使用 margin:auto 无法兼容 IE8, 除非 !DOCTYPE 已经声明。</p>
+  </div>
+
+  <h2>======================================</h2>
+  <h2>文本居中对齐</h2>
+
+  <div class="txt-center">
+    <p>文本居中对齐。</p>
+  </div>
+
+  <h2>======================================</h2>
+  <h2>图片居中对齐</h2>
+  <p>要让图片居中对齐, 可以使用 margin: auto; 并将它放到块元素中：</p>
+
+  <img src="./图片/gif.gif" alt="Paris" style="width:40%">
+
+</body>
+
+</html>
