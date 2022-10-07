@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    /*  
+    flex-flow
+    让弹性盒的元素以相反的顺序显示，且在必要的时候进行拆行：
+
+    定义和用法
+    flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性。
+    flex-flow 属性用于设置或检索弹性盒模型对象的子元素排列方式。
+    flex-direction 属性规定灵活项目的方向。
+    flex-wrap 属性规定灵活项目是否拆行或拆列。
+    注意：如果元素不是弹性盒对象的元素，则 flex-flow 属性不起作用。
+
+    默认值：	row nowrap
+
+    */
+    #main {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      -webkit-flex-flow: row-reverse wrap;
+      /* Safari 6.1+ */
+      display: flex;
+      flex-flow: row-reverse wrap;
+    }
+
+    #main div {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main">
+    <div style="background-color:coral;">A</div>
+    <div style="background-color:lightblue;">B</div>
+    <div style="background-color:khaki;">C</div>
+    <div style="background-color:pink;">D</div>
+    <div style="background-color:lightgrey;">E</div>
+    <div style="background-color:lightgreen;">F</div>
+  </div>
+
+  <p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-flow 属性。</p>
+  <p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-flow 属性支持该属性。</p>
+
+
+</body>
+
+</html>

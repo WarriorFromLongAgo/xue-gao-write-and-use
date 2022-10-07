@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #main {
+      width: 350px;
+      height: 100px;
+      border: 1px solid #c3c3c3;
+      display: flex;
+    }
+
+    /*  
+    flex-grow
+    让第二个元素的宽度为其他元素的三倍：
+
+    定义和用法
+    flex-grow 属性用于设置或检索弹性盒子的扩展比率。。
+    注意：如果元素不是弹性盒对象的元素，则 flex-grow 属性不起作用。
+    默认值：	0
+
+    flex-grow: number|initial|inherit;
+
+      值	               描述
+    number	    一个数字，规定项目相对于其他灵活的项目进行扩展的量。默认值是 0。
+    initial	    设置该属性为它的默认值。请参阅 initial。
+    inherit	    从父元素继承该属性。请参阅 inherit。
+
+    */
+    #main div:nth-of-type(1) {
+      flex-grow: 1;
+    }
+
+    #main div:nth-of-type(2) {
+      flex-grow: 3;
+    }
+
+    #main div:nth-of-type(3) {
+      flex-grow: 1;
+    }
+
+    #main div:nth-of-type(4) {
+      flex-grow: 1;
+    }
+
+    #main div:nth-of-type(5) {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main">
+    <div style="background-color:coral;"></div>
+    <div style="background-color:lightblue;"></div>
+    <div style="background-color:khaki;"></div>
+    <div style="background-color:pink;"></div>
+    <div style="background-color:lightgrey;"></div>
+  </div>
+
+  <p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-grow 属性。</p>
+  <p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-grow 属性支持该属性。</p>
+
+</body>
+
+</html>

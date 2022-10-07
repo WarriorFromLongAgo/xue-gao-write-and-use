@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 导航栏 </title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+      border-right: 1px solid #bbb;
+    }
+
+    li:last-child {
+      border-right: none;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /*鼠标移动到选项上修改背景颜色 */
+    li a:hover {
+      background-color: #111;
+    }
+
+    li a.active {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <!--   
+水平导航条实例
+创建一个水平导航条，在鼠标移动到选项后修改背景颜色。
+
+li a.active {
+在点击了选项后，我们可以添加 "active" 类来标准哪个选项被选中：
+
+style="float:right"
+将导航条最右边的选项设置右对齐 (float:right;)：
+
+添加分割线
+<li> 通过 border-right 样式来添加分割线:
+/* 除了最后一个选项(last-child) 其他的都添加分割线 */
+li {
+    border-right: 1px solid #bbb;
+}
+li:last-child {
+    border-right: none;
+}
+
+
+
+
+ -->
+  <ul>
+    <li><a class="active" href="#home">主页</a></li>
+    <li><a href="#news">新闻</a></li>
+    <li><a href="#contact">联系</a></li>
+    <li style="float:right"><a href="#about">关于</a></li>
+  </ul>
+
+</body>
+
+</html>

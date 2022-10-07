@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    #content {
+      display: flex;
+      width: 500px;
+    }
+
+    #content div {
+      flex-basis: 120px;
+      border: 3px solid rgba(0, 0, 0, .2);
+    }
+
+
+    /*  
+    实例解析：
+    flex-shrink的默认值为1，如果没有显示定义该属性，将会自动按照默认值1在所有因子相加之后计算比率来进行空间收缩。
+    本例中A、B、C 显式定义了 flex-shrink 为 1，D、E 定义了 flex-shrink 为 2，所以计算出来总共将剩余空间分成了 7 份，
+    其中 A、B、C 占 1 份，D、E 占 2 份，即1:1:1:2:2
+    我们可以看到父容器定义为 500px，子项被定义为 120px，子项相加之后即为 600 px，超出父容器 100px。
+    那么超出的 100px 需要被 A、B、C、D、E 消化 通过收缩因子，所以加权综合可得 100*1+100*1+100*1+100*2+100*2=700px。
+    于是我们可以计算 A、B、C、D、E 将被移除的溢出量是多少：
+    最后A、B、C、D、E的实际宽度分别为：120-14=106px, 120-14=106px, 120-14=106px, 120-28=92px,120-28=92px，此外，这个宽度是包含边框的。
+
+    flex-shrink
+    A, B, C 设置 flex-shrink:1， D , E 设置为 flex-shrink:2：
+
+    定义和用法
+    flex-shrink 属性指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。
+    注意：如果元素不是弹性盒对象的元素，则 flex-shrink 属性不起作用。
+    默认值：	1
+
+    flex-shrink: number|initial|inherit;
+
+      值	                  描述
+    number	    一个数字，规定项目将相对于其他灵活的项目进行收缩的量。默认值是 1。
+    initial	    设置该属性为它的默认值。请参阅 initial。
+    inherit	    从父元素继承该属性。请参阅 inherit。
+
+    */
+
+    .box {
+      flex-shrink: 1;
+    }
+
+    .box1 {
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>div 总宽度为 500px, flex-basic 为 120px。</p>
+  <p>A, B, C 设置 flex-shrink:1。 D , E 设置为 flex-shrink:2</p>
+  <p>D , E 宽度与 A, B, C 不同</p>
+  <div id="content">
+    <div class="box" style="background-color:red;">A</div>
+    <div class="box" style="background-color:lightblue;">B</div>
+    <div class="box" style="background-color:yellow;">C</div>
+    <div class="box1" style="background-color:brown;">D</div>
+    <div class="box1" style="background-color:lightgreen;">E</div>
+  </div>
+
+  <p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-shrink 属性。</p>
+  <p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-shrink 属性支持该属性。</p>
+
+</body>
+
+</html>

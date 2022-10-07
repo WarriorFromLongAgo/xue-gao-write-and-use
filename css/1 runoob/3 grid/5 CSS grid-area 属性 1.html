@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+
+    .item8 {
+      grid-area: 2 / 1 / span 2 / span 3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>grid-area 属性</h1>
+
+  <p>使用<em>grid-area</em> 属性指定网格元素的位置。</p>
+
+  <p>语法格式:</p>
+  <p>grid-row-start / grid-column-start / span rowNum / span columnNum.</p>
+
+  <p>以下实例设置 "item8" 从第 2 行开始和第 1 列开始， 横跨 2 行 3 列。</p>
+
+  <div class="grid-container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+    <div class="item11">11</div>
+    <div class="item12">12</div>
+    <div class="item13">13</div>
+    <div class="item14">14</div>
+    <div class="item15">15</div>
+  </div>
+
+</body>
+<!-- 
+属性定义及使用说明
+grid-area 属性指定网格元素在网格布局中的大小和位置，是以下属性的简写属性：
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+grid-area 属性也可以对网格元素进行命名。
+命名的网格元素可以通过容器的 grid-template-areas 属性来引用。
+值	描述
+grid-row-start	指定在哪一行开始显示网格元素。
+grid-column-start	指定在哪一列开始显示网格元素。
+grid-row-end	指定哪一行停止显示网格元素，或跨越多少行。
+grid-column-end	指定哪一列停止显示网格元素，或跨越多少列。
+itemname	指定网格元素名称
+
+
+ -->
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 下拉菜单</title>
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* 
+    display:inline-block将对象呈递为内联块级对象。
+    display:inline-block将对象呈递为内联对象，但是对象的内容作为块对象呈递。旁边的内联对象会被呈递在同一行内，允许空格。
+    inline-block的元素特点：
+    将对象呈递为内联对象，但是对象的内容作为块对象呈递。旁边的内联对象会被呈递在同一行内，允许空格。
+    (准确地说，应用此特性的元素呈现为内联对象，周围元素保持在同一行，但可以设置宽度和高度地块元素的属性) */
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 12px 16px;
+    }
+
+    /* display:block就是将元素显示为块级元素 */
+    /* 
+      block元素的特点是：
+      总是在新行上开始；
+      高度，行高以及顶和底边距都可控制；
+      宽度缺省是它的容器的100%，除非设定一个宽度
+      <div>, <p>, <h1>, <form>, <ul> 和 <li>是块元素的例子。 
+        */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  display:inline就是将元素显示为内联行内元素。
+
+  inline元素的特点是：
+  和其他元素都在一行上；
+  高，行高及顶和底边距不可改变；
+  宽度就是它的文字或图片的宽度，不可改变。
+  <span>, <a>, <label>, <input>, <img>, <strong> 和<em>是inline元素的例子。
+ -->
+
+  <h2>鼠标移动后出现下拉菜单</h2>
+  <p>将鼠标移动到指定元素上就能看到下拉菜单。</p>
+
+  <div class="dropdown">
+    <span>鼠标移动到我这！</span>
+    <div class="dropdown-content">
+      <p>菜鸟教程</p>
+      <p>www.runoob.com</p>
+    </div>
+  </div>
+  <!-- 
+HTML 部分：
+我们可以使用任何的 HTML 元素来打开下拉菜单，如：<span>, 或 a <button> 元素。
+使用容器元素 (如： <div>) 来创建下拉菜单的内容，并放在任何你想放的位置上。
+使用 <div> 元素来包裹这些元素，并使用 CSS 来设置下拉内容的样式。
+
+CSS 部分：
+.dropdown 类使用 position:relative, 这将设置下拉菜单的内容放置在下拉按钮 (使用 position:absolute) 的右下角位置。
+.dropdown-content 类中是实际的下拉菜单。默认是隐藏的，在鼠标移动到指定元素后会显示。 
+注意 min-width 的值设置为 160px。你可以随意修改它。 注意: 如果你想设置下拉内容与下拉按钮的宽度一致，
+可设置 width 为 100% ( overflow:auto 设置可以在小尺寸屏幕上滚动)。
+我们使用 box-shadow 属性让下拉菜单看起来像一个"卡片"。
+:hover 选择器用于在用户将鼠标移动到下拉按钮上时显示下拉菜单。
+ -->
+
+</body>
+
+</html>

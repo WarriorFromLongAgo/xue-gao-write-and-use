@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>26 CSS 提示工具(Tooltip)</title>
+
+  <style>
+    body {
+      text-align: center;
+    }
+
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* 定位 */
+      position: absolute;
+      z-index: 1;
+
+      /* 显示在右侧：
+      top: -5px;
+      left: 105%;  */
+      /* 显示在左侧：
+      top: -5px;
+      right: 105%;  */
+
+      /* 显示在头部：
+      width: 120px;
+      bottom: 100%;
+      left: 50%; 
+      margin-left: -60px;  使用一半宽度 (120/2 = 60) 来居中提示工具 
+      如果你想要提示工具显示在头部和底部。我们需要使用 margin-left 属性，并设置为 -60px。 
+      这个数字计算来源是使用宽度的一半来居中对齐，即： width/2 (120/2 = 60)。 */
+      /* 
+      显示在底部：
+      width: 120px;
+      top: 100%;
+      left: 50%; 
+      margin-left: -60px; 使用一半宽度 (120/2 = 60) 来居中提示工具
+      */
+
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    /* 
+    添加箭头 顶部提示框/底部箭头： 
+    我们可以用CSS 伪元素 ::after 及 content 属性为提示工具创建一个小箭头标志，箭头是由边框组成的，但组合起来后提示工具像个语音信息框。
+    以下实例演示了如何为显示在顶部的提示工具添加底部箭头：
+    */
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      /* 提示工具底部 */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 
+  HTML) 使用容器元素 (like <div>) 并添加 "tooltip" 类。在鼠标移动到 <div> 上时显示提示信息。
+  提示文本放在内联元素上(如 <span>) 并使用class="tooltiptext"。
+  CSS)tooltip 类使用 position:relative, 提示文本需要设置定位值 position:absolute。 注意: 接下来的实例会显示更多的定位效果。
+  tooltiptext 类用于实际的提示文本。模式是隐藏的，在鼠标移动到元素显示 。设置了一些宽度、背景色、字体色等样式。
+  CSS3 border-radius 属性用于为提示框添加圆角。
+  :hover 选择器用于在鼠标移动到到指定元素 <div> 上时显示的提示。
+ -->
+
+  <div class="tooltip">鼠标移动到这
+    <span class="tooltiptext">提示文本</span>
+  </div>
+
+</body>
+
+</html>

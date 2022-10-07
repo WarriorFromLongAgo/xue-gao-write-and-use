@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    #main {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      -webkit-flex-direction: row-reverse;
+      /* Safari 6.1+ */
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    /*  
+    flex-direction
+    设置 <div> 元素内弹性盒元素的方向为相反的顺序：
+    定义和用法
+    flex-direction 属性规定灵活项目的方向。
+    注意：如果元素不是弹性盒对象的元素，则 flex-direction 属性不起作用。
+    默认值：	row
+    flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+    row	              默认值。灵活的项目将水平显示，正如一个行一样。	
+    row-reverse	      与 row 相同，但是以相反的顺序。	
+    column	          灵活的项目将垂直显示，正如一个列一样。	
+    column-reverse	  与 column 相同，但是以相反的顺序。	
+    initial	          设置该属性为它的默认值。请参阅 initial。	
+    inherit	          从父元素继承该属性。请参阅 inherit。
+
+    */
+    #main div {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main">
+    <div style="background-color:coral;">A</div>
+    <div style="background-color:lightblue;">B</div>
+    <div style="background-color:khaki;">C</div>
+    <div style="background-color:pink;">D</div>
+    <div style="background-color:lightgrey;">E</div>
+    <div style="background-color:lightgreen;">F</div>
+  </div>
+
+  <p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-direction 属性。</p>
+  <p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-direction 属性支持该属性。</p>
+
+</body>
+
+</html>

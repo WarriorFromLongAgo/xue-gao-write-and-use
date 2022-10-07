@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    .item1 {
+      grid-area: myArea;
+    }
+
+    .grid-container {
+      display: grid;
+      grid:
+        'myArea myArea . . .'
+        'myArea myArea . . .';
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>grid 属性</h1>
+
+  <!-- 设置两行，item1 跨越前两行中的前两列： -->
+
+  <p>grid 属性还可以使用命名好的网格项来指定行/列</p>
+  <p>要指定两行，请再创建一个序列 </p>
+  <p>每行由撇号 (' ') 定义。</p>
+  <p>"myArea" 将在前两行跨越前两列：</p>
+
+  <div class="grid-container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+    <div class="item11">11</div>
+    <div class="item12">12</div>
+  </div>
+
+</body>
+
+</html>

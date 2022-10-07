@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 导航栏 </title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+    }
+
+    a:link,
+    a:visited {
+      display: block;
+      width: 120px;
+      font-weight: bold;
+      color: #FFFFFF;
+      background-color: #98bf21;
+      text-align: center;
+      padding: 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a:hover,
+    a:active {
+      background-color: #7A991A;
+    }
+  </style>
+</head>
+
+<body>
+  <!--   
+  水平导航栏 
+  有两种方法创建横向导航栏。使用内联(inline)或浮动(float)的列表项。 
+  这两种方法都很好，但如果你想链接到具有相同的大小，你必须使用浮动的方法。 
+
+  内联列表项
+  建立一个横向导航栏的方法之一是指定元素， 下述代码是标准的内联:
+  实例解析：
+  display:inline; - 默认情况下，<li> 元素是块元素。在这里，我们删除换行符之前和之后每个列表项，以显示一行。
+ -->
+  <ul>
+    <li><a href="#home">主页</a></li>
+    <li><a href="#news">新闻</a></li>
+    <li><a href="#contact">联系</a></li>
+    <li><a href="#about">关于</a></li>
+  </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    #main {
+      width: 350px;
+      height: 100px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+    }
+
+    #main div {
+      -webkit-flex-grow: 0;
+      /* Safari 6.1+ */
+      -webkit-flex-shrink: 0;
+      /* Safari 6.1+ */
+      -webkit-flex-basis: 40px;
+      /* Safari 6.1+ */
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 40px;
+    }
+
+    /* 
+    flex-basis
+    设置第二个弹性盒元素的初始长度为 80 像素：
+    定义和用法
+    注意：如果元素不是弹性盒对象的元素，则 flex-basis 属性不起作用。
+    默认值：	auto
+    flex-basis: number|auto|initial|inherit;
+    number	一个长度单位或者一个百分比，规定灵活项目的初始长度。
+    auto	  默认值。长度等于灵活项目的长度。如果该项目未指定长度，则长度将根据内容决定。
+    initial	设置该属性为它的默认值。请参阅 initial。
+    inherit	从父元素继承该属性。请参阅 inherit。
+    
+    */
+    #main div:nth-of-type(2) {
+      -webkit-flex-basis: 80px;
+      /* Safari 6.1+ */
+      flex-basis: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main">
+    <div style="background-color:coral;"></div>
+    <div style="background-color:lightblue;"></div>
+    <div style="background-color:khaki;"></div>
+    <div style="background-color:pink;"></div>
+    <div style="background-color:lightgrey;"></div>
+  </div>
+
+  <p><b>注意:</b> Internet Explorer 10 及更早版本浏览器不支持 flex-basis 属性。</p>
+  <p><b>注意:</b> Safari 6.1 及更新版本通过 -webkit-flex-basis 属性支持该属性。</p>
+
+</body>
+
+</html>

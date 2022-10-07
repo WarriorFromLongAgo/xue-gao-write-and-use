@@ -11,12 +11,26 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+    }
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    /* 鼠标移动到选项上修改背景颜色 */
+    li a:hover {
+      background-color: #555;
+      color: white;
     }
   </style>
 </head>
 
 <body>
-
   <ul>
     <li><a href="#home">主页</a></li>
     <li><a href="#news">新闻</a></li>
@@ -24,8 +38,8 @@
     <li><a href="#about">关于</a></li>
   </ul>
 
-  <p>注意：这里我们用 href="#"作为测试连接。但在一个真正的 web 站点上需要真实的 url。</p>
-
+  <p>背景颜色添加到链接中显示链接的区域</p>
+  <p>注意,整个区域是可点击的链接,而不仅仅是文本。</p>
 </body>
 
 </html>

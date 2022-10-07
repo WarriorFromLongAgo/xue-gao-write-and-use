@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 属性 选择器</title>
+  <style>
+    [title] {
+      color: blue;
+    }
+
+    [title=runoob] {
+      border: 5px solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Will apply to:</h2>
+  <h1 title="Hello world">Hello world</h1>
+  <a title="runoob.com" href="http://www.runoob.com/">runoob.com</a>
+  <hr>
+  <h2>Will not apply to:</h2>
+  <p>Hello!</p>
+  <hr>
+  <h2>将适用:</h2>
+  <img title="runoob" src="logo.png" width="270" height="50" />
+  <br>
+  <a title="runoob" href="http://www.runoob.com/">runoob</a>
+  <hr>
+  <h2>将不适用:</h2>
+  <p title="greeting">Hi!</p>
+  <a class="runoob" href="http://www.runoob.com/">runoob</a>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 50px;
+    }
+
+    .grid-container>div {
+      border: 1px solid black;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>gap 属性</h1>
+  <!--   
+设置网格行与列之间的间隙：
+属性定义及使用说明
+gap 属性是用来设置网格行与列之间的间隙，该属性是row-gap and column-gap的简写形式。
+注意： CSS 网格布局起初是用 grid-gap 属性来定义的，目前逐渐被 gap 替代。
+默认值:	normal normal
+  gap: row-gap column-gap;
+
+  row-gap	设置网格布局中行之间的间隙大小
+column-gap	设置网格布局中列之间的间隙大小
+
+设置行间距为 20px，列间距为 50px：
+.grid-container {
+  gap: 20px 50px;
+}
+
+
+   -->
+  <p>使用 <em>gap</em> 属性用来设置网格行与列之间的间隙。</p>
+  <p>以下网格行与列之间的间隙为 50px:</p>
+
+  <div class="grid-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+</body>
+
+</html>
