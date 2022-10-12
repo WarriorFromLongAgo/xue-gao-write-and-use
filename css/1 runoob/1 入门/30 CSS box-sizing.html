@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-sizing</title>
+  <style>
+    #example1 {
+      box-sizing: content-box;
+      width: 300px;
+      height: 100px;
+      padding: 30px;
+      border: 10px solid blue;
+    }
+
+    #example2 {
+      box-sizing: border-box;
+      width: 300px;
+      height: 100px;
+      padding: 30px;
+      border: 10px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>box-sizing 属性</h1>
+  <p>定义如何计算一个元素的总宽度和总高度，是否包含内边距和边框。</p>
+
+  <h2>box-sizing: content-box (默认):</h2>
+  <p>高度和宽度只应用于元素的内容:</p>
+  <div id="example1">这个 div 的宽度为 300px。但完整宽度为 300px + 20px (左边框和右边框) + 60px (左边距和右边距) = 380px!</div>
+
+  <h2>box-sizing: border-box:</h2>
+  <p>高度和宽度应用于元素的所有部分: 内容、内边距和边框:</p>
+  <div id="example2">不管如何这里的完整宽度为300px!</div>
+
+</body>
+
+</html>

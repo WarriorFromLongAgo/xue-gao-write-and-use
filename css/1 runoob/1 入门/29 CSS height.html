@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>height</title>
+</head>
+
+<body>
+  <!-- 
+  height:auto，是指根据块内内容自动调节高度。
+  height:100%，是指其相对父块高度而定义的高度，也就是按照离它最近且有定义高度的父层的高度来定义高度。
+  auto是随内容的高度而撑开的。100%是根据父级元素的高度来决定的。例如：
+
+  height：100%，当标签里面的内容不足100%时，height也不足100%
+  height: 100vh,不论内容是否多少，height都是100%
+
+
+-->
+  <h2>看黄色的高度</h2>
+
+  <div style="height: 100px; width: 100px; background-color: aqua;">
+    <div style="height: 100px; width: 100px; background-color: yellow; ">
+      里面这个容器的内容是随外面的高度决定的
+    </div>
+  </div>
+  <h2>==================================</h2>
+  <div style="height: 100px; width: 100px; background-color: aqua;">
+    <div style="height: 100%; width: 100px; background-color: yellow; ">
+      里面这个容器的高度是父级的高度
+      里面这个容器的高度是父级的高度
+      里面这个容器的高度是父级的高度
+      里面这个容器的高度是父级的高度
+    </div>
+  </div>
+  <h2>=============================</h2>
+  <div style="height: 100px; width: 100px; background-color: aqua;">
+    <div style="height: auto; width: 100px; background-color: yellow; float: left;">
+      里面这个容器的内容是随里面的内容的高度而决定的
+      里面这个容器的内容是随里面的内容的高度而决定的
+    </div>
+  </div>
+</body>
+
+</html>
