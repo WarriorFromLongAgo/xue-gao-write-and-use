@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login 3</title>
+</head>
+
+<body>
+
+  <!-- logo -->
+  <div class="row">
+    <img src="../image/logo.png" class="mylogo" />
+  </div>
+  <!-- logo -->
+  <!--注册、登录  -->
+  <form role="form">
+    <table class="table">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1 onclick="blockornone('regedit_div')" id="t_reg">注册<h1>
+        </div>
+        <div class="col-xs-6">
+          <h1 onclick="blockornone('login_div')" id="t_log">登录</h1>
+        </div>
+      </div>
+      <tbody id="regedit_div">
+        <tr>
+          <td>用户名</td>
+          <td><input type="text" placeholder="输入用户名" name="username" /></td>
+        </tr>
+        <tr>
+          <td>输入密码</td>
+          <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td>再次输入密码</td>
+          <td><input type="password" name="gpassword" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="注册" /></td>
+        </tr>
+      </tbody>
+      <tbody id="login_div">
+        <tr>
+          <td>用户名</td>
+          <td><input type="text" placeholder="输入用户名" name="username" /></td>
+        </tr>
+        <tr>
+          <td>密码</td>
+          <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="登录" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</body>
+
+<style>
+  /* 这个是Login.html里面的内容 */
+  .mylogo {
+    height: 100%;
+    width: 100%;
+  }
+
+  #login_div {
+    position: absolute;
+    width: 100%;
+    display: none;
+  }
+
+  #regedit_di {
+    position: absolute;
+    width: 100%;
+  }
+</style>
+
+<script>
+  function blockornone(id) {
+    alert("id:" + id);
+    // login.html里面的内容
+    //显示传过来的值
+    if (id == "regedit_div") {
+      //显示注册，隐藏登录
+      document.getElementById(id).style.display = 'block';
+      document.getElementById("login_div").style.display = 'none';
+      document.getElementById("t_reg").style.color = '#1ba71b';
+      document.getElementById("t_log").style.color = 'gray';
+    }
+    if (id == "login_div") {
+      //显示登录，隐藏注册
+      document.getElementById(id).style.display = 'block';
+      document.getElementById("regedit_div").style.display = 'none';
+      document.getElementById("t_reg").style.color = 'gray';
+      document.getElementById("t_log").style.color = '#1ba71b';
+    }
+    //my.html里面的内容
+  }
+</script>
+
+</html>
