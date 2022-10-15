@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻转登录注册</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box login">
+      <h2>Let's get Start!</h2>
+      <div class="my-con">
+        ren
+      </div>
+      <div class="contain">
+        <div class="name">
+          <input type="text" placeholder="username">
+        </div>
+        <div class="pwd">
+          <input type="password" placeholder="passwd">
+        </div>
+      </div>
+      <button>登录</button>
+      <p>dont have account?<a href="javascript:;"> go signup</a></p>
+    </div>
+    <div class="box signup">
+      <h2>Let's join in!</h2>
+      <div class="my-con">
+        人
+      </div>
+      <div class="contain">
+        <div class="name s">
+          <input type="text" placeholder="username">
+        </div>
+        <div class="pwd s">
+          <input type="password" placeholder="passwd">
+        </div>
+        <div class="pwd s">
+          <input type="email" placeholder="email">
+        </div>
+      </div>
+      <button>注册</button>
+      <p>Already have an account?<a href="javascript:;"> go login</a></p>
+    </div>
+  </div>
+  </div>
+
+
+</body>
+
+<style>
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    height: 28rem;
+    perspective: 1500px;
+    -webkit-perspective: 1500px;
+    -moz-perspective: 1500px;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 28rem;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    backface-visibility: hidden;
+    transition: all .5s;
+  }
+
+  .login {
+    background-color: #fff;
+    /* //先把login界面隐藏起来 */
+    transform: rotateY("-180deg"); 
+  }
+</style>
+
+<script>
+  // js 点击sigup触发翻转样式
+
+  let login = document.querySelector(".login");
+  let signup = document.querySelector(".signup");
+  let gos = login.querySelector("a");
+  let gol = signup.querySelector("a");
+  //点击去注册，触发事件
+  gos.addEventListener("click", () => {
+    login.style.transform = "rotateY(180deg)"
+    signup.style.transform = "rotateY(0deg)"
+  })
+  //点击去登录，触发事件
+  gol.addEventListener("click", () => {
+    signup.style.transform = "rotateY(-180deg)"
+    login.style.transform = "rotateY(0deg)"
+  })
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login 4</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="">
+        <div class="from-head">s</div>
+        <h1>注册</h1>
+        <span class="regist-comment">请选择填写注册资料</span>
+        <input class="regist-main-input" type="text" placeholder="账号"></input>
+        <!-- <input type="email" placeholder="邮箱"></input> -->
+        <input class="regist-main-input" type="password" placeholder="密码"></input>
+        <input class="regist-main-input" type="password" placeholder="确认密码"></input>
+        <button class="regist-btn">注册</button>
+        <div class="regist-tips">Tips：昵称可以登录后随便修改</div>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="">
+        <div class="from-head">s</div>
+        <h1>登录</h1>
+        <span class="login-comment">请填写登录信息</span>
+        <input class="login-main-input" type="text" placeholder="账号/昵称/邮箱"></input>
+        <!-- <input type="email" placeholder="Email" /> -->
+        <input class="login-main-input" type="password" placeholder="密码" />
+        <div class="remember-me">
+          <input type="checkbox" /><span>30天内免登录</span>
+        </div>
+        <button>登录</button>
+        <div class="login-other-operate">
+          <a href="#">忘记密码</a> |
+          <a href="#">注册新账号</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>
+      Created with by
+      <a href="">xuegao</a>
+    </p>
+  </footer>
+</body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  h1 {
+    /* 字体的粗细 */
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    background-color: #fff;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 向 div 元素添加阴影： */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* https://www.runoob.com/cssref/pr-pos-overflow.html */
+    /* 如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。 */
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+  }
+
+  .form-container {
+    display: flex;
+    /* 左右对齐 */
+    justify-content: center;
+    /* 每人占据50% */
+    width: 50%;
+  }
+
+  .form-container form {
+    display: flex;
+    /* 一列的展示 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* 上 右 下 左 */
+    padding: 0 50 0 50 px;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+  }
+
+
+  .sign-up-container {
+    /* background-color: white; */
+
+  }
+
+  .sign-in-container {
+    /* background-color: aquamarine; */
+
+  }
+
+  .form-container .from-head {
+    display: flex;
+    height: 15%;
+    color: white;
+  }
+
+  .form-container h1 {
+    display: flex;
+    /* background-color: brown; */
+  }
+
+  .form-container .regist-comment,
+  .form-container .login-comment {
+    /* 上 右 下 左 */
+    margin: 20px 0 10px 0;
+  }
+
+  .form-container .regist-main-input,
+  .form-container .login-main-input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 60%;
+  }
+
+  .form-container .remember-me {
+    width: 68%;
+
+    display: flex;
+    margin-bottom: 34px;
+  }
+
+  .form-container .remember-me input {
+    margin-left: 4px;
+  }
+
+  .form-container .remember-me span {
+    margin-left: 4px;
+  }
+
+
+  .form-container button {
+    /* 圆角 */
+    border-radius: 10px;
+    border: 1px solid #ff4b2b;
+    background-color: #ff4b2b;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    /* 上下左右的填充 */
+    padding: 12px 100px;
+    /* 设置字母的间距 */
+    letter-spacing: 1px;
+
+    transition: transform 80ms ease-in;
+  }
+
+  .form-container button:active {
+    transform: scale(0.95);
+  }
+
+  .form-container .regist-tips {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .form-container .login-other-operate {
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .form-container .login-other-operate a {
+    font-size: 14px;
+    color: #3c97bf;
+    text-decoration: underline;
+    transition: color, text-decoration 100ms ease-in;
+  }
+
+  .form-container .login-other-operate a:hover {
+    /* 从0.9变成了1，从有一点透明，变成了不透明 */
+    color: rgba(0.5);
+    text-decoration: none;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background-color: #222;
+
+    /* 文字的相关属性 */
+    color: white;
+    font-size: 14px;
+  }
+
+  footer a {
+    color: #3c97bf;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+
+
+</script>
+
+</html>

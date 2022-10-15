@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #main {
+      width: 800px;
+      height: 300px;
+      border: solid black 1px;
+      display: flex;
+      display: -webkit-flex;
+    }
+
+    #one {
+      -webkit-flex: 1;
+      flex: 1;
+      height: 50%;
+      background-color: yellow;
+    }
+
+    #two {
+      height: 50%;
+      -webkit-flex: 1;
+      flex: 1;
+      background-color: red;
+    }
+
+    #three {
+      height: 50%;
+      -webkit-flex: 1;
+      flex: 1;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="one">
+      盒子一
+    </div>
+    <div id="two">
+      盒子二
+    </div>
+    <div id="three">
+      盒子三
+    </div>
+  </div>
+</body>
+
+</html>

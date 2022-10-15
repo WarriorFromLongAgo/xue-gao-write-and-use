@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21 CSS 布局 左右对齐-使用flex-justify-content</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .container {
+      display: flex;
+      background-color: black;
+      overflow: hidden;
+      width: 768px;
+      max-width: 100%;
+      min-height: 480px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+
+    .flex-container.left {
+      background-color: blue;
+    }
+
+    .flex-container.right {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="flex-container left">aa</div>
+    <div class="flex-container right">bb</div>
+  </div>
+</body>
+
+</html>
