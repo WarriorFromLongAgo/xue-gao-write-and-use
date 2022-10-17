@@ -1,0 +1,23 @@
+{
+  "id": "3711786",
+  "name": "company-web",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15838429",
+      "name": "arrow-down",
+      "font_class": "arrow-down",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "11488290",
+      "name": "map",
+      "font_class": "map",
+      "unicode": "e786",
+      "unicode_decimal": 59270
+    }
+  ]
+}
