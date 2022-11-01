@@ -24,4 +24,9 @@ public class UserInfoController {
     public List<UserInfo> insert() {
         return userInfoService.insert();
     }
+
+    @RequestMapping(path = "/userInfo/disable", method = {RequestMethod.POST})
+    public Integer disable() {
+        return userInfoService.disable();
+    }
 }

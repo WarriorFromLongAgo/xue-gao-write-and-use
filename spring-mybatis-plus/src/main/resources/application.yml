@@ -12,6 +12,9 @@ spring:
   #  允许批量sql
   #  &allowMultiQueries=true
 
+logging:
+  level:
+    root: debug
 
 mybatis-plus:
   #  MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，
@@ -24,6 +27,13 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-logging:
-  level:
-    root: debug
+      # https://www.baomidou.com/pages/6b03c5/#%E6%AD%A5%E9%AA%A4-1-%E9%85%8D%E7%BD%AEcom-baomidou-mybatisplus-core-config-globalconfig-dbconfig
+      # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-field: del_flag
+      # 逻辑已删除值(默认为 0)
+      logic-delete-value: 0
+      # 逻辑未删除值(默认为 1)
+      logic-not-delete-value: 1
+
+
+
