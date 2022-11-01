@@ -12,3 +12,18 @@ spring:
   #  允许批量sql
   #  &allowMultiQueries=true
 
+
+mybatis-plus:
+  #  MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，
+  # https://mybatis.org/mybatis-3/zh/configuration.html
+  mapperLocations: classpath:mapper/*.xml
+  #  configLocation: classpath:mybatis-config.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    root: debug

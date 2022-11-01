@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuegao.springmybatisplus.business.demo.mapper.mapeer.UserInfoMapper">
+    <sql id="Base_Table">
+        id, name, age, email, manager_id, create_time, update_time
+    </sql>
+    <sql id="Base_Column">
+        id, name, age, email, manager_id, create_time, update_time, version
+    </sql>
+
+<!--    <select id="list" resultType="com.xuegao.springmybatisplus.doo.demo.UserInfo">-->
+<!--        select-->
+<!--        <include refid="Base_Column"/>-->
+<!--        from-->
+<!--        <include refid="Base_Table"/>-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+</mapper>

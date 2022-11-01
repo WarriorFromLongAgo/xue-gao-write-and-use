@@ -1,4 +1,4 @@
-package com.xuegao.springmybatisplus.doo;
+package com.xuegao.springmybatisplus.doo.demo;
 
 
 import lombok.Getter;
