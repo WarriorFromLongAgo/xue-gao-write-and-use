@@ -1,9 +1,9 @@
 package com.xuegao.springmybatis.business.transaction.service.test1;
 
-import com.xuegao.JsonUtil;
-import com.xuegao.SpringUtil;
 import com.xuegao.springmybatis.business.transaction.manage.TransactionManage;
 import com.xuegao.springmybatis.model.demo.doo.UserInfo;
+import com.xuegao.util.JsonUtil;
+import com.xuegao.util.SpringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

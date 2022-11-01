@@ -1,8 +1,8 @@
 package com.xuegao.springmybatis.demo;
 
-import com.xuegao.JsonUtil;
 import com.xuegao.springmybatis.business.demo.controller.UserInfoController;
 import com.xuegao.springmybatis.model.demo.doo.UserInfo;
+import com.xuegao.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

@@ -1,8 +1,8 @@
 package com.xuegao.springmybatis.business.demo.controller;
 
-import com.xuegao.JsonUtil;
 import com.xuegao.springmybatis.business.demo.mapper.UserInfoMapper;
 import com.xuegao.springmybatis.model.demo.doo.UserInfo;
+import com.xuegao.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

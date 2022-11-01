@@ -1,8 +1,8 @@
 package com.xuegao.springmybatis.result;
 
-import com.xuegao.JsonUtil;
 import com.xuegao.springmybatis.business.result.service.ResultService;
 import com.xuegao.springmybatis.model.demo.doo.MybatisResult;
+import com.xuegao.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
