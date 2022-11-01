@@ -1,10 +1,10 @@
-package com.xuegao.xuegaospringotherues;
+package com.xuegao.springmybatisplus;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class XueGaoSpringOtherUesApplicationTests {
+class SpringMybatisPlusApplicationTests {
 
     @Test
     void contextLoads() {
