@@ -23,4 +23,9 @@ public class UserInfoService {
     public List<UserInfo> insert() {
         return userInfoManage.insert();
     }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public Integer disable(Integer id) {
+        return userInfoManage.disable(id);
+    }
 }

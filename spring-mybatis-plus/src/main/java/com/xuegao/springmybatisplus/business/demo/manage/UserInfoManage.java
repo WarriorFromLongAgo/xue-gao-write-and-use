@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.xuegao.mapper.enums.DelFlagEnum;
 import com.xuegao.springmybatisplus.business.demo.mapper.iservice.UserInfoMpService;
 import com.xuegao.springmybatisplus.business.demo.mapper.mapeer.UserInfoMapper;
 import com.xuegao.springmybatisplus.doo.demo.UserInfo;
@@ -50,7 +51,7 @@ public class UserInfoManage {
 
     public List<UserInfo> insert() {
         List<UserInfo> userInfoList = new ArrayList<>(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             UserInfo userInfo = new UserInfo();
             // userInfo.setId(i);
             userInfo.setUsername(String.valueOf(i));
@@ -59,5 +60,11 @@ public class UserInfoManage {
         }
         userInfoMpService.saveBatch(userInfoList);
         return userInfoList;
+    }
+
+    public int disable(Integer id) {
+        UserInfo byId = userInfoMpService.getById(id);
+        byId.setDelFlag(DelFlagEnum.DEL_FLAG_0.getCode());
+        return userInfoMapper.updateById(byId);
     }
 }
