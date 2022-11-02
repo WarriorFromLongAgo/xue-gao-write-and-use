@@ -2,6 +2,7 @@ package com.xuegao.springmybatisplus.business.demo.manage;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.xuegao.mapper.enums.DelFlagEnum;
@@ -64,7 +65,12 @@ public class UserInfoManage {
 
     public int disable(Integer id) {
         UserInfo byId = userInfoMpService.getById(id);
-        byId.setDelFlag(DelFlagEnum.DEL_FLAG_0.getCode());
+        // byId.setDelFlag(DelFlagEnum.DEL_FLAG_0.getCode());
+
+        UpdateWrapper<UserInfo> updateWrapper = Wrappers.update(byId).set("del_flag", DelFlagEnum.DEL_FLAG_0.getCode());
+
+        boolean update = userInfoMpService.update(updateWrapper);
+
         return userInfoMapper.updateById(byId);
     }
 }
