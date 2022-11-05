@@ -2,10 +2,11 @@ package com.xuegao.springmybatisplus.business.demo.manage;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.xuegao.mapper.enums.DelFlagEnum;
+import com.xuegao.mapper.mpservice.AbstractMpService;
 import com.xuegao.springmybatisplus.business.demo.mapper.iservice.UserInfoMpService;
 import com.xuegao.springmybatisplus.business.demo.mapper.mapeer.UserInfoMapper;
 import com.xuegao.springmybatisplus.doo.demo.UserInfo;
@@ -19,8 +20,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserInfoManage {
+public class UserInfoManage extends AbstractMpService<UserInfoMapper, UserInfo, Integer> {
     private static final Logger log = LoggerFactory.getLogger(UserInfoManage.class);
+
+    protected UserInfoManage(BaseMapper<UserInfo> baseMapper) {
+        super(baseMapper);
+    }
+
+    @Override
+    public String shardingKey() {
+        return null;
+    }
 
     @Autowired
     private UserInfoMpService userInfoMpService;
@@ -67,10 +77,15 @@ public class UserInfoManage {
         UserInfo byId = userInfoMpService.getById(id);
         // byId.setDelFlag(DelFlagEnum.DEL_FLAG_0.getCode());
 
-        UpdateWrapper<UserInfo> updateWrapper = Wrappers.update(byId).set("del_flag", DelFlagEnum.DEL_FLAG_0.getCode());
+        UserInfo update = new UserInfo();
+        update.setId(byId.getId());
+        update.setDelFlag(DelFlagEnum.DEL_FLAG_0.getCode());
+        // UpdateWrapper<UserInfo> updateWrapper = Wrappers.update(update).set("del_flag", DelFlagEnum.DEL_FLAG_0.getCode());
+        // LambdaUpdateWrapper<UserInfo> updateWrapper = Wrappers.lambdaUpdate(update).set(UserInfo::getDelFlag, DelFlagEnum.DEL_FLAG_0.getCode());
+        // boolean count = userInfoMpService.update(byId, updateWrapper);
 
-        boolean update = userInfoMpService.update(updateWrapper);
+        boolean b = userInfoMpService.updateById(update);
 
-        return userInfoMapper.updateById(byId);
+        return 0;
     }
 }

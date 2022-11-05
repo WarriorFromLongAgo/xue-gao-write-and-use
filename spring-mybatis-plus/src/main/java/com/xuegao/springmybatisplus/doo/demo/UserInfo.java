@@ -7,7 +7,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder(toBuilder = true)
 public class UserInfo extends GenericModel<Integer> {
 
     private String username;
