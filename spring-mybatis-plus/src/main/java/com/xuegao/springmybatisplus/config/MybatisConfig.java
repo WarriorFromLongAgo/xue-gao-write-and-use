@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.core.toolkit.GlobalConfigUtils;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.xuegao.mapper.config.PrintSqlInterceptor;
-import com.xuegao.mapper.enums.DelFlagEnum;
 import com.xuegao.mapper.mpconfig.MybatisMetaObjectHandler;
 import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -45,9 +44,9 @@ public class MybatisConfig {
         globalConfig.setMetaObjectHandler(new MybatisMetaObjectHandler());
         GlobalConfig.DbConfig dbConfig = new GlobalConfig.DbConfig();
         dbConfig.setIdType(IdType.AUTO);
-        dbConfig.setLogicDeleteField("del_flag");
-        dbConfig.setLogicDeleteValue(String.valueOf(DelFlagEnum.DEL_FLAG_0.getCode()));
-        dbConfig.setLogicNotDeleteValue(String.valueOf(DelFlagEnum.DEL_FLAG_1.getCode()));
+        // dbConfig.setLogicDeleteField("del_flag");
+        // dbConfig.setLogicDeleteValue(String.valueOf(DelFlagEnum.DEL_FLAG_0.getCode()));
+        // dbConfig.setLogicNotDeleteValue(String.valueOf(DelFlagEnum.DEL_FLAG_1.getCode()));
         globalConfig.setDbConfig(dbConfig);
 
         mybatisSqlSessionFactoryBean.setDataSource(dataSource);
