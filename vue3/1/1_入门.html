@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../vue.global.js"></script>
-</head>
-
-<body>
-    <div id="root">
-        <div> {{ message }} </div>
-        <div> {{ counter }} </div>
-
-    </div>
-
-</body>
-
-<script>
-    const HelloVueApp = {
-        data() {
-            return {
-                message: 'Hello Vue!!',
-                counter: 0
-            }
-        },
-        mounted() {
-            setInterval(() => {
-                this.counter++
-            }, 1000)
-        },
-        created() {
-            // `this` 指向 vm 实例
-            console.log('counter is: ' + this.counter) // => "count is: 1"
+    <title>vue3</title>
+    <style>
+        [v-cloak] {
+            display: none !important;
         }
-    }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div>
+        {{ state1 }}
+    </div>
+    <div>
+        {{ message }}
+    </div>
+    <div>
+        {{ num }}
+    </div>
+    <input type="text" name="" placeholder="输入" v-model="input1"><br/>
+    <input type="text" name="" placeholder="输入" v-model="input2"><br/>
+    <div>
+        input1:{{ input1 }}
+    </div>
+    <div>
+        input2:{{ input2 }}
+    </div>
+    <button @click="btn1">
+        点我
+    </button>
+</div>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.js"></script> -->
+<script src="../vue.global.js"></script>
+<script>
+    const {createApp, reactive, toRefs, ref, onMounted} = Vue;
 
-    Vue.createApp(HelloVueApp).mount('#root')
+    const app = createApp({
+        setup() {
+            var state1 = ref(123)
+            var input2 = ref(123)
+            const state = reactive({
+                message: 12,
+                num: 1,
+                input1: ''
+            })
+            onMounted(() => {
+                console.log(2222)
+            })
+            const btn1 = () => {
+                console.log(state1)
+                console.log(input2)
+                console.log(state)
+                state1.value++
+                state.num++
+
+            }
+            return {
+                ...toRefs(state),
+                state1,
+                input2,
+                btn1
+            }
+        }
+    });
+    app.mount("#app");
 </script>
-
+</body>
 </html>

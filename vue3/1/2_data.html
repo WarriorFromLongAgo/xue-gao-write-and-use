@@ -5,37 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>导出真实实验数据</title>
     <script src="../vue.global.js"></script>
 </head>
+<style>
+    div {
+        height: 30px;
+        line-height: 30px;
+    }
+</style>
 
 <body>
-    <div id="root">
-        <div> {{ message }} </div>
+<br><br><br><br><br><br><br>
+<div style="width:100%;" id="app">
+    <div style="width:400px;margin:0 auto;">
+        <h2>导出真实实验数据</h2>
+        <div>{{count}}</div>
+        <button @click="addCount">+1</button>
     </div>
+</div>
 </body>
-<!-- data 选项是一个函数。Vue 在创建新组件实例的过程中调用此函数。 -->
-<!-- 它应该返回一个对象，然后 Vue 会通过响应性系统将其包裹起来，并以 $data 的形式存储在组件实例中。 -->
-<script>
-    const app = Vue.createApp({
-        data() {
-            return { count: 4 }
-        }
-    })
-
-    const vm = app.mount('#app')
-
-    document.write(vm.$data.count) // => 4
-    document.write("<br>")
-    document.write(vm.count)       // => 4
-    document.write("<br>")
-    // 修改 vm.count 的值也会更新 $data.count
-    vm.count = 5
-    document.write(vm.$data.count) // => 5
-    document.write("<br>")
-    // 反之亦然
-    vm.$data.count = 6
-    document.write(vm.count) // => 6
-</script>
 
 </html>
+<script>
+    Object.assign(window, Vue);
+    const vue3Composition = {
+        setup() {
+            const data = reactive({
+                // 虚拟实验id
+                count: 0,
+
+            });
+
+            function addCount() {
+                data.count++;
+            }
+
+            const dataRef = toRefs(data);
+            return {
+                ...dataRef,
+                addCount
+            }
+        },
+    }
+    const app = createApp(vue3Composition).mount("#app");
+</script>
