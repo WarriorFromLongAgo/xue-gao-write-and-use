@@ -16,7 +16,19 @@
 </template>
 
 <script lang="ts" setup>
-import { defineEmits, defineProps } from "vue";
+import { defineEmits, defineProps, ref, defineExpose } from "vue";
+
+// let SonComponentInt1 = 1;
+// let SonComponentInt2 = 2;
+// let message = ref("我是子元素").value;
+// const alertMessage = function () {
+//   alert(message);
+// };
+// defineExpose({
+//   message,
+//   alertMessage,
+// });
+
 const parentProps = defineProps({
   modelValue: { type: Number, required: true },
   modelStr: String,

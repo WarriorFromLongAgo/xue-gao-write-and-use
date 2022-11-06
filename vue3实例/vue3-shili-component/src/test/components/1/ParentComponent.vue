@@ -16,10 +16,16 @@
       @updateModelValue="addParentModelValue"
     ></son-component>
   </div>
+  <hr />
+  ===========================================
+  <hr />
+  <!--  <son-component ref="parentModelValue"></son-component>-->
+  <!--  <button @click="show">Show Child Message</button>-->
 </template>
 
 <script lang="ts" setup>
 import SonComponent from "@/test/components/1/SonComponent.vue";
+// import { getCurrentInstance } from "@vue/runtime-core";
 import { ref } from "vue";
 
 let parentModelValue = ref(11);
@@ -29,6 +35,12 @@ function addParentModelValue(data: number) {
   console.log("addParentModelValue data = ", data);
   parentModelValue.value += data;
 }
+
+// const currentInstance = getCurrentInstance();
+//
+// function show() {
+//   currentInstance.ctx.$refs.child.alertMessage();
+// }
 </script>
 
 <style scoped></style>
