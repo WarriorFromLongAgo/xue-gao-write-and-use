@@ -25,9 +25,10 @@ import { ref } from "vue";
 let parentModelValue = ref(11);
 let parentModelStr = "parentModelStr";
 
-function addParentModelValue(data: number) {
+function addParentModelValue(data: { e: number }) {
   console.log("addParentModelValue data = ", data);
-  parentModelValue.value += data;
+  console.log("addParentModelValue data.e = ", data.e);
+  parentModelValue.value += data.e;
 }
 </script>
 
