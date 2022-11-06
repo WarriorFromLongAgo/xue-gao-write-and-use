@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "ParentComponent",
     component: () => import("@/test/components/1/ParentComponent.vue"),
   },
+  {
+    path: "/TestUtil",
+    name: "TestUtil",
+    component: () => import("@/test/util/TestUtil.vue"),
+  },
 ];
 
 const router = createRouter({
