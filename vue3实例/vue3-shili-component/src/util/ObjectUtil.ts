@@ -1,7 +1,11 @@
-function isBlank(input: string): boolean {
+function isBlank(input: string | null): boolean {
   return (
     input === null || input == undefined || input === "" || input.trim() == ""
   );
+}
+
+function isNotBlank(input: string | null): boolean {
+  return !isBlank(input);
 }
 
 function isEmpty(input: object): boolean {
@@ -24,4 +28,4 @@ function isNotEmpty(input: object): boolean {
   return !isEmpty(input);
 }
 
-export { isBlank, isEmpty, isNotEmpty };
+export { isBlank, isNotBlank, isEmpty, isNotEmpty };
