@@ -1,0 +1,9 @@
+# 应用名称
+spring:
+  application:
+    name: baiduAi
+server:
+  port: 10001
+
+
+
