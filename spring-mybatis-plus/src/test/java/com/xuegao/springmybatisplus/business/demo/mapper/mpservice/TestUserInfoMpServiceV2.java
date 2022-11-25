@@ -109,8 +109,8 @@ public class TestUserInfoMpServiceV2 {
         userInfo.setId(11);
         userInfo.setUsername("setUsername11111");
         userInfo.setPassword("setPassword111111");
-        userInfo.setCreateBy("setCreateBy1111111");
-        userInfo.setUpdateBy("setUpdateBy1111111");
+        // userInfo.setCreateBy("setCreateBy1111111");
+        // userInfo.setUpdateBy("setUpdateBy1111111");
         userInfoMpServiceV2.test(userInfo);
     }
 }

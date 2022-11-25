@@ -3,6 +3,7 @@ package com.xuegao.springmybatisplus.business.demo.manage;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.xuegao.mapper.enums.DelFlagEnum;
@@ -87,5 +88,11 @@ public class UserInfoManage extends AbstractMpService<UserInfoMapper, UserInfo, 
         boolean b = userInfoMpService.updateById(update);
 
         return 0;
+    }
+
+    public void searchService(Integer id) {
+        IPage<UserInfo> page = userInfoMpService.lambdaQuery().select().page(null);
+
+
     }
 }

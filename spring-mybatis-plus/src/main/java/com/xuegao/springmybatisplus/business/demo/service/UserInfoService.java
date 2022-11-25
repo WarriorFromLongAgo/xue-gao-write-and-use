@@ -28,4 +28,9 @@ public class UserInfoService {
     public Integer disable(Integer id) {
         return userInfoManage.disable(id);
     }
+
+    // @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    // public void searchService(Integer id) {
+    //     return userInfoManage.searchService(id);
+    // }
 }
