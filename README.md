@@ -4,3 +4,4 @@
 # mybatis pgsql
 -javaagent:D:\git\my\xuegao-im-chat-v2\wechat-server-monolith\src\main\resources\transmittable-thread-local-2.13.2.jar
 
+# pgsql入门
