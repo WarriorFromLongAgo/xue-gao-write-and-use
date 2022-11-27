@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuegao.mybatispgsql.business.test.mapper.TempUserInfoV2Mapper">
+    <resultMap id="BaseResultMap" type="com.xuegao.mybatispgsql.common.test.model.TempUserInfoV2">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+    <sql id="BaseTable">
+        temp_user_info_v2
+    </sql>
+
+    <insert id="batchInsert" keyProperty="id" useGeneratedKeys="true">
+        insert into
+        <include refid="BaseTable"/>
+        (username, password)
+        values
+        <foreach collection="tempUserInfoV2List" item="userInfo" separator=",">
+            (#{userInfo.username}, #{userInfo.password})
+        </foreach>
+        ;
+    </insert>
+
+    <select id="selectByInput" resultMap="BaseResultMap">
+        select *
+        from test_db.public.temp_user_info_v2
+        where id = 1
+    </select>
+
+    <update id="updatePassword">
+        update test_db.public.temp_user_info_v2
+        set password = #{tempUserInfoV2.password}
+        where id = #{tempUserInfoV2.id}
+    </update>
+
+</mapper>
