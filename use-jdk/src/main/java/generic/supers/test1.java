@@ -1,4 +1,4 @@
-package fanxing.supers;
+package generic.supers;
 
 public class test1 {
     public static void main(String[] args) {

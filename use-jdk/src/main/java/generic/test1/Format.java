@@ -1,4 +1,4 @@
-package fanxing.test1;
+package generic.test1;
 
 import java.math.BigDecimal;
 

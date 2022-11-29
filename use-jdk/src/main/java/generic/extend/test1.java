@@ -1,4 +1,4 @@
-package fanxing.extend;
+package generic.extend;
 
 import model.B;
 
