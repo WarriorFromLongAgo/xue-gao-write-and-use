@@ -5,4 +5,6 @@ server:
 spring:
   application:
     name: 'mvc'
-
+logging:
+  level:
+    root: debug
