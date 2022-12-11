@@ -1,6 +1,6 @@
 package com.xuegao.feignserver.business.controller;
 
-import com.xuegao.RespUtil;
+import com.xuegao.core.model.Result;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +15,7 @@ public class FeignRespController {
     private String applicationName;
 
     @RequestMapping(path = "/feignResp/test1", method = RequestMethod.POST)
-    public RespUtil<String> feignRespTest1() {
-        return RespUtil.success("[feignserver][" + serverPort + "][" + applicationName + "]");
+    public Result<String> feignRespTest1() {
+        return Result.success("[feignserver][" + serverPort + "][" + applicationName + "]");
     }
 }

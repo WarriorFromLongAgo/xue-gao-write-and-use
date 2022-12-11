@@ -29,7 +29,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.4.13</spring-boot.version>
         <spring-cloud.version>2020.0.6</spring-cloud.version>
-        <xuegao-framework.version>0.0.2</xuegao-framework.version>
+        <xuegao-framework.version>0.0.3</xuegao-framework.version>
     </properties>
 
     <dependencyManagement>

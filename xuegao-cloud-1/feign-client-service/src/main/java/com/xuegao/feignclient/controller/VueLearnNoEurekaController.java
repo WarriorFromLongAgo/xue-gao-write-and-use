@@ -1,8 +1,8 @@
 package com.xuegao.feignclient.controller;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.xuegao.JsonUtil;
 import com.xuegao.feignclient.call.feignserver.VueLearnNoEurekaCall;
+import com.xuegao.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

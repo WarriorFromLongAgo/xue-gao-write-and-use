@@ -1,10 +1,10 @@
 package com.xuegao.feignserver.business.controller;
 
 import com.google.common.collect.Lists;
-import com.xuegao.JsonUtil;
 import com.xuegao.feignserver.business.remote.FeignEurekaRemoteController;
 import com.xuegao.model.dto.TestRequest;
 import com.xuegao.model.vo.TestResponse;
+import com.xuegao.util.JsonUtil;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

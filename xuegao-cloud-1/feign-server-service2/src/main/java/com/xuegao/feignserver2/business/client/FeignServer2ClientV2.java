@@ -1,6 +1,6 @@
 package com.xuegao.feignserver2.business.client;
 
-import com.xuegao.RespUtil;
+import com.xuegao.core.model.Result;
 import com.xuegao.feignserver2.business.remote.FeignServer2RemoteV2;
 import com.xuegao.model.dto.TestRequest;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ public interface FeignServer2ClientV2 extends FeignServer2RemoteV2 {
     @Component
     class fallBack implements FeignServer2ClientV2 {
         @Override
-        public RespUtil<String> test1(TestRequest request) {
+        public Result<String> test1(TestRequest request) {
             log.info("[xue-gao-write-and-use][FeignServer2ClientV2][fallBack][test1][]");
             return null;
         }

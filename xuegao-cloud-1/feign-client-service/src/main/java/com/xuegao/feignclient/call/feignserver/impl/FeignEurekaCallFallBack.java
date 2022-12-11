@@ -1,6 +1,6 @@
 package com.xuegao.feignclient.call.feignserver.impl;
 
-import com.xuegao.RespUtil;
+import com.xuegao.core.model.Result;
 import com.xuegao.feignclient.call.feignserver.FeignEurekaCall;
 import com.xuegao.model.dto.TestRequest;
 import com.xuegao.model.vo.TestResponse;
@@ -19,7 +19,7 @@ public class FeignEurekaCallFallBack implements FeignEurekaCall {
     }
 
     @Override
-    public RespUtil<String> feignRespTest1() {
+    public Result<String> feignRespTest1() {
         log.info("[xue-gao-write-and-use][FeignEurekaCallFallBack][feignRespTest1][--------]");
         return null;
     }

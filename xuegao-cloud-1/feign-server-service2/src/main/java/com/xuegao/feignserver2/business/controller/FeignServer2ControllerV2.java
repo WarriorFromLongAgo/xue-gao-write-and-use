@@ -1,6 +1,6 @@
 package com.xuegao.feignserver2.business.controller;
 
-import com.xuegao.RespUtil;
+import com.xuegao.core.model.Result;
 import com.xuegao.feignserver2.business.remote.FeignServer2RemoteV2;
 import com.xuegao.model.dto.TestRequest;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +16,8 @@ public class FeignServer2ControllerV2 implements FeignServer2RemoteV2 {
     private String applicationName;
 
     @Override
-    public RespUtil<String> test1(@RequestBody TestRequest request) {
-        return RespUtil.success("[FeignServer2ControllerV2][" + serverPort + "][" + applicationName + "]");
+    public Result<String> test1(@RequestBody TestRequest request) {
+        return Result.success("[FeignServer2ControllerV2][" + serverPort + "][" + applicationName + "]");
     }
 
 }

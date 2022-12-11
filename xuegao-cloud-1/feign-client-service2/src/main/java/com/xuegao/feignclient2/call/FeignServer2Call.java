@@ -1,10 +1,10 @@
 package com.xuegao.feignclient2.call;
 
-import com.xuegao.JsonUtil;
-import com.xuegao.RespUtil;
+import com.xuegao.core.model.Result;
 import com.xuegao.feignserver2.business.client.FeignServer2Client;
 import com.xuegao.feignserver2.business.client.FeignServer2ClientV2;
 import com.xuegao.model.dto.TestRequest;
+import com.xuegao.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +21,9 @@ public class FeignServer2Call {
 
     public void test1() {
         TestRequest testRequest = new TestRequest();
-        RespUtil<String> stringRespUtil = feignServer2Client.test1(testRequest);
+        Result<String> stringRespUtil = feignServer2Client.test1(testRequest);
         log.info("[xue-gao-write-and-use][FeignServer2Call][test1][={}]", JsonUtil.toJsonString(stringRespUtil));
-        RespUtil<String> stringRespUtilV2 = feignServer2ClientV2.test1(testRequest);
+        Result<String> stringRespUtilV2 = feignServer2ClientV2.test1(testRequest);
         log.info("[xue-gao-write-and-use][FeignServer2Call][test1][={}]", JsonUtil.toJsonString(stringRespUtilV2));
     }
 }
