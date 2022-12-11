@@ -1,4 +1,4 @@
-package model.temp;
+package common.model.temp;
 
 import lombok.Getter;
 import lombok.Setter;

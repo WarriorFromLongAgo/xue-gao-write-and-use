@@ -1,7 +1,7 @@
 package generic.test1;
 
-import model.A;
-import model.A2;
+import common.model.A;
+import common.model.A2;
 
 import java.util.ArrayList;
 import java.util.List;

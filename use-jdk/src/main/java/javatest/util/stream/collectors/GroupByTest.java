@@ -1,7 +1,7 @@
 package javatest.util.stream.collectors;
 
 import com.xuegao.util.JsonUtil;
-import model.temp.TempListBO;
+import common.model.temp.TempListBO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

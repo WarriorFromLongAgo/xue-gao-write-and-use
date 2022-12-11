@@ -1,6 +1,6 @@
 package generic.extend;
 
-import model.B;
+import common.model.B;
 
 import java.util.List;
 
