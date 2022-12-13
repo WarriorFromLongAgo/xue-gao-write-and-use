@@ -20,9 +20,9 @@ public class CacheInterfaceTest {
         //创建guava cache
         Cache<String, String> cache = Caffeine.newBuilder()
                 //cache的初始容量
-                .initialCapacity(5)
+                .initialCapacity(1)
                 //cache最大缓存数,设置缓存最大条目数，超过条目则触发回收。
-                .maximumSize(10)
+                .maximumSize(4)
                 // 设置缓存最大权重，设置权重是通过weigher方法，
                 // 需要注意的是权重也是限制缓存大小的参数，并不会影响缓存淘汰策略，也不能和maximumSize方法一起使用。
                 // .maximumWeight(10)
@@ -49,7 +49,6 @@ public class CacheInterfaceTest {
                 // .executor()
                 // 定期清空数据的一个机制
                 // .scheduler()
-
                 // 不知道这个有什么用
                 .evictionListener(new RemovalListener<Object, Object>() {
                     @Override
@@ -57,8 +56,6 @@ public class CacheInterfaceTest {
                         System.out.println("evictionListener key:" + key + " value:" + value + " cause:" + cause);
                     }
                 })
-
-
                 .build(new CacheLoader<String, String>() {
                     @Override
                     public @Nullable String load(@NonNull String key) throws Exception {
