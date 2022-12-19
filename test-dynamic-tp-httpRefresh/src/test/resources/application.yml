@@ -1,7 +1,7 @@
 # 应用名称
 spring:
   application:
-    name: 'test-dynamic-tp'
+    name: 'test-dynamic-tp-httpRefresh'
   dynamic:
     tp:
       enabled: true
@@ -9,14 +9,7 @@ spring:
       enabledCollect: true          # 是否开启监控指标采集，默认false
       collectorTypes: logging     # 监控数据采集器类型（logging | micrometer | internal_logging），默认micrometer
       monitorInterval: 15            # 监控时间间隔（报警判断、指标采集），默认5s
-#      configType: yml               # 配置文件类型，非cloud nacos 和 apollo需配置，其他不用配
-      config-type: properties         # zookeeper支持 properties & json 配置
-      zookeeper:
-#        config-version: 1.0.0
-        zk-connect-str: 127.0.0.1:2181
-        root-node: /configserver/dev
-        node: dynamic-tp-zookeeper-demo
-
+      configType: yml               # 配置文件类型，非cloud nacos 和 apollo需配置，其他不用配
       platforms: # 通知报警平台配置
         - platform: pushdeer
           urlKey: PDU8003ToNVEruCyolgSCPfYHpzhPTKI1a9QLUTO     # 替换
@@ -27,8 +20,8 @@ spring:
         corePoolSize: 100
         maximumPoolSize: 200
         keepAliveTime: 60
-#      undertowTp:
-#        corePoolSize: 100
+      #      undertowTp:
+      #        corePoolSize: 100
       executors: # 动态线程池配置，都有默认值，采用默认值的可以不配置该项，减少配置量
         - threadPoolName: dtpExecutor1
           threadPoolAliasName: 测试线程池             # 线程池别名

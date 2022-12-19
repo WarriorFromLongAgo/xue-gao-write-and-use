@@ -1,7 +1,7 @@
 # 应用名称
 spring:
   application:
-    name: 'test-dynamic-tp'
+    name: 'test-dynamic-tp-httpRefresh'
   dynamic:
     tp:
       enabled: true

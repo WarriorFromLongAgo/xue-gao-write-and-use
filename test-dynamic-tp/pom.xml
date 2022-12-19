@@ -38,11 +38,19 @@
             </exclusions>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>cn.dynamictp</groupId>-->
+<!--            <artifactId>dynamic-tp-spring-boot-starter-common</artifactId>-->
+<!--            <version>1.0.9</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-spring-boot-starter-common</artifactId>
+            <artifactId>dynamic-tp-spring-boot-starter-zookeeper</artifactId>
             <version>1.0.9</version>
         </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
