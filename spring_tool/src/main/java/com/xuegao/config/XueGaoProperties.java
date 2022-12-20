@@ -26,12 +26,13 @@ public class XueGaoProperties {
 
     private SimpleTpProperties tomcat;
 
-
-    static class SimpleTpProperties {
+    @Getter
+    @Setter
+    public static class SimpleTpProperties {
         /**
          * Name.
          */
-        private String name;
+        private String simpleName;
     }
 
 
