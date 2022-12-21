@@ -15,20 +15,7 @@ spring:
 #        config-version: 1.0.0
         zk-connect-str: 127.0.0.1:2181
         root-node: /configserver/dev
-        node: dynamic-tp-zookeeper-demo
-
-      platforms: # 通知报警平台配置
-        - platform: pushdeer
-          urlKey: PDU8003ToNVEruCyolgSCPfYHpzhPTKI1a9QLUTO     # 替换
-          receivers: xuegao                                    # 接受人企微名称
-        - platform: email
-          receivers: 651267797@qq.com                          # 收件人
-      tomcatTp: # tomcat webserver线程池配置
-        corePoolSize: 100
-        maximumPoolSize: 200
-        keepAliveTime: 60
-#      undertowTp:
-#        corePoolSize: 100
+        node: xuegao-thread-test1
       executors: # 动态线程池配置，都有默认值，采用默认值的可以不配置该项，减少配置量
         - threadPoolName: dtpExecutor1
           threadPoolAliasName: 测试线程池             # 线程池别名
@@ -46,26 +33,6 @@ spring:
           preStartAllCoreThreads: false                  # 是否预热所有核心线程，默认false
           runTimeout: 200                                # 任务执行超时阈值，目前只做告警用，单位（ms）
           queueTimeout: 100                              # 任务在队列等待超时阈值，目前只做告警用，单位（ms）
-  #        taskWrapperNames: [ "ttl" ]                      # 任务包装器名称，集成TaskWrapper接口
-  #        notifyItems: # 报警项，不配置自动会按默认值配置（变更通知、容量报警、活性报警、拒绝报警、任务超时报警）
-  #          - type: capacity               # 报警项类型，查看源码 NotifyTypeEnum枚举类
-  #            enabled: true
-  #            threshold: 80                # 报警阈值
-  #            interval: 120                # 报警间隔（单位：s）
-  #          - type: change
-  #            enabled: true
-  #          - type: liveness
-  #            enabled: true
-  #            threshold: 80
-  #          - type: reject
-  #            enabled: true
-  #            threshold: 1
-  #          - type: run_timeout
-  #            enabled: true
-  #            threshold: 1
-  #          - type: queue_timeout
-  #            enabled: true
-  #            threshold: 1
 logging:
   level:
     root: debug
