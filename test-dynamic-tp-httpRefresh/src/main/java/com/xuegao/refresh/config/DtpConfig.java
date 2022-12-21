@@ -1,6 +1,10 @@
 package com.xuegao.refresh.config;
 
+import com.dtp.core.support.ThreadPoolBuilder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Configuration
 public class DtpConfig {
@@ -10,10 +14,10 @@ public class DtpConfig {
      *
      * @return 线程池实例
      */
-    // @Bean
-    // public ThreadPoolExecutor dtpExecutor2() {
-    //     return ThreadPoolBuilder.newBuilder()
-    //             .threadPoolName("thread_num_2")
-    //             .buildDynamic();
-    // }
+    @Bean
+    public ThreadPoolExecutor dtpExecutor2() {
+        return ThreadPoolBuilder.newBuilder()
+                .threadPoolName("thread_num_2")
+                .buildDynamic();
+    }
 }

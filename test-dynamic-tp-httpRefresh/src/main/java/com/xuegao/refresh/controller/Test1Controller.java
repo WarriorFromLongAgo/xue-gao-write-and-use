@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @RestController
 public class Test1Controller {
@@ -24,14 +26,17 @@ public class Test1Controller {
     // @Qualifier(value = "thread_num_2")
     // private ThreadPoolExecutor thread_num_2ThreadPoolExecutor;
 
-    // @Resource
-    // private ThreadPoolExecutor dtpExecutor1;
+    @Resource
+    private ThreadPoolExecutor dtpExecutor1;
 
-    // @Resource
-    // private ThreadPoolExecutor dtpExecutor2;
+    @Resource
+    private ThreadPoolExecutor dtpExecutor2;
 
-    // @Resource
-    // private ThreadPoolExecutor thread_num_2;
+    @Resource
+    private ThreadPoolExecutor dtpExecutor3;
+
+    @Resource
+    private ThreadPoolExecutor thread_num_2;
 
     @Autowired
     private DtpProperties dtpProperties;
@@ -40,10 +45,10 @@ public class Test1Controller {
     public void test() {
         System.out.println("test1");
 
-        // dtpExecutor1.execute(() -> System.out.println("dtpExecutor1"));
-        // dtpExecutor2.execute(() -> System.out.println("dtpExecutor2"));
-
-        // thread_num_2.execute(() -> System.out.println("thread_num_2"));
+        dtpExecutor1.execute(() -> System.out.println("dtpExecutor1"));
+        dtpExecutor2.execute(() -> System.out.println("dtpExecutor2"));
+        dtpExecutor3.execute(() -> System.out.println("dtpExecutor3"));
+        thread_num_2.execute(() -> System.out.println("thread_num_2"));
 
         // dtpExecutor1ThreadPoolExecutor.execute(() -> System.out.println("dtpExecutor1ThreadPoolExecutor"));
 
