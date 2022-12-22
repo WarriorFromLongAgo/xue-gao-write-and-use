@@ -21,17 +21,17 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-spring-boot-starter-http</artifactId>
-            <version>${dynamic-tp.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.dynamictp</groupId>-->
+<!--            <artifactId>dynamic-tp-spring-boot-starter-http</artifactId>-->
+<!--            <version>${dynamic-tp.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>cn.dynamictp</groupId>
-            <artifactId>dynamic-tp-spring-boot-starter-zookeeper</artifactId>
-            <version>1.0.9</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.dynamictp</groupId>-->
+<!--            <artifactId>dynamic-tp-spring-boot-starter-zookeeper</artifactId>-->
+<!--            <version>1.0.9</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>cn.dynamictp</groupId>

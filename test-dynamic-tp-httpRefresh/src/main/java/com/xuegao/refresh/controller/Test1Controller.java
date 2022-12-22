@@ -59,7 +59,7 @@ public class Test1Controller {
 
         List<String> strings = DtpRegistry.listAllDtpNames();
 
-        DtpExecutor dtpExecutor1 = DtpRegistry.getDtpExecutor("dtpExecutor1");
+        // DtpExecutor dtpExecutor1 = DtpRegistry.getDtpExecutor("dtpExecutor1");
 
         DtpExecutor thread_num_2 = DtpRegistry.getDtpExecutor("thread_num_2");
         System.out.println("thread_num_2 = " + thread_num_2);
