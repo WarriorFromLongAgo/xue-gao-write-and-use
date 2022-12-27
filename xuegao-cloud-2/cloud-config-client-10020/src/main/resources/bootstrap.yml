@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: prd
+  application:
+    #会在git上找和name相同的配置文件，如果找不到，就是默认的配置文件。也将名字改为foobar-dev就可以命中相应的配置文件，这样感觉不是很好。
+    name: 'cloud-config-client-10020'
+  security:
+    user:
+      name: root         # 用户名
+      password: 123456   # 密码
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: 'cloud-config-server-10010'
+#      #当使用了eureka后就不需要config来配置，会通过application.name的值在configserver中查找相应的配置文件。
+#      #      uri: http://localhost:8052
+#      #      profile: production
+#      #当configserver的后端存储是Git时，默认是master
+#      label: main
+
+eureka:
+  # 设置注册中心
+  instance:
+    hostname: "127.0.0.1"
+  client:
+    #不显示对server应用的注册
+    #    是否将自己注册到 Eureka-Server 中，默认的为 true
+    register-with-eureka: true
+    #    是否需要拉取服务信息，默认未true
+    fetchRegistry: true
+    # 表示 Eureka Client 间隔多久去服务器拉取信息，默认为 30 秒
+    registry-fetch-interval-seconds: 10
+    serviceUrl:
+      #配置eureka服务注册中心地址 如果eureka server服务注册中心是集群部署 只配置一个其他服务注册中心也能发现
+      defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/"
+#      defaultZone: "http://root:123456@127.0.0.1:8761/eureka/"
