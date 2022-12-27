@@ -13,6 +13,8 @@ spring:
       config-type: properties         # zookeeper支持 properties & json 配置
       platforms: # 通知报警平台配置
         - platform: Xue-Gao-pushDeer
+        - platform: email
+          receivers: 651267797@qq.com   # 收件人
       zookeeper:
         #        config-version: 1.0.0
         zk-connect-str: 127.0.0.1:2181
@@ -40,33 +42,37 @@ spring:
             - type: capacity               # 报警项类型，查看源码 NotifyTypeEnum枚举类
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
             - type: change
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
             - type: liveness
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
             - type: reject
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
             - type: run_timeout
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
             - type: queue_timeout
               enabled: true
               threshold: 0                # 报警阈值
-              platforms: [ Xue-Gao-pushDeer ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platforms: [ email ]     # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                # 报警间隔（单位：s）
+  mail:
+    host: smtp.163.com
+    username: xuegao
+    password: 123456
 logging:
   level:
     root: debug

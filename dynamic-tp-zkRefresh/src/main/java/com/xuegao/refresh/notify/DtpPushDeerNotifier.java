@@ -4,6 +4,7 @@ import com.dtp.common.ApplicationContextHolder;
 import com.dtp.common.dto.DtpMainProp;
 import com.dtp.common.dto.NotifyPlatform;
 import com.dtp.common.em.NotifyItemEnum;
+import com.dtp.common.em.NotifyPlatformEnum;
 import com.dtp.core.notify.AbstractDtpNotifier;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
@@ -11,8 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import static com.xuegao.refresh.common.XueGaoConstant.Notify.NOTIFY_XUE_GAO_PUSH_DEER;
 
 @Service
 public class DtpPushDeerNotifier extends AbstractDtpNotifier {
@@ -24,7 +23,7 @@ public class DtpPushDeerNotifier extends AbstractDtpNotifier {
 
     @Override
     public String platform() {
-        return NOTIFY_XUE_GAO_PUSH_DEER.toLowerCase();
+        return NotifyPlatformEnum.SMS.name().toLowerCase();
     }
 
     @Override

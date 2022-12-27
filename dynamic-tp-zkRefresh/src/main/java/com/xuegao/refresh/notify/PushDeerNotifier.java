@@ -1,14 +1,13 @@
 package com.xuegao.refresh.notify;
 
 import com.dtp.common.dto.NotifyPlatform;
+import com.dtp.common.em.NotifyPlatformEnum;
 import com.dtp.core.notify.base.Notifier;
 import com.xuegao.refresh.call.service.RemindCallService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import static com.xuegao.refresh.common.XueGaoConstant.Notify.NOTIFY_XUE_GAO_PUSH_DEER;
 
 @Service
 public class PushDeerNotifier implements Notifier {
@@ -19,7 +18,7 @@ public class PushDeerNotifier implements Notifier {
 
     @Override
     public String platform() {
-        return NOTIFY_XUE_GAO_PUSH_DEER.toLowerCase();
+        return NotifyPlatformEnum.SMS.name().toLowerCase();
     }
 
     @Override
