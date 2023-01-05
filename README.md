@@ -48,6 +48,8 @@ logback
 按类型加载
 ## spring_autoconfig
 自动配置
+## spring_performance
+性能测试
 
 # springcloud相关
 ## spring_micro_services
