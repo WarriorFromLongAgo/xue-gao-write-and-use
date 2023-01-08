@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地图显示</title>
+</head>
+
+<!--1，引入资源-->
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode: "44968705b20492f5ad5625312c9211f3",
+    };
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=474b03a0e834e782c3fd0ea0f0c593ef"></script>
+
+<!--3，设置地图的样式-->
+<style lang="css">
+    #container {
+        width: 1000px;
+        height: 900px;
+    }
+</style>
+
+<body>
+<!--2，创建地图容器-->
+<div id="container">
+
+
+</div>
+</body>
+
+<script>
+    console.log(AMap);
+    // 4，加载地图
+    let aMap = new AMap.Map("container");
+
+</script>
+
+
+</html>
