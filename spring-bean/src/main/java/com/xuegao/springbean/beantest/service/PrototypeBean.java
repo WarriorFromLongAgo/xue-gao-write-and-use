@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class Test2 {
+public class PrototypeBean {
 
     private String name;
 
@@ -34,7 +34,7 @@ public class Test2 {
     }
 
     public void test(String inputName) {
-        Test2 bean = SpringUtils.getBean(Test2.class);
+        PrototypeBean bean = SpringUtils.getBean(PrototypeBean.class);
         System.out.println(Thread.currentThread().getName() + " 1 == " + bean);
         if ("a".equals(inputName)) {
             setName("a");
