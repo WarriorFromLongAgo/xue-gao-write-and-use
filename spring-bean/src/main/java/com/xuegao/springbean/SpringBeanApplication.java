@@ -4,6 +4,7 @@ import com.xuegao.springbean.beanextend.Bean1_ApplicationContextInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// @SpringBootApplication(scanBasePackages = {"com.xuegao.springbean", "com.xuegao.beantest"})
 @SpringBootApplication(scanBasePackages = {"com.xuegao.springbean"})
 public class SpringBeanApplication {
 

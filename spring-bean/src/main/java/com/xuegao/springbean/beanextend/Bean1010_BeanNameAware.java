@@ -12,6 +12,6 @@ public class Bean1010_BeanNameAware implements BeanNameAware {
 
     @Override
     public void setBeanName(String name) {
-        OnlyPrintUtil.print(getClass(), "setBeanName");
+        OnlyPrintUtil.print(getClass(), "setBeanName === " + name);
     }
 }
