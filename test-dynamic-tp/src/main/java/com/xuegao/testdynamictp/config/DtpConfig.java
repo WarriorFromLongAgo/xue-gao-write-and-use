@@ -3,7 +3,10 @@ package com.xuegao.testdynamictp.config;
 import com.dtp.core.support.DynamicTp;
 import com.dtp.core.support.ThreadPoolBuilder;
 import com.dtp.core.support.ThreadPoolCreator;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.task.AsyncTaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
 public class DtpConfig {
@@ -84,4 +87,10 @@ public class DtpConfig {
     //             .awaitTerminationSeconds(5)
     //             .buildDynamic();
     // }
+
+    @Bean("myAsyncTaskExecutor")
+    public AsyncTaskExecutor afterExecute() {
+        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+        return threadPoolTaskExecutor;
+    }
 }
