@@ -1,14 +1,14 @@
-interface Student {
-  name: string;
+interface CatInfo {
   age: number;
+  breed: string;
 }
 
+type CatName = "miffy" | "boris" | "mordred";
 
-const student1: Student = {age: 0, name: ""};
-
-const student2: Partial<Student> = {};
-
-export const student3: Record<string, any> = {
-  name: "张三",
-  age: 20,
+const cats: Record<CatName, CatInfo> = {
+  miffy: { age: 10, breed: "Persian" },
+  boris: { age: 5, breed: "Maine Coon" },
+  mordred: { age: 16, breed: "British Shorthair" },
 };
+
+cats.boris;
