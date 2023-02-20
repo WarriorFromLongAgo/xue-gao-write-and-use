@@ -2,12 +2,14 @@ package common.model.temp;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
+@ToString
 public class TempListBO {
 
     private Integer id;
@@ -16,7 +18,7 @@ public class TempListBO {
 
     public static List<TempListBO> getList() {
         List<TempListBO> list = new ArrayList<>(5);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             TempListBO tempListBO = new TempListBO();
             tempListBO.setId(i);
             tempListBO.setUsername("username" + i);
