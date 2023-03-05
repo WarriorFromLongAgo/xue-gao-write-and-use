@@ -1,12 +1,13 @@
 package leetcode.sort;
 
+import leetcode.LeetCodeConstant;
+
 import java.util.Arrays;
 import java.util.Objects;
 
 public class 冒泡排序 {
     public static void main(String[] args) {
-        double[] doubleArr = new double[]{2.4, 5.10, -1, -4};
-        double[] sort = sort(doubleArr);
+        double[] sort = sort(LeetCodeConstant.DOUBLE_ARR);
         System.out.println("end = " + Arrays.toString(sort));
     }
 
