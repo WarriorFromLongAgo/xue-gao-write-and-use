@@ -7,6 +7,7 @@ import common.model.temp.TempListBO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -55,7 +56,8 @@ public class OfNullableTest {
         System.out.println("nullListStr = " + nullListStr);
 
         String notNullListStr = Optional.ofNullable(tempListBOList)
-                .flatMap(c -> c.stream().findFirst()).map(JsonUtil::toJsonString).orElse(null);
+                .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
+                .map(JsonUtil::toJsonString).orElse(null);
         System.out.println("notNullListStr = " + notNullListStr);
     }
 
