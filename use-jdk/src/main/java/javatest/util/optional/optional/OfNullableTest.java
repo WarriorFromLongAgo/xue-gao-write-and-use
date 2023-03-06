@@ -59,6 +59,10 @@ public class OfNullableTest {
                 .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
                 .map(JsonUtil::toJsonString).orElse(null);
         System.out.println("notNullListStr = " + notNullListStr);
+
+        TempListBO tempListBO = Optional.ofNullable(tempListBOList)
+                .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst()).orElse(null);
+        System.out.println("obj = " + JsonUtil.toJsonString(tempListBO));
     }
 
 }
