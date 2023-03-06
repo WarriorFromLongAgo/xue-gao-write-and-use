@@ -57,11 +57,13 @@ public class OfNullableTest {
 
         String notNullListStr = Optional.ofNullable(tempListBOList)
                 .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
-                .map(JsonUtil::toJsonString).orElse(null);
+                .map(TempListBO::getUsername)
+                .orElse(null);
         System.out.println("notNullListStr = " + notNullListStr);
 
         TempListBO tempListBO = Optional.ofNullable(tempListBOList)
-                .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst()).orElse(null);
+                .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
+                .orElse(null);
         System.out.println("obj = " + JsonUtil.toJsonString(tempListBO));
     }
 
