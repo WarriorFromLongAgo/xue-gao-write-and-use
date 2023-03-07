@@ -6,10 +6,13 @@ import com.xuegao.util.JsonUtil;
 import common.model.temp.TempListBO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Passing a non-null argument to 'Optional'
@@ -65,6 +68,16 @@ public class OfNullableTest {
                 .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
                 .orElse(null);
         System.out.println("obj = " + JsonUtil.toJsonString(tempListBO));
+
+        Map<String, List<TempListBO>> resultMap = new HashMap<>(10);
+        Optional.ofNullable(tempListBOList)
+                .map(tempList -> {
+                    System.out.println(" groupingBy ");
+                    Map<String, List<TempListBO>> map = tempList.stream().collect(Collectors.groupingBy(TempListBO::getUsername));
+                    resultMap.putAll(map);
+                    return null;
+                });
+        System.out.println("resultMap = " + JsonUtil.toJsonString(resultMap));
     }
 
 }
