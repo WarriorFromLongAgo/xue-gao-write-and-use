@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
 @Service
 public class ManualService {
@@ -20,6 +22,9 @@ public class ManualService {
 
     @Autowired
     private TransactionDefinition transactionDefinition;
+
+    @Autowired
+    private TransactionTemplate transactionTemplate;
 
     public void insert1() {
         TransactionStatus transactionStatus = platformTransactionManager.getTransaction(transactionDefinition);
@@ -36,4 +41,20 @@ public class ManualService {
         }
     }
 
+    public void insert2() {
+        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            public void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+                try {
+                    manualManage.insert();
+                    log.info("[xue-gao-write-and-use][ManualService][insert2][1]");
+                    manualManage.insert();
+                    log.info("[xue-gao-write-and-use][ManualService][insert2][2]");
+                    int a = 100 / 0;
+                } catch (Exception e) {
+                    transactionStatus.setRollbackOnly();
+                }
+            }
+        });
+    }
 }
