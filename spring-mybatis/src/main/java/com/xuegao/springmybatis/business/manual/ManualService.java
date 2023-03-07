@@ -28,7 +28,7 @@ public class ManualService {
             log.info("[xue-gao-write-and-use][ManualService][insert1][1]");
             manualManage.insert();
             log.info("[xue-gao-write-and-use][ManualService][insert1][2]");
-
+            int a = 100 / 0;
             platformTransactionManager.commit(transactionStatus);
         } catch (Exception e) {
             log.info("[xue-gao-write-and-use][ManualService][insert1][e]", e);
