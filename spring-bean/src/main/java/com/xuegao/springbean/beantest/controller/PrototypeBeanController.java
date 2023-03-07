@@ -20,7 +20,7 @@ public class PrototypeBeanController {
     @Autowired
     private PrototypeBean prototypeBean;
 
-    @GetMapping("/test2")
+    @GetMapping("/test/prototype")
     public void test(@RequestParam(name = "name") String name) {
         log.info("[xue-gao-write-and-use][PrototypeBeanController][test][prototypeBean={}]", prototypeBean);
 

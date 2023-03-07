@@ -3,7 +3,6 @@ package com.xuegao.springbean.beantest.service;
 import com.xuegao.springbean.util.SpringUtils;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -14,8 +13,8 @@ import java.util.concurrent.TimeUnit;
  * @date 2023年01月30日 17:07
  */
 @Component
-// @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-@Scope(value = BeanDefinition.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
+// @Scope(value = BeanDefinition.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
 public class PrototypeBean {
 
     private String name;

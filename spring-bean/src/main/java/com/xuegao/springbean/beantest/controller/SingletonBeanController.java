@@ -20,7 +20,7 @@ public class SingletonBeanController {
     @Autowired
     private SingletonBean singletonBean;
 
-    @GetMapping("/test1")
+    @GetMapping("/test/singleton")
     public void test(@RequestParam(name = "name") String name) {
         log.info("[xue-gao-write-and-use][SingletonBeanController][test][singletonBean={}]", singletonBean);
         singletonBean.test(name);
