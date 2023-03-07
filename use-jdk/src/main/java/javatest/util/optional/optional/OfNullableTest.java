@@ -35,6 +35,13 @@ public class OfNullableTest {
         test3(notNullList);
         List<TempListBO> strList = TempListBO.getList();
         test3(strList);
+
+        List<TempListBO> test4_1 = test4(nullList);
+        System.out.println("test4_1 = " + JsonUtil.toJsonString(test4_1));
+        List<TempListBO> test4_2 = test4(Lists.newArrayList());
+        System.out.println("test4_2 = " + JsonUtil.toJsonString(test4_2));
+        List<TempListBO> test4_3 = test4(TempListBO.getList());
+        System.out.println("test4_3 = " + JsonUtil.toJsonString(test4_3));
     }
 
     private static void test1() {
@@ -80,4 +87,8 @@ public class OfNullableTest {
         System.out.println("resultMap = " + JsonUtil.toJsonString(resultMap));
     }
 
+    public static List<TempListBO> test4(List<TempListBO> tempListBOList) {
+        return Optional.ofNullable(tempListBOList)
+                .orElse(Lists.newArrayList());
+    }
 }
