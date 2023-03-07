@@ -1,6 +1,8 @@
 package com.xuegao.springbean.beantest.controller;
 
-import com.xuegao.springbean.beantest.service.PrototypeBean;
+import com.xuegao.springbean.beantest.service.SingletonBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,13 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class SingletonBeanController {
+    private static final Logger log = LoggerFactory.getLogger(SingletonBeanController.class);
 
     @Autowired
-    private PrototypeBean prototypeBean;
+    private SingletonBean singletonBean;
 
-    @GetMapping("/test2")
+    @GetMapping("/test1")
     public void test(@RequestParam(name = "name") String name) {
-        prototypeBean.test(name);
+        log.info("[xue-gao-write-and-use][SingletonBeanController][test][singletonBean={}]", singletonBean);
+        singletonBean.test(name);
     }
 
 
