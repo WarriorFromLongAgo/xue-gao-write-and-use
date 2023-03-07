@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.google.common.collect.Lists;
 import com.xuegao.util.JsonUtil;
 import common.model.temp.TempListBO;
+import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,12 +37,19 @@ public class OfNullableTest {
         List<TempListBO> strList = TempListBO.getList();
         test3(strList);
 
-        List<TempListBO> test4_1 = test4(nullList);
-        System.out.println("test4_1 = " + JsonUtil.toJsonString(test4_1));
-        List<TempListBO> test4_2 = test4(Lists.newArrayList());
-        System.out.println("test4_2 = " + JsonUtil.toJsonString(test4_2));
-        List<TempListBO> test4_3 = test4(TempListBO.getList());
-        System.out.println("test4_3 = " + JsonUtil.toJsonString(test4_3));
+        // List<TempListBO> test4_1 = test4(nullList);
+        // System.out.println("test4_1 = " + JsonUtil.toJsonString(test4_1));
+        // List<TempListBO> test4_2 = test4(Lists.newArrayList());
+        // System.out.println("test4_2 = " + JsonUtil.toJsonString(test4_2));
+        // List<TempListBO> test4_3 = test4(TempListBO.getList());
+        // System.out.println("test4_3 = " + JsonUtil.toJsonString(test4_3));
+
+        // List<TempListBO> test4_2_1 = test4_2(nullList);
+        // System.out.println("test4_2_1 = " + JsonUtil.toJsonString(test4_2_1));
+        // List<TempListBO> test4_2_2 = test4_2(Lists.newArrayList());
+        // System.out.println("test4_2_2 = " + JsonUtil.toJsonString(test4_2_2));
+        // List<TempListBO> test4_2_3 = test4_2(TempListBO.getList());
+        // System.out.println("test4_2_3 = " + JsonUtil.toJsonString(test4_2_3));
     }
 
     private static void test1() {
@@ -87,8 +95,16 @@ public class OfNullableTest {
         System.out.println("resultMap = " + JsonUtil.toJsonString(resultMap));
     }
 
-    public static List<TempListBO> test4(List<TempListBO> tempListBOList) {
+    public static TempListBO test4(List<TempListBO> tempListBOList) {
         return Optional.ofNullable(tempListBOList)
-                .orElse(Lists.newArrayList());
+                .flatMap(c -> c.stream().filter(Objects::nonNull).findFirst())
+                .orElse(null);
+    }
+
+    public static TempListBO test4_2(List<TempListBO> tempListBOList) {
+        if (ObjectUtils.isEmpty(tempListBOList)) {
+            return null;
+        }
+        return tempListBOList.get(0);
     }
 }
