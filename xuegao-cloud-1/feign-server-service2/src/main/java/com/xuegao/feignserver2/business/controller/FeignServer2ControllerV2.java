@@ -17,7 +17,7 @@ public class FeignServer2ControllerV2 implements FeignServer2RemoteV2 {
 
     @Override
     public Result<String> test1(@RequestBody TestRequest request) {
-        return Result.success("[FeignServer2ControllerV2][" + serverPort + "][" + applicationName + "]");
+        return Result.ok("[FeignServer2ControllerV2][" + serverPort + "][" + applicationName + "]");
     }
 
 }

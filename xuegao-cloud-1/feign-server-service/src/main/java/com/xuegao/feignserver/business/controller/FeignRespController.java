@@ -16,6 +16,6 @@ public class FeignRespController {
 
     @RequestMapping(path = "/feignResp/test1", method = RequestMethod.POST)
     public Result<String> feignRespTest1() {
-        return Result.success("[feignserver][" + serverPort + "][" + applicationName + "]");
+        return Result.ok("[feignserver][" + serverPort + "][" + applicationName + "]");
     }
 }
