@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class MyThreadPool {
     private static final AtomicInteger COUNT = new AtomicInteger();
 
-    private static final ThreadPoolExecutor ONE_POOL_EXECUTOR = new ThreadPoolExecutor(
+    private static final ThreadPoolExecutor ONE_ONE_LIST_POOL_EXECUTOR = new ThreadPoolExecutor(
             1,
             1,
             1L,
@@ -16,11 +16,11 @@ public class MyThreadPool {
             new java.util.concurrent.LinkedBlockingQueue<>(),
             r -> new Thread(r, "ThreadPoolOne" + COUNT.incrementAndGet()));
 
-    public static ThreadPoolExecutor getOneInstance() {
-        return ONE_POOL_EXECUTOR;
+    public static ThreadPoolExecutor getOneOneListPoolExecutor() {
+        return ONE_ONE_LIST_POOL_EXECUTOR;
     }
 
-    private static final ThreadPoolExecutor MANY_POOL_EXECUTOR = new ThreadPoolExecutor(
+    private static final ThreadPoolExecutor MANY_MANY_LIST_POOL_EXECUTOR = new ThreadPoolExecutor(
             10,
             20,
             1L,
@@ -28,10 +28,33 @@ public class MyThreadPool {
             new java.util.concurrent.LinkedBlockingQueue<>(),
             r -> new Thread(r, "ThreadPoolBusiness" + COUNT.incrementAndGet()));
 
-    public static ThreadPoolExecutor getManyInstance() {
-        return MANY_POOL_EXECUTOR;
+    public static ThreadPoolExecutor getManyManyListPoolExecutor() {
+        return MANY_MANY_LIST_POOL_EXECUTOR;
     }
 
+    private static final ThreadPoolExecutor ONE_ONE_ARRAY_POOL_EXECUTOR = new ThreadPoolExecutor(
+            1,
+            1,
+            1L,
+            java.util.concurrent.TimeUnit.SECONDS,
+            new java.util.concurrent.ArrayBlockingQueue<>(10),
+            r -> new Thread(r, "ThreadPoolOne" + COUNT.incrementAndGet()));
+
+    public static ThreadPoolExecutor getOneOneArrayPoolExecutor() {
+        return ONE_ONE_ARRAY_POOL_EXECUTOR;
+    }
+
+    private static final ThreadPoolExecutor MANY_MANY_ARRAY_POOL_EXECUTOR = new ThreadPoolExecutor(
+            10,
+            20,
+            1L,
+            java.util.concurrent.TimeUnit.SECONDS,
+            new java.util.concurrent.ArrayBlockingQueue<>(10),
+            r -> new Thread(r, "ThreadPoolBusiness" + COUNT.incrementAndGet()));
+
+    public static ThreadPoolExecutor getManyManyArrayPoolExecutor() {
+        return MANY_MANY_ARRAY_POOL_EXECUTOR;
+    }
 
     private static final ThreadPoolExecutor REJECTED_POOL_EXECUTOR = new ThreadPoolExecutor(
             5,

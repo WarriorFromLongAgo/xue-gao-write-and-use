@@ -29,7 +29,7 @@ public class DealExcepution {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        MyThreadPool.getOneInstance().execute(() -> {
+                        MyThreadPool.getOneOneListPoolExecutor().execute(() -> {
                             System.out.println("oneThreadTestV1_Normal: " + Thread.currentThread().getName() + " value === " + value);
                         });
                     }
@@ -53,7 +53,7 @@ public class DealExcepution {
                             e.printStackTrace();
                         }
 
-                        MyThreadPool.getOneInstance().execute(() -> {
+                        MyThreadPool.getOneOneListPoolExecutor().execute(() -> {
                             int j = 1 / 0;
                         });
                     }
@@ -78,7 +78,7 @@ public class DealExcepution {
                             e.printStackTrace();
                         }
 
-                        MyThreadPool.getOneInstance().execute(() -> {
+                        MyThreadPool.getOneOneListPoolExecutor().execute(() -> {
                             try {
                                 int j = 1 / 0;
                             } catch (Exception e) {
@@ -105,7 +105,7 @@ public class DealExcepution {
                             e.printStackTrace();
                         }
 
-                        Future<?> submit = MyThreadPool.getOneInstance().submit(() -> {
+                        Future<?> submit = MyThreadPool.getOneOneListPoolExecutor().submit(() -> {
                             System.out.println("线程" + Thread.currentThread().getName() + "执行");
                             int j = 1 / 0;
                         });
