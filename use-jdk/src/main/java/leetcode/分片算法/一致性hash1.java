@@ -3,7 +3,7 @@ package leetcode.分片算法;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-// 一致性hash算法的Java实现
+// 不带虚拟节点的一致性Hash算法
 public class 一致性hash1 {
 
 
