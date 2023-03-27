@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Bean1010_BeanNameAware implements BeanNameAware {
     public Bean1010_BeanNameAware() {
-        OnlyPrintUtil.print(getClass(), "Bean8_BeanNameAware");
+        OnlyPrintUtil.print(getClass(), "Bean1010_BeanNameAware");
     }
 
     @Override
