@@ -1,14 +1,14 @@
-package javatest.lang.inheritablethreadlocal;
+package javatest.lang.threadlocal;
 
 import common.thread.MyThreadPool;
 
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class InheritableThreadLocalTest {
+public class ThreadLocalTest {
     public static void main(String[] args) {
         AtomicInteger count = new AtomicInteger(0);
-        ThreadLocal<String> threadLocal = new InheritableThreadLocal<>();
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
 
         ThreadPoolExecutor threadPoolExecutor = MyThreadPool.getManyManyListPoolExecutor();
         for (int i = 0; i < 100; i++) {
@@ -21,7 +21,6 @@ public class InheritableThreadLocalTest {
                 }
             });
         }
-
 
     }
 }
