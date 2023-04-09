@@ -1,0 +1,22 @@
+{
+  "name": "js_node_tools",
+  "version": "1.0.0",
+  "description": "采用分支的方式，手写框架，学习框架使用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarriorFromLongAgo/xue-gao-write-and-use.git"
+  },
+  "keywords": [
+    "xuegao"
+  ],
+  "author": "xuegao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WarriorFromLongAgo/xue-gao-write-and-use/issues"
+  },
+  "homepage": "https://github.com/WarriorFromLongAgo/xue-gao-write-and-use#readme"
+}
