@@ -1,0 +1,12 @@
+# 应用服务 WEB 访问端口
+server:
+  port:
+    8000
+
+spring:
+  rabbitmq:
+    virtual-host: /
+    username: guest
+    password: guest
+    port: 5672
+    host: 127.0.0.1
