@@ -27,4 +27,16 @@ public class TempListBO {
         }
         return list;
     }
+
+    public static List<TempListBO> getListV2() {
+        List<TempListBO> list = new ArrayList<>(5);
+        for (int i = 0; i < 3; i++) {
+            TempListBO tempListBO = new TempListBO();
+            tempListBO.setId(i);
+            tempListBO.setUsername("username");
+            tempListBO.setPassword("password");
+            list.add(tempListBO);
+        }
+        return list;
+    }
 }
