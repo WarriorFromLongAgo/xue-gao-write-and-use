@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css电梯导航</title>
+
+</head>
+
+<body>
+<div style="display: flex;">
+    <div>
+        <div class="box1" id="box1">服饰</div>
+        <div class="box2" id="box2">家电</div>
+        <div class="box3" id="box3">生鲜</div>
+
+    </div>
+    <div class="slidebar">
+        <a href="#box1">服饰</a>
+        <a href="#box2">家电</a>
+        <a href="#box3">生鲜</a>
+    </div>
+</div>
+
+</body>
+
+<style>
+    .box1 {
+        width: 80vw;
+        height: 800px;
+        background-color: aqua;
+    }
+
+    .box2 {
+        width: 80vw;
+        height: 800px;
+        background-color: chartreuse;
+    }
+
+    .box3 {
+        width: 80vw;
+        height: 800px;
+        background-color: red
+    }
+
+    .slidebar {
+        display: flex;
+        flex-direction: column;
+        margin-left: 85vw;
+        margin-top: 50px;
+        position: fixed;
+
+    }
+
+    .slidebar a {
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+    }
+
+    .slidebar a:nth-child(1) {
+
+        background-color: aqua;
+    }
+
+    .slidebar a:nth-child(2) {
+
+        background-color: chartreuse;
+    }
+
+    .slidebar a:nth-child(3) {
+        background-color: red;
+    }
+
+    html {
+        /* 页面滚动条滑动 */
+        scroll-behavior: smooth;
+    }
+</style>
+
+</html>

@@ -1,0 +1,45 @@
+<template>
+    <div class="order">
+        <div class="category">
+            <div
+                    v-for="(item, key) in goods"
+                    :class="{
+          'category-name': true,
+          active: currentKey === key,
+        }"
+                    :key="key"
+                    @click="changeCategory(key)"
+            >
+                {{ item.categoryName }}
+            </div>
+        </div>
+        <div ref="content" class="content" @scroll="handleScroll">
+            <div
+                    v-for="(item, key) in goods"
+                    :key="key"
+                    class="content-item"
+                    ref="categoryRefs"
+            >
+                <div class="title">{{ item.categoryName }}</div>
+                <div
+                        class="each-item"
+                        v-for="good in item.goodsList"
+                        :key="good.goodsCode"
+                >
+                    <div class="image-url">
+                        <img :src="good.imagePathSmall"/>
+                    </div>
+                    <div class="desc">
+                        <div class="goods-name">{{ good.goodsName }}</div>
+                        <div class="goods-slogan">{{ good.goodsSlogan }}</div>
+
+                        <div class="bottom">
+                            <div>￥{{ good.goodsStandardList[0].acturalPrice }}</div>
+                            <div>+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
