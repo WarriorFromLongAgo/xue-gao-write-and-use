@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function (data) {
+        console.log(data);
+    });
+    xhr.open("GET", "http://www.baidu.com/");
+    xhr.send();
+
+    // 回调地狱
+    // const xhr = new XMLHttpRequest();
+    // xhr.addEventListener("load", function (data) {
+    //     console.log(data);
+    //     const xhr1 = new XMLHttpRequest();
+    //     xhr1.open("GET", "http://www.example.com/");
+    //     xhr1.send();
+    //     xhr1.addEventListener("load", function (data1) {
+    //         console.log(data1)
+    //         //... 发送第三个请求
+    //     });
+    // });
+    // xhr.open("GET", "http://www.example.com/");
+    // xhr.send();
+
+
+</script>
+
+</html>

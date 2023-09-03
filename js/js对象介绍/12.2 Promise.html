@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function request(url) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", function (data) {
+                console.log(data);
+                resolve();
+            });
+            xhr.open("GET", url);
+            xhr.send();
+        });
+    }
+    // 发送第一个请求
+    request("http://www.example.com/").then(() => {
+        // 发送第二个请求
+        return request("http://www.example1.com/");
+    }).then(() => {
+        // 发送第三个请求
+        return request("http://www.example2.com/");
+    });
+
+
+
+</script>
+
+</html>
