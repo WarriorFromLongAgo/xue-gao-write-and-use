@@ -1,0 +1,13 @@
+{
+  "name": "web3_20230903",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "xuegao",
+  "license": "MIT",
+  "dependencies": {
+    "solc": "^0.8.21"
+  },
+  "scripts": {
+    "compile": "yarn solcjs --abi --bin --include-path node_modules/ --base-path . -o . SimpleStorage.sol"
+  }
+}
