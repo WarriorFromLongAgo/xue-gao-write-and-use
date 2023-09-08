@@ -1,7 +1,7 @@
 {
-    "name" : "hello uni-app",
-    "appid" : "__UNI__HelloUniApp",
-    "description" : "应用描述",
+    "name" : "uni_app_20230908_2254",
+    "appid" : "__UNI__88D3E79",
+    "description" : "uni-app 框架示例，一套代码，同时发行到iOS、Android、H5、小程序等多个平台，请使用手机扫码快速体验 uni-app 的强大功能",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
