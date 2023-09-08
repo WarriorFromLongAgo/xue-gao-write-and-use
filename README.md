@@ -1,11 +1,9 @@
 # xue-gao-write-other-use
 采用分支的方式，手写框架，学习框架使用
 
-# uni_app_20230907_2027
+# uni_app_20230908_2254
 hello app
 https://ext.dcloud.net.cn/plugin?id=4941
-
-
 
 # uni_app_20230907_2057
 uni ui

@@ -2,7 +2,7 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "uni-app"
+			"navigationBarTitleText": "uni ui --- uni_app_20230907_2057"
 		}
 	}],
 	"globalStyle": {

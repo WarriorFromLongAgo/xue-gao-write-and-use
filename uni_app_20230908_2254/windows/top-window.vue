@@ -3,7 +3,7 @@
 		<view class="left-header logo">
 			<navigator class="logo" open-type="reLaunch" url="/pages/component/view/view">
 				<image src="../static/logo.png" mode="heightFix" style="width: 30px;"></image>
-				<text>hello uni-app</text>
+				<text>hello uni-app uni_app_20230908_2254</text>
 			</navigator>
 		</view>
 		<custom-tab-bar class="tab-bar-flex" direction="horizontal" :show-icon="false" :selected="current"
