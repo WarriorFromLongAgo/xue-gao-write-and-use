@@ -14,3 +14,8 @@ https://ext.dcloud.net.cn/plugin?id=55
 新闻资讯App模板
 https://ext.dcloud.net.cn/plugin?id=103
 
+
+# uni_app_20230910_1221
+默认模板
+
+
