@@ -73,6 +73,7 @@ package-lock.json
 
 # visual studio code
 .history
+*.exe
 
 functions/mock
 .temp/**
