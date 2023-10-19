@@ -22,6 +22,19 @@ public class TransmittableThreadLocalTest {
         testExecute(threadLocal, ttlThreadPoolExecutor);
     }
 
+    // ThreadPool-many_many_list-1 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-3 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-2 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-4 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-3 = threadLocal.get() 2 = hello0
+    // ThreadPool-many_many_list-1 = threadLocal.get() 2 = hello0
+    // ThreadPool-many_many_list-5 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-4 = threadLocal.get() 2 = hello0
+    // ThreadPool-many_many_list-6 = threadLocal.get() 1 = hello0
+    // ThreadPool-many_many_list-2 = threadLocal.get() 2 = hello0
+    // ThreadPool-many_many_list-6 = threadLocal.get() 2 = hello0
+    // ThreadPool-many_many_list-7 = threadLocal.get() 1 = hello0
+    //
     private static void testExecute(ThreadLocal<String> threadLocal, ExecutorService threadPoolExecutor) {
         AtomicInteger count = new AtomicInteger(0);
         threadLocal.set("hello" + count.getAndIncrement());
