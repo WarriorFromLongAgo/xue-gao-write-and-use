@@ -61,8 +61,21 @@ spring整合kafka
 spring 整合 mybatis-plus
 ## spring-redis
 spring整合redis
-## spring_xxl-job
+## spring_xx-job
 xxl-job
+## spring_anquan_diy_token
+## spring_anquan_jwt
+spring 使用token的玩法，就是根据token获得用户信息。
+在分布式的场景下，在各个系统中进行调用。
+
+至于权限控制，
+接口权限，数据行权限，数据列权限，模块权限，也都可以处理
+
+## spring_anquan_oauth
+## spring_anquan_security
+
+
+
 ## spring_aop
 aop
 ## spring_autoconfig
