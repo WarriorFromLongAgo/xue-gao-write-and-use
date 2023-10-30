@@ -43,6 +43,23 @@ public class JwtUtil {
     }
 
     /**
+     * 创建token
+     *
+     * @param claimMap
+     * @return
+     */
+    public static String createToken(Map<String, Object> claimMap, String password) {
+        long currentTimeMillis = System.currentTimeMillis();
+        return Jwts.builder()
+                .setId(UUID.randomUUID().toString())
+                .setIssuedAt(new Date(currentTimeMillis))    // 设置签发时间
+                .setExpiration(new Date(currentTimeMillis + TOKEN_EXPIRE_MILLIS))   // 设置过期时间
+                .addClaims(claimMap)
+                .signWith(new SecretKeySpec(password.getBytes(), SignatureAlgorithm.HS256.getJcaName()))
+                .compact();
+    }
+
+    /**
      * 验证token
      *
      * @param token
