@@ -29,12 +29,6 @@ spring:
             - Path=/crm/**
           filters:
             - StripPrefix=1
-#        - id: "feign-client-service"
-#          uri: "lb://crm-service"
-#          predicates:
-#            - Path=/crm/**
-#          filters:
-#            - StripPrefix=1
       discovery:
         locator:
           enabled: true
