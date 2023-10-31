@@ -115,6 +115,9 @@ spring 整合 mybatis
 
 ## spring_webservice
 
+## springboot_duo_module
+springboot 多模块的情况下
+
 ## use-jdk
 jdk 基础的使用, leetcode
 ## web_container
