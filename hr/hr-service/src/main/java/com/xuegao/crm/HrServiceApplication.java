@@ -1,4 +1,4 @@
-package com.xuegao.hrservice;
+package com.xuegao.crm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

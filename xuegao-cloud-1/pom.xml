@@ -8,10 +8,6 @@
     <artifactId>xuegao-cloud-1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <modules>
-        <module>crm-service</module>
-        <module>xuegao-model</module>
-    </modules>
     <packaging>pom</packaging>
 
     <properties>
