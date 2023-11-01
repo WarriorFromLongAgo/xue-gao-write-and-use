@@ -92,8 +92,6 @@ cicd
 logback
 ## spring_micro_services
 spring的微服务相关
-## spring_micro_services_demo
-spring的微服务相关 初始化demo
 
 ## spring_mqtt
 mqtt
@@ -116,7 +114,7 @@ spring 整合 mybatis
 ## spring_webservice
 
 ## springboot_duo_module
-springboot 多模块的情况下
+springboot 多模块的情况下，进行分包处理
 
 ## use-jdk
 jdk 基础的使用, leetcode
