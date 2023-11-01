@@ -1,0 +1,58 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: "xuegao-gateway"
+  security:
+    user:
+      name: "root"               # ???
+      password: "123456"   # ??
+  # ??????
+  cloud:
+    gateway:
+      routes:
+        #        - id: "hr-service"
+        #          uri: "http://localhost:11000/"
+        #          predicates:
+        #            - path: "/hr/**"
+
+        - id: "hr-service"
+          uri: "lb://hr-service"
+          predicates:
+            - Path=/hr/**
+          filters:
+            - StripPrefix=1
+        - id: "crm-service"
+          uri: "lb://crm-service"
+          predicates:
+            - Path=/crm/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+
+eureka:
+  instance:
+    hostname: "127.0.0.1"
+  client:
+    #????server?????
+    #    ???????? Eureka-Server ?????? true
+    register-with-eureka: true
+    #    ??????????????true
+    fetchRegistry: true
+    # ?? Eureka Client ???????????????? 30 ?
+    registry-fetch-interval-seconds: 10
+    serviceUrl:
+      #??eureka???????? ??eureka server??????????? ?????????????????
+      defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/"
+#      defaultZone: "http://root:123456@127.0.0.1:8761/eureka/"
+
+
+
+
+
+
+
+

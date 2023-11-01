@@ -9,9 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>hr-service</module>
         <module>crm-service</module>
-        <module>xuegao-gateway</module>
         <module>xuegao-model</module>
     </modules>
     <packaging>pom</packaging>
