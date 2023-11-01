@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: crmv2-service
+    name: crm-service
   security:
     user:
       name: root               # ???
