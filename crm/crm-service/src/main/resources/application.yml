@@ -8,6 +8,17 @@ spring:
     user:
       name: root               # ???
       password: 123456   # ??
+  redis:
+    #    database: 2
+    host: localhost
+    port: 6379
+    #    password: 1qaz@WSX
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+    timeout: 100ms
   # ??????
 eureka:
   instance:
@@ -25,4 +36,21 @@ eureka:
       defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/"
 #      defaultZone: "http://root:123456@127.0.0.1:8761/eureka/"
 
+security:
+  oauth2:
+    client:
+      #      client-id、client-secret 要和认证服务中的配置一致，如果是使用 inMemory 还是 jdbc 方式。
+      client-id: crm-service
+      client-secret: crm-123456
+      #      user-authorization-uri 是授权码认证方式需要的，下一篇文章再说。
+      user-authorization-uri: http://localhost:6001/oauth/authorize
+      #      user-authorization-uri 是授权码认证方式需要的，下一篇文章再说。
+      access-token-uri: http://localhost:6001/oauth/token
+    resource:
+      id: crm-service
+      user-info-uri: user-info
+    #  authorization.check-token-access 也是关键信息，
+    #  当此服务端接收到来自客户端端的请求后，需要拿着请求中的 token 到认证服务端做 token 验证，就是请求的这个接口
+    authorization:
+      check-token-access: http://localhost:6001/oauth/check_token
 
