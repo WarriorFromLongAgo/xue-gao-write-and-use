@@ -1,14 +1,5 @@
 package com.xuegao.springsecuritydemo1.config.demo1;
 
-
-/**
- * 这里自定义了一个AuthenticationProvider来处理实际的认证业务逻辑，在这里可以方便的根据我们需要来进行自定义，
- * 做验证码校验、效期校验和验密，可以根据需要定制。认证成功就返回一个UsernamePasswordAuthenticationToken对象并配置好合适的权限
- * 如果认证失败，只需要抛出一个异常（AuthenticationException的子类），
- *
- * @author LiaoBaohong 2021/7/14
- */
-
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
