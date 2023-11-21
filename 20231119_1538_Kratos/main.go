@@ -1,0 +1,5 @@
+package kratos
+
+func main() {
+
+}
