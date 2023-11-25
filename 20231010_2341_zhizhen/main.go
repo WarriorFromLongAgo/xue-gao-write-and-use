@@ -1,6 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+type BaseModel_1 struct {
+	Username string
+	Time1    time.Time
+	Time2    *time.Time
+}
 
 func main() {
 
@@ -26,4 +35,20 @@ func main() {
 	fmt.Printf("p的值：%v, p的类型：%T, p的地址：%p", *p, p, p)
 	fmt.Println()
 
+	modelArr := []*BaseModel_1{
+		{Username: "111111", Time1: time.Now(), Time2: nil},
+		{Username: "222222", Time1: time.Now(), Time2: nil},
+	}
+	fmt.Printf("Model Array: %+v\n", modelArr)
+
+	fmt.Println("Model Array:")
+	for _, model := range modelArr {
+		fmt.Println(*model)
+	}
+
+	modelArr2 := []BaseModel_1{
+		{Username: "111111", Time1: time.Now(), Time2: nil},
+		{Username: "222222", Time1: time.Now(), Time2: nil},
+	}
+	fmt.Println("modelArr = ", modelArr2)
 }
