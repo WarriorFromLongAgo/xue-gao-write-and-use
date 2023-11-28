@@ -21,7 +21,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -37,6 +36,9 @@ public class WebSocketClient2 {
         CompletableFuture<String> resultFuture = new CompletableFuture<>();
         futureMap.put(msgId, resultFuture);
     }
+
+
+
     public static void main(String[] args) throws Exception {
         WebSocketClient2 client2 = new WebSocketClient2();
         Channel channel = client2.dest();
@@ -44,8 +46,12 @@ public class WebSocketClient2 {
 
         String format1 = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-hh mm:HH:ss"));
         System.out.println(format1);
+
+
         CompletableFuture<String> stringCompletableFuture = futureMap.get(msgId);
-        String s = stringCompletableFuture.get(10, TimeUnit.SECONDS);
+        String s = stringCompletableFuture.get(2, TimeUnit.SECONDS);
+
+
         System.out.println(s);
         String format2 = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-hh mm:HH:ss"));
         System.out.println(format2);

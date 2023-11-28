@@ -23,12 +23,36 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<TextWebS
 
         if (WebSocketClient2.msgId.equals(content)) {
             System.out.println("================================");
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(5);
         }
 
         // 向客户端回写数据
         channel.writeAndFlush(new TextWebSocketFrame(content + "服务端收到消息了"));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
