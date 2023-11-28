@@ -49,7 +49,7 @@ public class WebSocketClient2 {
 
 
         CompletableFuture<String> stringCompletableFuture = futureMap.get(msgId);
-        String s = stringCompletableFuture.get(2, TimeUnit.SECONDS);
+        String s = stringCompletableFuture.get();
 
 
         System.out.println(s);
@@ -85,7 +85,7 @@ public class WebSocketClient2 {
                     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
 
                         if (WebSocketClientProtocolHandler.ClientHandshakeStateEvent.HANDSHAKE_COMPLETE.equals(evt)) {
-                            send(msgId, ctx.channel());
+                            sendMsg(msgId, ctx.channel());
                         }
 
                         super.userEventTriggered(ctx, evt);
@@ -102,7 +102,7 @@ public class WebSocketClient2 {
     }
 
 
-    public static void send(String msgId, Channel channel) {
+    public static void sendMsg(String msgId, Channel channel) {
 
         if (channel != null && channel.isActive()) {
             TextWebSocketFrame frame = new TextWebSocketFrame(msgId);
