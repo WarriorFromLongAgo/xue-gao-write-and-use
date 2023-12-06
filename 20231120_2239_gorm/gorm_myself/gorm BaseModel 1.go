@@ -119,6 +119,53 @@ func BaseModel_1_c_v2() {
 	if resultArr.Error != nil {
 		fmt.Println("BaseModel_1_c_v2 Create records failed, err=", resultArr.Error)
 	} else {
+		fmt.Printf("BaseModel_1_c_v2 Created result: %+v\n", *resultArr)
+		fmt.Printf("BaseModel_1_c_v2 Created Config: %+v\n", *resultArr.Config)
+		fmt.Printf("BaseModel_1_c_v2 Created RowsAffected: %+v\n", resultArr.RowsAffected)
+
+		fmt.Println("BaseModel_1_c_v2 Created Models:")
+		for _, m := range modelArr {
+			fmt.Printf("m == %+v\n", m)
+		}
+	}
+}
+
+// 也可以
+// 增加全局拦截器
+func BaseModel_1_c_v3() {
+	dsn := "root:123456@tcp(127.0.0.1:3306)/go_mysql?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+	if err != nil {
+		fmt.Println("BaseModel_1_c_v2 database open failed ,err=", err)
+		return
+	}
+	// 自定义的 BeforeSave 钩子函数
+	MyBeforeSaveHook := func(db *gorm.DB) {
+		// 在保存记录之前执行的逻辑
+		// 在保存记录之前执行的逻辑
+		fmt.Println("Before saving record")
+
+		//now := time.Now()
+		//dest := db.Statement.Dest
+
+	}
+	// 注册全局的 BeforeSave 钩子函数
+	err2 := db.Callback().Create().Before("gorm:before_save").Register("my:before_save", MyBeforeSaveHook)
+	if err2 != nil {
+		fmt.Println(" err2 ", err2.Error())
+		return
+	}
+
+	modelArr := []BaseModel_1{
+		{Username: "111111", Time1: time.Now(), Time2: nil},
+		{Username: "222222", Time1: time.Now(), Time2: nil},
+	}
+	resultArr := db.Create(modelArr)
+	// 打印创建的对象数组的值
+	if resultArr.Error != nil {
+		fmt.Println("BaseModel_1_c_v2 Create records failed, err=", resultArr.Error)
+	} else {
 		fmt.Printf("BaseModel_1_c_v2Created result: %+v\n", *resultArr)
 		fmt.Printf("BaseModel_1_c_v2 Created Config: %+v\n", *resultArr.Config)
 		fmt.Printf("BaseModel_1_c_v2 Created RowsAffected: %+v\n", resultArr.RowsAffected)

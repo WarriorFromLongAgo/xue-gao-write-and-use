@@ -1,3 +1,6 @@
+go get github.com/mitchellh/mapstructure
+
+
 1, mapstructure处理字段映射是大小写不敏感的。
 
 

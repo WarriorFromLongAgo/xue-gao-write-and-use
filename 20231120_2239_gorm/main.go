@@ -11,9 +11,10 @@ func main() {
 	// gorm_myself.BaseModel_1_test()
 
 	// gorm_myself.BaseModel_1_c()
-	gorm_myself.BaseModel_1_c_v2()
+	//gorm_myself.BaseModel_1_c_v2()
+	gorm_myself.BaseModel_1_c_v3()
 
-	gorm_myself.BaseModel_1_r()
+	//gorm_myself.BaseModel_1_r()
 
 }
 
