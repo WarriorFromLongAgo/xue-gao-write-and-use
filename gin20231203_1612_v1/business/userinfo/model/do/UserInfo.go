@@ -27,6 +27,7 @@ func (UserInfo) TableName() string {
 //
 //	return
 //}
+
 //
 //func (userinfo *UserInfo) BeforeUpdate(db *gorm.DB) (err error) {
 //	now := fmkTimeUtil.Now()
