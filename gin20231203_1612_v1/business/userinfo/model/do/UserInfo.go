@@ -2,10 +2,6 @@ package do
 
 import (
 	fmkModel "gin20231203_1612_v1/app/model/common"
-	"gin20231203_1612_v1/global"
-	fmkJsonUtil "gin20231203_1612_v1/utils/json"
-	fmkTimeUtil "gin20231203_1612_v1/utils/time"
-	"gorm.io/gorm"
 )
 
 type UserInfo struct {
@@ -22,21 +18,21 @@ func (UserInfo) TableName() string {
 	return "user_info"
 }
 
-func (userinfo *UserInfo) BeforeSave(db *gorm.DB) (err error) {
-	now := fmkTimeUtil.Now()
-
-	global.App.Log.Info("BeforeSave " + fmkJsonUtil.Marshal(userinfo))
-	userinfo.CreatedTime = now
-	userinfo.UpdatedTime = now
-
-	return
-}
-
-func (userinfo *UserInfo) BeforeUpdate(db *gorm.DB) (err error) {
-	now := fmkTimeUtil.Now()
-
-	global.App.Log.Info("BeforeUpdate " + fmkJsonUtil.Marshal(userinfo))
-	userinfo.UpdatedTime = now
-
-	return
-}
+//func (userinfo *UserInfo) BeforeSave(db *gorm.DB) (err error) {
+//	now := fmkTimeUtil.Now()
+//
+//	global.App.Log.Info("BeforeSave " + fmkJsonUtil.Marshal(userinfo))
+//	userinfo.CreatedTime = now
+//	userinfo.UpdatedTime = now
+//
+//	return
+//}
+//
+//func (userinfo *UserInfo) BeforeUpdate(db *gorm.DB) (err error) {
+//	now := fmkTimeUtil.Now()
+//
+//	global.App.Log.Info("BeforeUpdate " + fmkJsonUtil.Marshal(userinfo))
+//	userinfo.UpdatedTime = now
+//
+//	return
+//}
