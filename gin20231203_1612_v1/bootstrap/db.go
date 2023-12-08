@@ -123,64 +123,12 @@ func MyBeforeSaveHook(db *gorm.DB) {
 	// 在保存记录之前执行的逻辑
 	// 在保存记录之前执行的逻辑
 	fmt.Println("Before saving record")
-	//createTimeField, ok := db.Statement.Schema.FieldsByDBName["CreatedTime"]
-	//if ok {
-	//	createTimeField.F.ValueOf(db.Statement.ReflectValue).IsZero()
-	//
-	//}
-	sch := db.Statement.Schema
-	value, ok := sch.FieldsByDBName["created_time"]
-	if ok {
-		fieldType := value.FieldType.String()
-		if fieldType == "time.Time" {
-			err := value.Set(db.Statement.Context, db.Statement.ReflectValue, time.Now())
-			if err != nil {
-				return
-			}
-		}
-	}
 
-	//nowTime := fmkTimeUtil.Now()
+	nowTime := fmkTimeUtil.Now()
 
-	//statement := db.Statement
-	//setGormCreateTime(statement, nowTime)
-	//setGormUpdateTime(statement, nowTime)
-
-	//// 获取 Statement 的 ReflectValue 字段
-	//reflectValue := db.Statement.ReflectValue
-	//// 获取 Dest 字段的值
-	//destValue := reflectValue.FieldByName("Dest")
-	//// 使用 Interface 方法获取实际值
-	//destInterface := destValue.Interface()
-	//// 打印 Dest 字段的值
-	//fmt.Println("Dest Value:", destInterface)
-
-	//value := reflect.ValueOf(statement.Dest)
-	////value  &{{0 0001-01-01 00:00:00 +0000 UTC 0 0001-01-01 00:00:00 +0000 UTC} 111111}
-	//fmt.Println("setGormUpdateTime value ", value)
-	//valueElem := value.Elem()
-	////valueElem  {{0 0001-01-01 00:00:00 +0000 UTC 0 0001-01-01 00:00:00 +0000 UTC} 111111}
-	//fmt.Println("setGormUpdateTime valueElem ", valueElem)
-	//
-	//createUpdateField := valueElem.FieldByName("CreateUpdate")
-	//if !createUpdateField.IsValid() {
-	//	fmt.Println("createUpdateValue 是不合法的")
-	//	return
-	//}
-	//fmt.Println("setGormUpdateTime createUpdateValue ", createUpdateField.Kind())
-	//if reflect.Struct != createUpdateField.Kind() {
-	//	return
-	//}
-	//
-	//updatedTimeField := createUpdateField.FieldByName("UpdatedTime")
-	//// Check if the CreatedTime field is valid and can be set
-	//if updatedTimeField.IsValid() && updatedTimeField.CanSet() {
-	//	// Modify the CreatedTime value
-	//	//updatedTimeField.Set(reflect.ValueOf(newTime))
-	//	statement.SetColumn("UpdatedTime", nowTime)
-	//}
-
-	fmt.Println("Dest", db.Statement.Dest)
+	statement := db.Statement
+	setGormCreateTime(statement, nowTime)
+	setGormUpdateTime(statement, nowTime)
 }
 
 // 自定义的 Before update 钩子函数

@@ -18,14 +18,16 @@ func main() {
 	global.App.DB = bootstrap.InitializeDB()
 
 	// 注册全局的 BeforeSave 钩子函数
-	err := global.App.DB.Callback().Create().Before("gorm:before_save").Register("my:before_save", bootstrap.MyBeforeSaveHook)
+	err := global.App.DB.Callback().Create().Before("gorm:before_create").Register("my:before_create", bootstrap.MyBeforeSaveHook)
 	if err != nil {
 		global.App.Log.Error("before_save err" + err.Error())
 		return
 	}
-	err2 := global.App.DB.Callback().Update().Before("gorm:before_update").Register("my:before_update", bootstrap.MyBeforeUpdateHook)
-	if err != nil {
-		global.App.Log.Error("before_update err " + err2.Error())
+
+	// 注册全局的 BeforeSave 钩子函数
+	err2 := global.App.DB.Callback().Create().Before("gorm:before_update").Register("my:before_update", bootstrap.MyBeforeUpdateHook)
+	if err2 != nil {
+		global.App.Log.Error("before_save err" + err2.Error())
 		return
 	}
 
