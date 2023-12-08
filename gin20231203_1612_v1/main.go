@@ -16,6 +16,8 @@ func main() {
 	global.App.Log.Info("log init success!")
 	// 初始化数据库
 	global.App.DB = bootstrap.InitializeDB()
+	// 初始化Redis
+	global.App.Redis = bootstrap.InitializeRedis()
 
 	// 注册全局的 BeforeSave 钩子函数
 	err := global.App.DB.Callback().Create().Before("gorm:before_create").Register("my:before_create", bootstrap.MyBeforeSaveHook)

@@ -1,4 +1,4 @@
-package routes
+package businessRouter
 
 import (
 	"gin20231203_1612_v1/business/userinfo/controller"

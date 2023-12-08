@@ -22,6 +22,12 @@ go get -u gorm.io/driver/mysql
 把定义路由的文件集中到同一个目录下，并处理前端项目打包后的静态文件。
 内置的 http.Server 提供了 Shutdown() 方法，支持平滑重启服务器，本次将使用它调整项目启动代码，若 Go 版本低于 1.8 可以使用 fvbock/endless 来替代
 
+6, 
+
+7, redis
+go get github.com/redis/go-redis/v9
+
+
 
 
 

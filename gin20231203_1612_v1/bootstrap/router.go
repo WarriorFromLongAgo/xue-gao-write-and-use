@@ -4,8 +4,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	businessRouter "gin20231203_1612_v1/business/userinfo/router"
 	"gin20231203_1612_v1/global"
-	"gin20231203_1612_v1/routes"
+	"gin20231203_1612_v1/middlewares"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -18,6 +19,9 @@ import (
 func setupRouter() *gin.Engine {
 	router := gin.Default()
 
+	// 设置跨域中间件
+	router.Use(middlewares.Cors())
+
 	// 前端项目静态资源
 	router.StaticFile("/", "./static/dist/index.html")
 	router.Static("/assets", "./static/dist/assets")
@@ -28,7 +32,7 @@ func setupRouter() *gin.Engine {
 
 	// 注册 api 分组路由
 	apiGroup := router.Group("/api")
-	routes.SetApiGroupRoutes(apiGroup)
+	businessRouter.SetApiGroupRoutes(apiGroup)
 
 	return router
 }

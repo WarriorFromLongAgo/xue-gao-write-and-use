@@ -11,16 +11,16 @@ import (
 
 // Register 用户注册
 func Register(c *gin.Context) {
-	var form dto.Register
+	var form dto.RegisterDTO
 	if err := c.ShouldBindJSON(&form); err != nil {
-		response.ValidateFail(c, MyValidator.GetErrorMsg(form, err))
+		response.Fail(c, MyValidator.GetErrorMsg(form, err))
 		return
 	}
-
-	if err, user := service.UserService.Register(form); err != nil {
+	user, err := service.UserService.Register(form)
+	if err != nil {
 		global.App.Log.Error(err.Error())
-		response.BusinessFail(c, err.Error())
-	} else {
-		response.Success(c, user)
+		response.Fail(c, err.Error())
+		return
 	}
+	response.Success(c, user)
 }

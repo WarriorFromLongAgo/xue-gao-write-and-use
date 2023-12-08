@@ -1,7 +1,11 @@
-package do
+package userInfoDo
 
 import (
+	"errors"
 	fmkModel "gin20231203_1612_v1/app/model/common"
+	"gin20231203_1612_v1/business/userinfo/model/dto"
+	"gin20231203_1612_v1/global"
+	fmkBcryptUtil "gin20231203_1612_v1/utils/bcrypt"
 )
 
 type UserInfo struct {
@@ -18,22 +22,21 @@ func (UserInfo) TableName() string {
 	return "user_info"
 }
 
-//func (userinfo *UserInfo) BeforeSave(db *gorm.DB) (err error) {
-//	now := fmkTimeUtil.Now()
-//
-//	global.App.Log.Info("BeforeSave " + fmkJsonUtil.Marshal(userinfo))
-//	userinfo.CreatedTime = now
-//	userinfo.UpdatedTime = now
-//
-//	return
-//}
+func GetByMobile(dto dto.RegisterDTO) (UserInfo, error) {
+	var result UserInfo
+	var dbResult = global.App.DB.Where("mobile = ?", dto.Mobile).Select("id").First(&result)
+	if dbResult.RowsAffected != 0 {
+		return UserInfo{}, errors.New("手机号已存在")
+	}
+	return result, nil
+}
 
-//
-//func (userinfo *UserInfo) BeforeUpdate(db *gorm.DB) (err error) {
-//	now := fmkTimeUtil.Now()
-//
-//	global.App.Log.Info("BeforeUpdate " + fmkJsonUtil.Marshal(userinfo))
-//	userinfo.UpdatedTime = now
-//
-//	return
-//}
+func CreateFunc(params dto.RegisterDTO) (UserInfo, error) {
+	user := UserInfo{Name: params.Name, Mobile: params.Mobile, Password: fmkBcryptUtil.BcryptMake([]byte(params.Password))}
+	var dbResult = global.App.DB.Create(&user)
+
+	if dbResult.RowsAffected != 0 {
+		return UserInfo{}, errors.New("手机号已存在")
+	}
+	return user, nil
+}

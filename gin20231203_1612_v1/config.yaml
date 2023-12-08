@@ -27,3 +27,9 @@ mysqlDatabase:
   log_mode: info # 日志级别
   enable_file_log_writer: true # 是否启用日志文件
   log_filename: app.log # 日志文件名称
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+  password:

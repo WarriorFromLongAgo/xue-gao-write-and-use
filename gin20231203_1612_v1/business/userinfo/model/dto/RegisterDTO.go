@@ -2,14 +2,14 @@ package dto
 
 import "gin20231203_1612_v1/app/request"
 
-type Register struct {
+type RegisterDTO struct {
 	Name     string `form:"name" json:"name" binding:"required"`
 	Mobile   string `form:"mobile" json:"mobile" binding:"required,mobile"`
 	Password string `form:"password" json:"password" binding:"required"`
 }
 
 // 自定义错误信息
-func (register Register) GetMessages() MyValidator.Messages {
+func (register RegisterDTO) GetMessages() MyValidator.Messages {
 	return MyValidator.Messages{
 		"name.required":     "用户名称不能为空",
 		"mobile.required":   "手机号码不能为空",
