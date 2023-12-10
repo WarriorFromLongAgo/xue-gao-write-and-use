@@ -21,6 +21,7 @@ func setupRouter() *gin.Engine {
 
 	// 设置跨域中间件
 	router.Use(middlewares.Cors())
+	router.Use(middlewares.ErrorMiddleware)
 
 	// 前端项目静态资源
 	router.StaticFile("/", "./static/dist/index.html")

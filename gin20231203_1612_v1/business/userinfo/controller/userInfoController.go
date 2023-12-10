@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"errors"
 	MyValidator "gin20231203_1612_v1/app/request"
 	"gin20231203_1612_v1/app/response"
 	"gin20231203_1612_v1/business/userinfo/model/dto"
@@ -23,4 +24,18 @@ func Register(c *gin.Context) {
 		return
 	}
 	response.Success(c, user)
+}
+
+// TestError 用户注册
+func TestError(c *gin.Context) {
+	tempInt := newError()
+
+	println("============================")
+	response.Success(c, tempInt)
+}
+
+func newError() int {
+	panic(errors.New("账号或密码错误"))
+
+	return 1
 }

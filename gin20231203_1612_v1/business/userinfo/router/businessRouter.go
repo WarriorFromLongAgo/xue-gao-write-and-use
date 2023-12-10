@@ -13,4 +13,5 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 	})
 
 	router.POST("/user/register", controller.Register)
+	router.POST("/user/testError", controller.TestError)
 }

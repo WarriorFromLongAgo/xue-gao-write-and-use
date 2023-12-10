@@ -2,7 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
-	"gin20231203_1612_v1/business/userinfo/model/do"
+	userInfoDo "gin20231203_1612_v1/business/userinfo/model/do"
 	"gin20231203_1612_v1/global"
 	fmkTimeUtil "gin20231203_1612_v1/utils/time"
 	"go.uber.org/zap"
@@ -110,7 +110,7 @@ func getGormLogger() logger.Interface {
 // 数据库表初始化
 func InitMySqlTables(db *gorm.DB) {
 	err := db.AutoMigrate(
-		do.UserInfo{},
+		userInfoDo.UserInfo{},
 	)
 	if err != nil {
 		global.App.Log.Error("migrate table failed", zap.Any("err", err))
