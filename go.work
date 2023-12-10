@@ -26,9 +26,9 @@ use (
 	20231203_1640_go
 )
 
-// go build
-// go run .\main.go
-// go mod init test1
-// go mod tidy
-// go work init .\20231008_0007_helloword\ .\20231008_1242_helloworld\
-// go work use .
+// godemo build
+// godemo run .\main.godemo
+// godemo mod init test1
+// godemo mod tidy
+// godemo work init .\20231008_0007_helloword\ .\20231008_1242_helloworld\
+// godemo work use .

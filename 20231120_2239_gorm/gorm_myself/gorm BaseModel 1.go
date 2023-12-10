@@ -148,7 +148,6 @@ func BaseModel_1_c_v3() {
 
 		//now := time.Now()
 		//dest := db.Statement.Dest
-
 	}
 	// 注册全局的 BeforeSave 钩子函数
 	err2 := db.Callback().Create().Before("gorm:before_save").Register("my:before_save", MyBeforeSaveHook)

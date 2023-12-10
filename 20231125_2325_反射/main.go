@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"time"
 )
 
 func main() {
@@ -29,7 +30,61 @@ func main() {
 	//}
 	//fmt.Println(fieldType)
 
-	IsValidTest()
+	//IsValidTest()
+
+	user := &UserInfo{
+		Username: "111111",
+	}
+	setGormCrateAndUpdate(user)
+}
+
+// 创建、更新时间
+type CreateUpdate struct {
+	CreatedBy   uint      `json:"created_by"`
+	CreatedTime time.Time `json:"created_time"`
+	UpdatedBy   uint      `json:"updated_by"`
+	UpdatedTime time.Time `json:"updated_time"`
+}
+
+type UserInfo struct {
+	CreateUpdate
+	Username string `gorm_myself:"column:username11; type:varchar(100); comment:姓名"`
+}
+
+func setGormCrateAndUpdate(info *UserInfo) {
+	newTime := time.Now() // For example, add 24 hours to the current time
+
+	value := reflect.ValueOf(info)
+	//value  &{{0 0001-01-01 00:00:00 +0000 UTC 0 0001-01-01 00:00:00 +0000 UTC} 111111}
+	fmt.Println("value ", value)
+	valueElem := value.Elem()
+	//valueElem  {{0 0001-01-01 00:00:00 +0000 UTC 0 0001-01-01 00:00:00 +0000 UTC} 111111}
+	fmt.Println("valueElem ", valueElem)
+
+	createUpdateField := valueElem.FieldByName("CreateUpdate")
+	if !createUpdateField.IsValid() {
+		fmt.Println("createUpdateValue 是不合法的")
+		return
+	}
+	fmt.Println("createUpdateValue ", createUpdateField.Kind())
+	if reflect.Struct != createUpdateField.Kind() {
+		return
+	}
+	createdTimeField := createUpdateField.FieldByName("CreatedTime")
+	// Check if the CreatedTime field is valid and can be set
+	if createdTimeField.IsValid() && createdTimeField.CanSet() {
+		// Modify the CreatedTime value
+		createdTimeField.Set(reflect.ValueOf(newTime))
+	}
+
+	updatedTimeField := createUpdateField.FieldByName("UpdatedTime")
+	// Check if the CreatedTime field is valid and can be set
+	if updatedTimeField.IsValid() && updatedTimeField.CanSet() {
+		// Modify the CreatedTime value
+		updatedTimeField.Set(reflect.ValueOf(newTime))
+	}
+
+	fmt.Println("info的值", *info)
 }
 
 func IsValidTest() {
@@ -229,4 +284,14 @@ func getFieldType(obj interface{}, fieldName string) (string, error) {
 
 	// 获取字段的类型
 	return field.Type.Kind().String(), nil
+}
+
+// 判断对象是否包含指定字段
+func hasField(obj interface{}, fieldName string) bool {
+	// 使用反射获取对象的类型
+	objType := reflect.TypeOf(obj)
+
+	// 获取字段
+	_, found := objType.FieldByName(fieldName)
+	return found
 }
