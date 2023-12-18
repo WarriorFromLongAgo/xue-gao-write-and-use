@@ -52,7 +52,7 @@ type UserInfo struct {
 }
 
 func setGormCrateAndUpdate(info *UserInfo) {
-	newTime := time.Now() // For example, add 24 hours to the current time
+	newTime := time.Now() // For example, c_and_go 24 hours to the current time
 
 	value := reflect.ValueOf(info)
 	//value  &{{0 0001-01-01 00:00:00 +0000 UTC 0 0001-01-01 00:00:00 +0000 UTC} 111111}

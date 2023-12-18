@@ -1,4 +1,4 @@
-package godemo
+package _defer
 
 import (
 	"fmt"

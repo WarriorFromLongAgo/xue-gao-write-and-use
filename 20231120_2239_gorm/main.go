@@ -2,8 +2,8 @@ package main
 
 import "20231120_2239_gorm/gorm_myself"
 
-// godemo get github.com/godemo-sql-driver/mysql
-// godemo get github.com/jmoiron/sqlx
+// go get github.com/go-sql-driver/mysql
+// go get github.com/jmoiron/sqlx
 
 func main() {
 	// gorm_myself.Gorm_test()

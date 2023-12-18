@@ -1,14 +1,6 @@
 go 1.21.4
 
 use (
-	./20231119_1948_panic
-	./20231120_2239_gorm
-	./20231121_2325_goredis
-	./20231125_2325_反射
-	./20231126_1236_grpc_client
-	./20231126_1236_grpc_server
-	./20231126_1236_grpc_server2
-	./20231126_1324_listmap
 	./20231008_0007_helloword
 	./20231008_1242_helloworld
 	// const
@@ -23,12 +15,21 @@ use (
 	./20231011_2336_zuhe
 	./20231011_2343_json
 	./20231119_1538_Kratos
+	./20231119_1948_panic
+	./20231120_2239_gorm
+	./20231121_2325_goredis
+	./20231125_2325_反射
+	./20231126_1236_grpc_client
+	./20231126_1236_grpc_server
+	./20231126_1236_grpc_server2
+	./20231126_1324_listmap
+	./20231211_2216_gin
 	20231203_1640_go
 )
 
-// godemo build
-// godemo run .\main.godemo
-// godemo mod init test1
-// godemo mod tidy
-// godemo work init .\20231008_0007_helloword\ .\20231008_1242_helloworld\
-// godemo work use .
+// go build
+// go run .\main.go
+// go mod init test1_client_server
+// go mod tidy
+// go work init .\20231008_0007_helloword\ .\20231008_1242_helloworld\
+// go work use .
