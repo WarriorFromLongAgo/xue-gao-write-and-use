@@ -24,12 +24,16 @@ use (
 	./20231126_1236_grpc_server2
 	./20231126_1324_listmap
 	./20231211_2216_gin
+	./20231231_1402_cid
+	./20231231_2028_web3
 	20231203_1640_go
 )
 
+// go mod init test1_client_server
+//创建main.go
+// go mod tidy
+// go work use .
+
 // go build
 // go run .\main.go
-// go mod init test1_client_server
-// go mod tidy
 // go work init .\20231008_0007_helloword\ .\20231008_1242_helloworld\
-// go work use .
