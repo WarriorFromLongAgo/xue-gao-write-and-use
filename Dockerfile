@@ -36,3 +36,8 @@ CMD ["./main"]
 #安装了 ca-certificates，这样使用 TLS证书就没问题了
 #自动设置了本地时区，这样我们在日志里看到的是北京时间了
 
+# docker build -t hello:v3 .
+# docker run -it --rm -p 8080:8080 hello:v3
+
+
+
