@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"gin20231203_1612_v1/business/userinfo/model/do"
+	userInfoDo "gin20231203_1612_v1/business/userinfo/model/do"
 	fmkJsonUtil "gin20231203_1612_v1/utils/json"
 	"testing"
 )
 
 func TestMarshal(t *testing.T) {
-	str := fmkJsonUtil.Marshal(do.UserInfo{
+	str := fmkJsonUtil.Marshal(&userInfoDo.UserInfo{
 		Name:   "name",
 		Mobile: "1800088",
 	})
@@ -22,7 +22,7 @@ func TestMarshal(t *testing.T) {
 func TestUnmarshal(t *testing.T) {
 	str := "{\"id\":222,\"name\":\"1111111111\",\"mobile\":\"1800088\"}"
 
-	var user do.UserInfo
+	var user userInfoDo.UserInfo
 	domain := fmkJsonUtil.Unmarshal(str, user)
 	fmt.Println("TestUnmarshal", fmkJsonUtil.Marshal(domain))
 
