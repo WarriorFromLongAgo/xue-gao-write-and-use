@@ -1,18 +1,16 @@
 package test
 
 import (
-	"20231203_1640_go_sdk/gosdk/src/unsafe/c_and_go/add"
-	"fmt"
 	"testing"
 )
 
 // https://chai2010.gitbooks.io/advanced-go-programming-book/content/ch2-cgo/readme.html
 func Test_c_and_go_add(t *testing.T) {
-	add.HelloWorld()
-
-	add.HelloWorld()
-	fmt.Println(add.Add(10, 5))
-	fmt.Println(add.Mul(10, 5))
+	//add.HelloWorld()
+	//
+	//add.HelloWorld()
+	//fmt.Println(add.Add(10, 5))
+	//fmt.Println(add.Mul(10, 5))
 }
 
 //这个错误通常表示在 64 位模式下编译器没有启用。要解决这个问题，你需要确保你的编译器支持 64 位模式，并且你正在使用 64 位编译器。
