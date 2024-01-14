@@ -37,6 +37,7 @@ func Test_v7(t *testing.T) {
 		return
 	}
 	fmt.Println("publicKeyECDSA = ", publicKeyECDSA)
+	//从公钥推导出钱包地址
 	fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
 	nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
 	if err != nil {
