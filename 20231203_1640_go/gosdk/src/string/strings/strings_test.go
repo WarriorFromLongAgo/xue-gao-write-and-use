@@ -3,9 +3,10 @@ package strings
 import (
 	"fmt"
 	"strings"
+	"testing"
 )
 
-func main() {
+func Test_str(t *testing.T) {
 	str := "Hello, World!"
 
 	// 判断字符串是否包含子串
@@ -78,4 +79,6 @@ func main() {
 	formattedStr := fmt.Sprintf("The number is %d", 42)
 	fmt.Println(formattedStr) // The number is 42
 
+	tempStr := str[1]
+	fmt.Printf("tempStr = %c\n", tempStr)
 }
