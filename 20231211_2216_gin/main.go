@@ -16,12 +16,12 @@ func main() {
 	router := gin.Default()
 	router.Use(gin.Recovery())
 	router.Use(corsMiddleware())
-	router.GET("/", func(c *gin.Context) {
+	router.GET("/api/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "Welcome Gin Server")
 	})
 	//启动服务
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":8889",
 		Handler: router,
 	}
 	go func() {
