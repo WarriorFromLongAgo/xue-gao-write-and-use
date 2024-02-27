@@ -33,3 +33,10 @@ func Test_natsio_example(t *testing.T) {
 	_, err := nc.Request("greet.joe", nil, time.Second)
 	fmt.Println(err)
 }
+
+//hello, joe
+//hello, sue
+//hello, bob
+//nats: no responders available for request
+
+//

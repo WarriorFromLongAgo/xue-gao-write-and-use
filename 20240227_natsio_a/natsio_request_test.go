@@ -1,10 +1,8 @@
 package _0240227_natsio_a
 
 import (
-	"fmt"
 	"github.com/nats-io/nats.go"
 	"testing"
-	"time"
 )
 
 func Test_natsio_request(t *testing.T) {
@@ -13,23 +11,8 @@ func Test_natsio_request(t *testing.T) {
 	nc, _ := nats.Connect(url)
 	defer nc.Drain()
 
-	sub, _ := nc.Subscribe("greet.*", func(msg *nats.Msg) {
+	// Matches all of the above
+	nc.Publish("foo.bar.baz", []byte("Hello World")) // Use the response
 
-		name := msg.Subject[6:]
-		msg.Respond([]byte("hello, " + name))
-	})
-
-	rep, _ := nc.Request("greet.joe", nil, time.Second)
-	fmt.Println(string(rep.Data))
-
-	rep, _ = nc.Request("greet.sue", nil, time.Second)
-	fmt.Println(string(rep.Data))
-
-	rep, _ = nc.Request("greet.bob", nil, time.Second)
-	fmt.Println(string(rep.Data))
-
-	sub.Unsubscribe()
-
-	_, err := nc.Request("greet.joe", nil, time.Second)
-	fmt.Println(err)
+	println("request request request")
 }
