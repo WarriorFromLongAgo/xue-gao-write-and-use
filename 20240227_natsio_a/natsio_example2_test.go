@@ -1,6 +1,7 @@
 package _0240227_natsio_a
 
 import (
+	"fmt"
 	"github.com/nats-io/nats.go"
 	"log"
 	"sync"
@@ -81,4 +82,22 @@ func example4() {
 	msg.Respond(timeAsBytes)
 
 	println("44444444444444")
+}
+
+func TestNats_example4(t *testing.T) {
+	url := nats.DefaultURL
+
+	nc, _ := nats.Connect(url)
+	defer nc.Drain()
+
+	var wg sync.WaitGroup
+	wg.Add(1)
+	nc.Subscribe("foo", func(m *nats.Msg) {
+		defer wg.Done()
+		fmt.Printf("Msg received on [%s] : %s\n", m.Subject, string(m.Data))
+	})
+
+	nc.Publish("foo", []byte("Hello World"))
+
+	wg.Wait()
 }

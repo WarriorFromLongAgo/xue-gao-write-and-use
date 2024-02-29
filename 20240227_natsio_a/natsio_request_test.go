@@ -14,7 +14,7 @@ func Test_natsio_request(t *testing.T) {
 		log.Fatal(err)
 		return
 	}
-	defer nc.Drain()
+	defer nc.Close()
 
 	// Matches all of the above
 	nc.Publish("foo", []byte("Hello World")) // Use the response
