@@ -11,6 +11,7 @@ public class ActionServiceImplV1 implements ActionService, InitializingBean {
     private SpringBeanTest springBeanTest;
     public void processMsg() {
 
+
         System.out.println("ActionServiceImplV1 ActionServiceImplV1");
         springBeanTest.testSpring();
     }
